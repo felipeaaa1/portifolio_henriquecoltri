@@ -1,5 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { provideRouter } from '@angular/router';
 
 import { HomePageComponent } from './home-page.component';
 
@@ -7,13 +8,14 @@ describe('HomePageComponent', () => {
   let component: HomePageComponent;
   let fixture: ComponentFixture<HomePageComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ HomePageComponent ],
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [HomePageComponent],
+      providers: [provideRouter([])],
       schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(HomePageComponent);

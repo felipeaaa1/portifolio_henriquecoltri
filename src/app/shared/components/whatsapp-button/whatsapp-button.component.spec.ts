@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WhatsappButtonComponent } from './whatsapp-button.component';
 
@@ -6,12 +6,12 @@ describe('WhatsappButtonComponent', () => {
   let component: WhatsappButtonComponent;
   let fixture: ComponentFixture<WhatsappButtonComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ WhatsappButtonComponent ]
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [WhatsappButtonComponent]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(WhatsappButtonComponent);

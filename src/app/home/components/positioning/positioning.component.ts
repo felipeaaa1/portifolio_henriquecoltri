@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { RevealDirective } from '../../../shared/directives/reveal.directive';
 
 @Component({
   selector: 'app-positioning',
+  standalone: true,
+  imports: [RevealDirective],
   templateUrl: './positioning.component.html',
-  styleUrls: ['./positioning.component.scss']
+  styleUrl: './positioning.component.scss'
 })
-export class PositioningComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class PositioningComponent { }

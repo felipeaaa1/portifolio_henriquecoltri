@@ -1,7 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { NgFor, NgIf } from '@angular/common';
 import { Testimonial } from '../../../core/models/portfolio.model';
 import { PortfolioService } from '../../../core/services/portfolio.service';
-@Component({ selector: 'app-testimonials', templateUrl: './testimonials.component.html', styleUrls: ['./testimonials.component.scss'] })
+import { SectionTitleComponent } from '../../../shared/components/section-title/section-title.component';
+import { RevealDirective } from '../../../shared/directives/reveal.directive';
+@Component({
+  selector: 'app-testimonials',
+  standalone: true,
+  imports: [NgFor, NgIf, SectionTitleComponent, RevealDirective],
+  templateUrl: './testimonials.component.html',
+  styleUrl: './testimonials.component.scss'
+})
 export class TestimonialsComponent implements OnInit {
   testimonials: Testimonial[] = [];
   activeIndex = 0;

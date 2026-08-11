@@ -1,6 +1,13 @@
 import { Component, Input } from '@angular/core';
+import { NgIf } from '@angular/common';
 
-@Component({ selector: 'app-section-title', templateUrl: './section-title.component.html', styleUrls: ['./section-title.component.scss'] })
+@Component({
+  selector: 'app-section-title',
+  standalone: true,
+  imports: [NgIf],
+  templateUrl: './section-title.component.html',
+  styleUrl: './section-title.component.scss'
+})
 export class SectionTitleComponent {
   @Input() eyebrow = '';
   @Input() title = '';

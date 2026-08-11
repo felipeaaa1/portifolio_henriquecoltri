@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PositioningComponent } from './positioning.component';
 
@@ -6,12 +6,12 @@ describe('PositioningComponent', () => {
   let component: PositioningComponent;
   let fixture: ComponentFixture<PositioningComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ PositioningComponent ]
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [PositioningComponent]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PositioningComponent);

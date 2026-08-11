@@ -1,5 +1,5 @@
-@import 'styles/variables';
-@import 'styles/reset';
+@use 'styles/variables' as *;
+@use 'styles/reset';
 
 :root {
   --color-dark: #171717;

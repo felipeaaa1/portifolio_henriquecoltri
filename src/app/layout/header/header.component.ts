@@ -1,15 +1,21 @@
 import { Component, HostListener } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
-@Component({ selector: 'app-header', templateUrl: './header.component.html', styleUrls: ['./header.component.scss'] })
+@Component({
+  selector: 'app-header',
+  standalone: true,
+  imports: [RouterLink, RouterLinkActive],
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.scss'
+})
 export class HeaderComponent {
   menuOpen = false;
   scrolled = false;
   onHome = true;
 
   constructor(private router: Router) {
-    this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((event: NavigationEnd) => {
+    this.router.events.pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd)).subscribe(event => {
       this.onHome = event.urlAfterRedirects.split('#')[0] === '/';
       this.menuOpen = false;
     });

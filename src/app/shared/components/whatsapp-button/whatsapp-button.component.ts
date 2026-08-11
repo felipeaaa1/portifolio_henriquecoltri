@@ -3,8 +3,9 @@ import { PortfolioService } from '../../../core/services/portfolio.service';
 
 @Component({
   selector: 'app-whatsapp-button',
+  standalone: true,
   templateUrl: './whatsapp-button.component.html',
-  styleUrls: ['./whatsapp-button.component.scss']
+  styleUrl: './whatsapp-button.component.scss'
 })
 export class WhatsappButtonComponent {
   readonly contactUrl: string;

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { of } from 'rxjs';
 
@@ -9,16 +9,16 @@ describe('CasesPageComponent', () => {
   let component: CasesPageComponent;
   let fixture: ComponentFixture<CasesPageComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ CasesPageComponent ],
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [CasesPageComponent],
       providers: [{ provide: CaseService, useValue: {
         getCases: () => of([{ id: 1, title: 'Case', slug: 'case', summary: 'Resumo', featured: true, accent: '#fff' }])
       } }],
       schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CasesPageComponent);

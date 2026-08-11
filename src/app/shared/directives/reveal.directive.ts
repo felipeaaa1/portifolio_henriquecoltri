@@ -3,13 +3,14 @@ import { AfterViewInit, Directive, ElementRef, Input, OnDestroy, Renderer2 } fro
 export type RevealAnimation = 'fade-up' | 'slide-left' | 'slide-right' | 'scale' | 'tilt' | 'clip';
 
 @Directive({
-  selector: '[appReveal]'
+  selector: '[appReveal]',
+  standalone: true
 })
 export class RevealDirective implements AfterViewInit, OnDestroy {
   @Input('appReveal') animation: RevealAnimation = 'fade-up';
   @Input() revealDelay = 0;
 
-  private observer: IntersectionObserver;
+  private observer?: IntersectionObserver;
 
   constructor(private elementRef: ElementRef, private renderer: Renderer2) { }
 
@@ -28,7 +29,7 @@ export class RevealDirective implements AfterViewInit, OnDestroy {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           this.showElement();
-          this.observer.unobserve(entry.target);
+          this.observer?.unobserve(entry.target);
         }
       });
     }, { rootMargin: '0px 0px -10% 0px', threshold: 0.12 });

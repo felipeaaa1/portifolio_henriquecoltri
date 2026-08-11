@@ -1,10 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { NgFor } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { Case } from '../../../core/models/case.model';
 import { CaseService } from '../../../core/services/case.service';
+import { SectionTitleComponent } from '../../../shared/components/section-title/section-title.component';
+import { RevealDirective } from '../../../shared/directives/reveal.directive';
 @Component({
   selector: 'app-featured-cases',
+  standalone: true,
+  imports: [NgFor, RouterLink, SectionTitleComponent, RevealDirective],
   templateUrl: './featured-cases.component.html',
-  styleUrls: ['./featured-cases.component.scss']
+  styleUrl: './featured-cases.component.scss'
 })
 export class FeaturedCasesComponent implements OnInit {
   cases: Case[] = [];
