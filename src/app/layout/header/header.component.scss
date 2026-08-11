@@ -2,10 +2,11 @@
 .site-header { position: fixed; inset: 0 0 auto; color: var(--color-light); transition: background var(--transition), box-shadow var(--transition); }
 .site-header--solid { background: rgba(23, 23, 23, .96); box-shadow: 0 1px 0 rgba(255,255,255,.1); }
 .site-header__inner { width: min(var(--container), calc(100% - 2.5rem)); height: 82px; margin: auto; display: flex; align-items: center; justify-content: space-between; }
-.brand { color: inherit; text-decoration: none; font-size: 1.6rem; font-weight: 900; letter-spacing: -.08em; }.brand span { color: var(--color-accent); }
+.brand { display: flex; align-items: center; width: 176px; color: inherit; text-decoration: none; }
+.brand img { display: block; width: 100%; height: auto; }
 .navigation { display: flex; align-items: center; gap: 1.35rem; }.navigation a { position: relative; color: inherit; text-decoration: none; font-size: .82rem; font-weight: 700; }
 .navigation a:not(.navigation__cta)::after { content: ''; position: absolute; left: 0; right: 100%; bottom: -.45rem; height: 2px; background: var(--color-accent); transition: right var(--transition); }
 .navigation a:hover::after, .navigation a:focus-visible::after, .navigation a.active::after { right: 0; }
 .navigation__cta { padding: .7rem 1rem; border: 1px solid currentColor; border-radius: 999px; }.navigation__cta:hover { color: var(--color-dark); background: var(--color-accent); border-color: var(--color-accent); }
 .menu-button { display: none; width: 48px; height: 48px; border: 0; background: transparent; color: inherit; }.menu-button span { display: block; width: 24px; height: 2px; margin: 5px auto; background: currentColor; }
-@media (max-width: 900px) { .menu-button { display: block; } .navigation { position: absolute; top: 82px; left: 0; right: 0; display: none; padding: 1.5rem 1.25rem 2rem; background: var(--color-dark); flex-direction: column; align-items: stretch; gap: 0; } .navigation--open { display: flex; } .navigation a { padding: .85rem 0; font-size: 1.15rem; } .navigation__cta { margin-top: .75rem; text-align: center; } }
+@media (max-width: 900px) { .brand { width: 148px; } .menu-button { display: block; } .navigation { position: absolute; top: 82px; left: 0; right: 0; display: none; padding: 1.5rem 1.25rem 2rem; background: var(--color-dark); flex-direction: column; align-items: stretch; gap: 0; } .navigation--open { display: flex; } .navigation a { padding: .85rem 0; font-size: 1.15rem; } .navigation__cta { margin-top: .75rem; text-align: center; } }

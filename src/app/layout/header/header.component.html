@@ -1,6 +1,8 @@
 <header class="site-header" [class.site-header--solid]="scrolled || !onHome || menuOpen">
   <div class="site-header__inner">
-    <a class="brand" routerLink="/" fragment="inicio" (click)="closeMenu()" aria-label="Henrique Coltri — página inicial">HC<span>.</span></a>
+    <a class="brand" routerLink="/" fragment="inicio" (click)="closeMenu()" aria-label="Henrique Coltri — página inicial">
+      <img src="assets/images/brand/logo-henrique-coltri-gelo.svg" alt="Henrique Coltri">
+    </a>
     <button class="menu-button" type="button" aria-label="Abrir ou fechar menu" [attr.aria-expanded]="menuOpen" aria-controls="primary-navigation" (click)="toggleMenu()">
       <span></span><span></span><span></span>
     </button>

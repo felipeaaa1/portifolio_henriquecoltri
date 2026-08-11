@@ -28,4 +28,30 @@ body { background: var(--color-dark); color: var(--color-dark); font-family: $fo
 .button--outline { background: transparent; border-color: rgba(246,241,232,.6); color: var(--color-light); }
 .button--outline:hover { background: var(--color-light); color: var(--color-dark); }
 
+/* Revelações progressivas acionadas pela diretiva appReveal. */
+.reveal {
+  opacity: 0;
+  transition:
+    opacity 900ms cubic-bezier(.16, 1, .3, 1) var(--reveal-delay, 0ms),
+    transform 1000ms cubic-bezier(.16, 1, .3, 1) var(--reveal-delay, 0ms),
+    clip-path 1100ms cubic-bezier(.16, 1, .3, 1) var(--reveal-delay, 0ms);
+  will-change: opacity, transform, clip-path;
+}
+.reveal--fade-up { transform: translate3d(0, 72px, 0); }
+.reveal--slide-left { transform: translate3d(-110px, 0, 0) rotate(-1deg); }
+.reveal--slide-right { transform: translate3d(110px, 0, 0) rotate(1deg); }
+.reveal--scale { transform: scale(.84) translateY(28px); }
+.reveal--tilt { transform: translate3d(0, 64px, 0) rotate(-4deg); transform-origin: 20% 50%; }
+.reveal--clip { clip-path: inset(0 0 100% 0 round var(--radius-card)); transform: translate3d(0, 42px, 0) scale(.97); }
+.reveal--visible { opacity: 1; transform: none; clip-path: inset(0 0 0 0 round var(--radius-card)); }
+
+@media (max-width: 700px) {
+  .reveal--slide-left { transform: translate3d(-56px, 0, 0); }
+  .reveal--slide-right { transform: translate3d(56px, 0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal--visible { opacity: 1; transform: none; clip-path: none; will-change: auto; }
+}
+
 @media (max-width: 600px) { :root { --radius-card: 1.25rem; } .container { width: min(var(--container), calc(100% - 1.5rem)); } }
