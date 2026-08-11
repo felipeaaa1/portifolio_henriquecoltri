@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'styles/variables';
+@import 'styles/reset';
+
+:root {
+  --color-dark: #171717;
+  --color-light: #f6f1e8;
+  --color-paper: #f4ebdd;
+  --color-muted: #6d6a65;
+  --color-accent: #ff7452;
+  --color-accent-strong: #c33f22;
+  --color-blue: #8aa7ff;
+  --container: 1240px;
+  --section-space: clamp(5rem, 10vw, 9rem);
+  --radius-large: clamp(2rem, 5vw, 5rem);
+  --radius-card: 1.75rem;
+  --transition: 220ms ease;
+}
+
+html { scroll-padding-top: 82px; }
+body { background: var(--color-dark); color: var(--color-dark); font-family: $font-family; }
+.container { width: min(var(--container), calc(100% - 2.5rem)); margin-right: auto; margin-left: auto; }
+.section-light { background: var(--color-paper); color: var(--color-dark); }
+.section-dark { background: var(--color-dark); color: var(--color-light); }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: .8rem; min-height: 50px; padding: .8rem 1.25rem; border: 1px solid transparent; border-radius: 999px; font-weight: 800; text-decoration: none; transition: transform var(--transition), background var(--transition), color var(--transition); }
+.button:hover, .button:focus-visible { transform: translateY(-3px); }
+.button--accent { background: var(--color-accent); color: var(--color-dark); }
+.button--dark { background: var(--color-dark); color: var(--color-light); }
+.button--outline { background: transparent; border-color: rgba(246,241,232,.6); color: var(--color-light); }
+.button--outline:hover { background: var(--color-light); color: var(--color-dark); }
+
+@media (max-width: 600px) { :root { --radius-card: 1.25rem; } .container { width: min(var(--container), calc(100% - 1.5rem)); } }

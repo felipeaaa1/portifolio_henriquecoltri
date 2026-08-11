@@ -1,0 +1,5 @@
+<header class="section-title" [class.section-title--dark]="theme === 'dark'">
+  <p class="section-title__eyebrow" *ngIf="eyebrow">{{ eyebrow }}</p>
+  <h2>{{ title }}</h2>
+  <p class="section-title__description" *ngIf="description">{{ description }}</p>
+</header>

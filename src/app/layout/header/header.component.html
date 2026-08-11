@@ -1,0 +1,17 @@
+<header class="site-header" [class.site-header--solid]="scrolled || !onHome || menuOpen">
+  <div class="site-header__inner">
+    <a class="brand" routerLink="/" fragment="inicio" (click)="closeMenu()" aria-label="Henrique Coltri — página inicial">HC<span>.</span></a>
+    <button class="menu-button" type="button" aria-label="Abrir ou fechar menu" [attr.aria-expanded]="menuOpen" aria-controls="primary-navigation" (click)="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="primary-navigation" class="navigation" [class.navigation--open]="menuOpen" aria-label="Navegação principal">
+      <a routerLink="/" fragment="inicio" (click)="closeMenu()">Home</a>
+      <a routerLink="/" fragment="quem-sou" (click)="closeMenu()">Quem sou</a>
+      <a routerLink="/" fragment="solucoes" (click)="closeMenu()">Soluções</a>
+      <a routerLink="/" fragment="metodo" (click)="closeMenu()">Método</a>
+      <a routerLink="/cases" routerLinkActive="active" (click)="closeMenu()">Cases</a>
+      <a routerLink="/" fragment="contato" (click)="closeMenu()">Contato</a>
+      <a class="navigation__cta" routerLink="/" fragment="contato" (click)="closeMenu()">Vamos conversar</a>
+    </nav>
+  </div>
+</header>

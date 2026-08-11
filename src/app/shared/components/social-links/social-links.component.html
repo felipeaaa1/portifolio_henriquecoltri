@@ -1,0 +1,5 @@
+<nav class="social-links" aria-label="Redes sociais">
+  <a *ngFor="let link of links" [href]="link.url" [attr.aria-disabled]="link.url === '#'" (click)="link.url === '#' && $event.preventDefault()">
+    {{ link.label }} <span aria-hidden="true">↗</span>
+  </a>
+</nav>

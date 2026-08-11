@@ -1,0 +1,6 @@
+.section-title { max-width: 760px; margin-bottom: 3rem; }
+.section-title__eyebrow { margin: 0 0 1rem; text-transform: uppercase; letter-spacing: .14em; font-size: .75rem; font-weight: 700; color: var(--color-accent); }
+h2 { margin: 0; font-size: clamp(2.4rem, 6vw, 5.5rem); line-height: .95; letter-spacing: -.055em; }
+.section-title__description { max-width: 620px; margin: 1.4rem 0 0; color: var(--color-muted); font-size: 1.08rem; line-height: 1.65; }
+.section-title--dark { color: var(--color-light); }
+.section-title--dark .section-title__description { color: rgba(246, 241, 232, .7); }
