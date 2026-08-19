@@ -56,3 +56,61 @@ body { background: var(--color-dark); color: var(--color-dark); font-family: $fo
 }
 
 @media (max-width: 600px) { :root { --radius-card: 1.25rem; } .container { width: min(var(--container), calc(100% - 1.5rem)); } }
+
+
+/* Ajustes para telas menores e prevenção de rolagem horizontal. */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+@media (max-width: 600px) {
+  :root {
+    --section-space: clamp(3.5rem, 14vw, 5rem);
+    --radius-large: 2rem;
+  }
+
+  .hero { min-height: auto; padding: 7.5rem 0 4.5rem; }
+  .hero h1,
+  .cases-hero h1,
+  .about h2,
+  .positioning h2,
+  .contact h2 {
+    font-size: clamp(3rem, 14vw, 4.5rem);
+    line-height: .84;
+    letter-spacing: -.065em;
+    overflow-wrap: anywhere;
+  }
+
+  .hero__art span:nth-child(2),
+  .hero__art span:nth-child(3) { display: none; }
+  .hero__art span:nth-child(1) { width: 70vw; height: 70vw; right: -28vw; top: 7rem; }
+
+  .about__lead,
+  .manifesto__intro,
+  .manifesto__more { font-size: 1.05rem; }
+
+  .testimonial__quote { right: 1rem; font-size: 5rem; }
+  .testimonial__controls { justify-content: flex-start; }
+
+  .footer { padding-top: 4rem; }
+  .footer__brand { margin-bottom: 2.5rem; }
+  .footer__name {
+    margin-top: 3.5rem;
+    font-size: clamp(2.8rem, 14vw, 4.4rem);
+    line-height: .8;
+    letter-spacing: -.075em;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-header__inner { width: calc(100% - 1.5rem); }
+  .brand { width: 128px; }
+  .hero h1,
+  .cases-hero h1,
+  .about h2,
+  .positioning h2,
+  .contact h2 { font-size: 2.8rem; }
+  .button { width: 100%; }
+}
