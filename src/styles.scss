@@ -114,3 +114,16 @@ html, body {
   .contact h2 { font-size: 2.8rem; }
   .button { width: 100%; }
 }
+
+
+/* Em telas touch, mantém o conteúdo no lugar mesmo antes da animação observar a seção. */
+@media (max-width: 700px) {
+  .reveal,
+  .reveal--visible {
+    opacity: 1;
+    transform: none !important;
+    clip-path: none !important;
+    transition: none;
+    will-change: auto;
+  }
+}
