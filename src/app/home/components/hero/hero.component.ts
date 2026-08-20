@@ -1,12 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { RevealDirective } from '../../../shared/directives/reveal.directive';
+import { PortfolioService } from '../../../core/services/portfolio.service';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [RouterLink, RevealDirective],
+  imports: [RevealDirective],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss'
 })
-export class HeroComponent { }
+export class HeroComponent {
+  readonly contactUrl: string;
+
+  constructor(portfolioService: PortfolioService) {
+    this.contactUrl = portfolioService.getWhatsappUrl();
+  }
+}
