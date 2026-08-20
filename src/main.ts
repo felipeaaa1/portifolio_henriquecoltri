@@ -8,7 +8,7 @@ bootstrapApplication(AppComponent, {
   providers: [
     provideRouter(routes, withInMemoryScrolling({
       anchorScrolling: 'enabled',
-      scrollPositionRestoration: 'enabled'
+      scrollPositionRestoration: 'top'
     }))
   ]
 }).catch(error => console.error(error));
