@@ -13,7 +13,7 @@
       <a routerLink="/" fragment="metodo" (click)="closeMenu()">Método</a>
       <a routerLink="/cases" routerLinkActive="active" (click)="closeMenu()">Cases</a>
       <a routerLink="/" fragment="contato" (click)="closeMenu()">Contato</a>
-      <a class="navigation__cta" routerLink="/" fragment="contato" (click)="closeMenu()">Vamos conversar</a>
+      <a class="navigation__cta" [href]="contactUrl" target="_blank" rel="noopener noreferrer" (click)="closeMenu()">Vamos conversar</a>
     </nav>
   </div>
 </header>
