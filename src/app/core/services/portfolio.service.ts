@@ -35,10 +35,10 @@ export class PortfolioService {
       text: 'Um terceiro relato poderá mostrar outra perspectiva da parceria e do trabalho realizado.' }
   ];
   private readonly socialLinks: SocialLink[] = [
-    { label: 'Instagram', url: '#' }, { label: 'LinkedIn', url: '#' }, { label: 'Behance', url: '#' }
+    { label: 'Instagram', url: 'https://instagram.com/henriquecoltri' }, { label: 'LinkedIn', url: 'https://br.linkedin.com/in/henriquecoltri' }, { label: 'Behance', url: 'https://behance.com/henriquecoltri' }
   ];
   private readonly contact: ContactConfig = {
-    whatsappNumber: '5511996243271', whatsappMessage: 'Olá, Henrique! Cheguei até você pelo seu site e gostaria de conversar sobre um projeto de branding. Quero entender melhor como funciona seu processo e contar um pouco sobre o que estou buscando.', email: 'contato@confirmar.com.br'
+    whatsappNumber: '5511996243271', whatsappMessage: 'Olá, Henrique! Cheguei até você pelo seu site e gostaria de conversar sobre um projeto de branding. Quero entender melhor como funciona seu processo e contar um pouco sobre o que estou buscando.', email: 'henriquecoltri@hotmail.com'
   };
   private readonly workPreviews: WorkPreview[] = [
     { label: 'Estratégia', accent: '#ff6b45' }, { label: 'Branding', accent: '#b9d96f' },
