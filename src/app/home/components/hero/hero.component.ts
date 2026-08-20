@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RevealDirective } from '../../../shared/directives/reveal.directive';
-import { PortfolioService } from '../../../core/services/portfolio.service';
 
 @Component({
   selector: 'app-hero',
@@ -10,12 +9,6 @@ import { PortfolioService } from '../../../core/services/portfolio.service';
   styleUrl: './hero.component.scss'
 })
 export class HeroComponent {
-  readonly contactUrl: string;
-
-  constructor(portfolioService: PortfolioService) {
-    this.contactUrl = portfolioService.getWhatsappUrl();
-  }
-
   moveGlow(event: PointerEvent): void {
     const hero = event.currentTarget as HTMLElement;
     const bounds = hero.getBoundingClientRect();
