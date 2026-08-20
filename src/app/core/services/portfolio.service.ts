@@ -38,7 +38,7 @@ export class PortfolioService {
     { label: 'Instagram', url: '#' }, { label: 'LinkedIn', url: '#' }, { label: 'Behance', url: '#' }
   ];
   private readonly contact: ContactConfig = {
-    whatsappNumber: '', whatsappMessage: 'Olá, Henrique! Quero conversar sobre um projeto.', email: 'contato@confirmar.com.br'
+    whatsappNumber: '5511996243271', whatsappMessage: 'Olá, Henrique! Cheguei até você pelo seu site e gostaria de conversar sobre um projeto de branding. Quero entender melhor como funciona seu processo e contar um pouco sobre o que estou buscando.', email: 'contato@confirmar.com.br'
   };
   private readonly workPreviews: WorkPreview[] = [
     { label: 'Estratégia', accent: '#ff6b45' }, { label: 'Branding', accent: '#b9d96f' },
