@@ -136,9 +136,9 @@
 }
 
 h1 {
-  max-width: 1050px;
-  margin: 1rem 0 2rem;
-  font-size: clamp(4rem, 10.5vw, 9.5rem);
+  max-width: 1380px;
+  margin: 0 0 2.25rem;
+  font-size: clamp(3.5rem, 7.5vw, 8rem);
   line-height: .78;
   letter-spacing: -.075em;
 }
@@ -156,11 +156,28 @@ h1 em {
   gap: 3rem;
 }
 
-.hero__intro p {
+.hero__copy {
+  max-width: 560px;
+}
+
+.hero__copy > p {
   margin: 0;
   font-size: clamp(1.05rem, 2vw, 1.35rem);
   line-height: 1.55;
   color: rgba(246, 241, 232, .82);
+}
+
+.hero__services {
+  margin-top: 1rem !important;
+  color: var(--color-accent) !important;
+  font-size: .82rem !important;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.hero__services span {
+  padding: 0 .25rem;
 }
 
 .hero__scroll {
