@@ -1,7 +1,7 @@
 <section id="quem-sou" class="about section-light">
   <div class="container about__grid">
     <div class="about__identity" appReveal="slide-left" [revealDelay]="120"><p class="eyebrow">Quem sou</p><h2>Henrique<br>Coltri</h2><p class="about__lead">Publicitário e estrategista de marcas. Atua na interseção entre estratégia, branding, comunicação e direção criativa.</p><p class="about__pending">Conteúdo biográfico complementar aguardando validação do cliente.</p></div>
-    <div class="about__portrait" appReveal="slide-right" role="img" aria-label="Espaço reservado para retrato de Henrique Coltri"><span>Retrato<br>a inserir</span></div>
+    <div class="about__portrait" appReveal="slide-right"><img src="assets/images/henrique-coltri-portrait.webp" alt="Retrato de Henrique Coltri" width="720" height="1564" loading="lazy" decoding="async"></div>
   </div>
   <div class="work-strip" tabindex="0" aria-label="Prévia de áreas e trabalhos"><div class="work-strip__track"><div *ngFor="let item of previews" [style.--preview-accent]="item.accent"><span>{{ item.label }}</span></div><div *ngFor="let item of previews" [style.--preview-accent]="item.accent" aria-hidden="true"><span>{{ item.label }}</span></div></div></div>
 </section>
