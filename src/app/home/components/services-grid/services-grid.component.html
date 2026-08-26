@@ -1,5 +1,4 @@
 <section id="solucoes" class="services section-light"><div class="container">
-  <app-section-title appReveal="slide-left" eyebrow="Atuação / Soluções" title="Clareza para decidir. Forma para reconhecer." description="Seis frentes provisórias que organizam como estratégia e expressão podem trabalhar juntas."></app-section-title>
+  <app-section-title appReveal="slide-left" eyebrow="Atuação / Soluções" title="Clareza para decidir. Forma para reconhecer." description="Do pensamento à expressão, cada frente do meu trabalho existe para construir marcas coerentes por dentro e reconhecíveis por fora."></app-section-title>
   <div class="services__grid"><article class="service-card" *ngFor="let service of services; let index = index" tabindex="0" [appReveal]="index % 2 === 0 ? 'slide-left' : 'slide-right'" [revealDelay]="index * 85"><span>0{{ service.id }}</span><h3>{{ service.title }}</h3><p>{{ service.description }}</p><b aria-hidden="true">↗</b></article></div>
-  <p class="content-note">Conteúdo provisório sujeito à validação do cliente.</p>
 </div></section>

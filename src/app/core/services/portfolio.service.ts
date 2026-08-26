@@ -9,12 +9,12 @@ import { Brand, ContactConfig, MethodStep, SocialLink, Testimonial, WorkPreview 
 export class PortfolioService {
   // Conteúdo provisório: validar textos e endereços com o cliente antes da publicação.
   private readonly services: ServiceItem[] = [
-    { id: 1, title: 'Estratégia de Marca', description: 'Diagnóstico, posicionamento e direção antes de qualquer decisão visual.' },
-    { id: 2, title: 'Posicionamento', description: 'Uma proposta clara para orientar escolhas e construir diferenciação.' },
-    { id: 3, title: 'Identidade verbal', description: 'Tom, mensagens e narrativa para uma marca falar com coerência.' },
-    { id: 4, title: 'Comunicação', description: 'Sistemas e caminhos para transformar estratégia em presença.' },
-    { id: 5, title: 'Conteúdo', description: 'Direção editorial provisória para conectar ideias e públicos.' },
-    { id: 6, title: 'Direção criativa', description: 'Critérios para alinhar linguagem, forma e experiência de marca.' }
+    { id: 1, title: 'Branding', description: 'Construção estratégica e criativa da marca, conectando essência, posicionamento, identidade e presença em um sistema único.' },
+    { id: 2, title: 'Posicionamento', description: 'Definição do lugar que a marca deseja ocupar, do que precisa representar e das razões pelas quais deve ser escolhida.' },
+    { id: 3, title: 'Identidade Visual', description: 'Criação de sistemas visuais capazes de traduzir estratégia em formas, símbolos, cores, tipografia e aplicações consistentes.' },
+    { id: 4, title: 'Identidade Verbal', description: 'Definição do tom de voz, mensagens, linguagem e princípios que orientam a maneira como a marca fala e se relaciona.' },
+    { id: 5, title: 'Rebranding', description: 'Revisão estratégica e visual de marcas que mudaram, cresceram ou já não se reconhecem na forma como se apresentam.' },
+    { id: 6, title: 'Direção Criativa', description: 'Construção de critérios e caminhos criativos para manter linguagem, expressão e experiência alinhadas à estratégia da marca.' }
   ];
   private readonly methodSteps: MethodStep[] = [
     { number: '01', title: 'Absorção', description: 'Escuta, briefing, pesquisa e diagnóstico do negócio, do público e do contexto.' },
