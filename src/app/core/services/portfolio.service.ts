@@ -17,10 +17,10 @@ export class PortfolioService {
     { id: 6, title: 'Direção Criativa', description: 'Construção de critérios e caminhos criativos para manter linguagem, expressão e experiência alinhadas à estratégia da marca.' }
   ];
   private readonly methodSteps: MethodStep[] = [
-    { number: '01', title: 'Absorção', description: 'Escuta, briefing, pesquisa e diagnóstico do negócio, do público e do contexto.' },
-    { number: '02', title: 'Direção', description: 'Propósito, posicionamento, personalidade e estratégia definidos com clareza.' },
-    { number: '03', title: 'Forma', description: 'Identidade visual, identidade verbal e sistemas de comunicação aplicáveis.' },
-    { number: '04', title: 'Presença', description: 'Implantação, lançamento e orientação de uso nos pontos de contato.' }
+    { number: '01', title: 'Absorção', description: 'Escuta, contexto, pesquisa e diagnóstico para compreender o negócio, as pessoas e tudo aquilo que a marca já carrega.' },
+    { number: '02', title: 'Direção', description: 'Definição de propósito, posicionamento, personalidade e estratégia para encontrar um caminho claro.' },
+    { number: '03', title: 'Forma', description: 'Transformação da estratégia em identidade visual, identidade verbal e sistemas de comunicação reconhecíveis.' },
+    { number: '04', title: 'Presença', description: 'Aplicação e orientação da marca para que estratégia e identidade continuem coerentes em seus diferentes pontos de contato.' }
   ];
   private readonly brands: Brand[] = [
     { name: 'Marca Norte' }, { name: 'Estúdio Um' }, { name: 'Coletivo Forma' },

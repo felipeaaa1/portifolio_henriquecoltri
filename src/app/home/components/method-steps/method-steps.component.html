@@ -1,3 +1,30 @@
-<section id="metodo" class="method section-dark"><div class="container"><app-section-title appReveal="slide-right" eyebrow="Método" title="Um processo para transformar intenção em presença." theme="dark"></app-section-title>
-<ol class="method__grid"><li *ngFor="let step of steps; let index = index" [appReveal]="index % 2 === 0 ? 'slide-left' : 'slide-right'" [revealDelay]="index * 110"><span>{{ step.number }}</span><h3>{{ step.title }}</h3><p>{{ step.description }}</p></li></ol>
-<p class="method__statement" appReveal="clip">Absorver para entender. Direcionar para decidir. Dar forma para reconhecer. Ativar para gerar presença.</p></div></section>
+<section id="metodo" class="method section-dark">
+  <div class="container">
+    <app-section-title
+      appReveal="slide-right"
+      eyebrow="Método"
+      title="Um processo para transformar essência em direção. E direção em presença."
+      theme="dark">
+    </app-section-title>
+
+    <ol class="method__grid">
+      <li
+        *ngFor="let step of steps; let index = index"
+        [appReveal]="index % 2 === 0 ? 'slide-left' : 'slide-right'"
+        [revealDelay]="index * 110">
+        <span>{{ step.number }}</span>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.description }}</p>
+      </li>
+    </ol>
+
+    <p class="method__statement" appReveal="clip">
+      <strong>
+        Absorver para entender.<br>
+        Direcionar para decidir.<br>
+        Dar forma para reconhecer.<br>
+        Ativar para gerar presença.
+      </strong>
+    </p>
+  </div>
+</section>
