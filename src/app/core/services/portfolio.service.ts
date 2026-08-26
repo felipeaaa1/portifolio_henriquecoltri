@@ -27,12 +27,12 @@ export class PortfolioService {
     { name: 'Casa Horizonte' }, { name: 'Projeto Vértice' }, { name: 'Marca Pulso' }
   ];
   private readonly testimonials: Testimonial[] = [
-    { id: 1, author: 'Depoimento a validar', role: 'Cliente / empresa',
-      text: 'Espaço reservado para um relato real sobre clareza, processo e resultado do projeto.' },
-    { id: 2, author: 'Depoimento a validar', role: 'Cliente / empresa',
-      text: 'Este conteúdo provisório será substituído após aprovação e autorização de publicação.' },
-    { id: 3, author: 'Depoimento a validar', role: 'Cliente / empresa',
-      text: 'Um terceiro relato poderá mostrar outra perspectiva da parceria e do trabalho realizado.' }
+    {
+      id: 1,
+      author: 'Rafael',
+      role: 'Garanhuns/PE',
+      text: 'Falar do trabalho de Henrique é fácil, ele simplesmente foi fantástico, cumpriu com os prazos, os valores foram excelentes e bem pagos pela qualidade que ele nos entregou! A experiência foi das melhores, desde o momento da venda, até as entregas de todo o material! Recomendo!'
+    }
   ];
   private readonly socialLinks: SocialLink[] = [
     { label: 'Instagram', url: 'https://instagram.com/henriquecoltri' }, { label: 'LinkedIn', url: 'https://br.linkedin.com/in/henriquecoltri' }, { label: 'Behance', url: 'https://behance.com/henriquecoltri' }
