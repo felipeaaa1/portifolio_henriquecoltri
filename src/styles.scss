@@ -127,3 +127,1026 @@ html, body {
     will-change: auto;
   }
 }
+
+
+/* ==========================================================================
+   TESTE DE DIREÇÃO VISUAL — EDITORIAL / INDUSTRIAL
+   Inspirado na linguagem de estúdios contemporâneos: grade técnica,
+   tipografia monumental, superfícies claras e azul elétrico.
+   ========================================================================== */
+
+:root {
+  --color-dark: #050505;
+  --color-light: #f4f3ef;
+  --color-paper: #f1f0ec;
+  --color-muted: #5c5c58;
+  --color-accent: #1d21ff;
+  --color-accent-strong: #1115d8;
+  --color-blue: #1d21ff;
+  --container: 100%;
+  --section-space: clamp(6rem, 10vw, 11rem);
+  --radius-large: 0;
+  --radius-card: 0;
+  --grid-line: rgba(5, 5, 5, .11);
+  --page-gutter: clamp(1.25rem, 3.5vw, 3.75rem);
+  --transition: 180ms cubic-bezier(.2, .8, .2, 1);
+}
+
+html {
+  scroll-padding-top: 76px;
+  background: var(--color-paper);
+}
+
+body {
+  background-color: var(--color-paper);
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(5, 5, 5, .055) 1px, transparent 1px);
+  background-size: 12.5vw 100%, 100% 9rem;
+  color: var(--color-dark);
+  font-family: $font-family;
+  font-kerning: normal;
+}
+
+body .container {
+  width: calc(100% - (var(--page-gutter) * 2));
+  max-width: none;
+}
+
+body .section-light,
+body .section-dark {
+  background: transparent;
+  color: var(--color-dark);
+}
+
+body .button {
+  min-height: 48px;
+  padding: .85rem 1.3rem;
+  border: 1px solid var(--color-dark);
+  border-radius: 0;
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0 transparent;
+}
+
+body .button:hover,
+body .button:focus-visible {
+  transform: translate(-3px, -3px);
+  box-shadow: 4px 4px 0 var(--color-dark);
+}
+
+body .button--accent {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: #fff;
+}
+
+body .button--dark {
+  border-color: var(--color-dark);
+  background: var(--color-dark);
+  color: #fff;
+}
+
+body .button--outline {
+  border-color: currentColor;
+  background: transparent;
+  color: inherit;
+}
+
+body .button--outline:hover {
+  background: #fff;
+  color: var(--color-dark);
+}
+
+/* Cabeçalho */
+body app-header .site-header {
+  color: var(--color-dark);
+  border-bottom: 1px solid var(--grid-line);
+  background: rgba(241, 240, 236, .9);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+body app-header .site-header--solid {
+  background: rgba(241, 240, 236, .96);
+  box-shadow: none;
+}
+
+body app-header .site-header__inner {
+  width: calc(100% - (var(--page-gutter) * 2));
+  height: 76px;
+}
+
+body app-header .brand {
+  width: clamp(145px, 12vw, 190px);
+}
+
+body app-header .brand img {
+  filter: brightness(0);
+}
+
+body app-header .navigation {
+  gap: clamp(.8rem, 1.5vw, 1.75rem);
+}
+
+body app-header .navigation a {
+  font-size: .68rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+body app-header .navigation a:not(.navigation__cta)::after {
+  bottom: -.35rem;
+  height: 3px;
+  background: var(--color-accent);
+}
+
+body app-header .navigation__cta {
+  padding: .75rem 1rem;
+  border: 0;
+  border-radius: 0;
+  background: var(--color-accent);
+  color: #fff;
+}
+
+body app-header .navigation__cta:hover {
+  background: var(--color-dark);
+  color: #fff;
+}
+
+body app-header .menu-button {
+  border: 1px solid var(--color-dark);
+  border-radius: 0;
+}
+
+/* Hero */
+body app-hero .hero {
+  min-height: 100svh;
+  padding: clamp(7.5rem, 12vw, 10rem) 0 clamp(3rem, 6vw, 5rem);
+  align-items: stretch;
+  background: transparent;
+  color: var(--color-dark);
+  border-bottom: 1px solid var(--grid-line);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+body app-hero .hero::before {
+  content: 'HENRIQUE COLTRI™';
+  position: absolute;
+  z-index: 3;
+  top: 6.25rem;
+  right: var(--page-gutter);
+  font-size: .68rem;
+  font-weight: 900;
+  letter-spacing: .13em;
+}
+
+body app-hero .hero__glass {
+  display: none;
+}
+
+body app-hero .hero__art {
+  z-index: 0;
+}
+
+body app-hero .hero__art::after {
+  inset: auto 18% 4% auto;
+  width: clamp(220px, 32vw, 560px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(29, 33, 255, .6);
+  background:
+    linear-gradient(135deg, transparent 49.4%, rgba(29, 33, 255, .55) 49.6% 50.4%, transparent 50.6%),
+    linear-gradient(45deg, transparent 49.4%, rgba(29, 33, 255, .25) 49.6% 50.4%, transparent 50.6%);
+  transform: rotate(45deg);
+}
+
+body app-hero .hero__shape {
+  display: block;
+  mix-blend-mode: normal;
+  filter: none;
+  border-radius: 0;
+  transition: transform .8s cubic-bezier(.16, 1, .3, 1);
+}
+
+body app-hero .hero__shape--one {
+  width: clamp(180px, 28vw, 470px);
+  height: clamp(180px, 28vw, 470px);
+  top: 31%;
+  left: 42%;
+  border: clamp(22px, 4vw, 68px) solid rgba(5, 5, 5, .82);
+  background: transparent;
+  transform: translate3d(var(--shape-one-x), var(--shape-one-y), 0) rotate(45deg);
+}
+
+body app-hero .hero__shape--two {
+  width: clamp(135px, 22vw, 370px);
+  height: clamp(135px, 22vw, 370px);
+  top: 40%;
+  left: 47%;
+  border: clamp(18px, 3.1vw, 52px) solid rgba(29, 33, 255, .82);
+  background: transparent;
+  transform: translate3d(var(--shape-two-x), var(--shape-two-y), 0) rotate(45deg);
+}
+
+body app-hero .hero__shape--three {
+  width: clamp(160px, 25vw, 420px);
+  height: clamp(25px, 4vw, 66px);
+  right: 17%;
+  bottom: 17%;
+  background: var(--color-accent);
+  transform: translate3d(var(--shape-three-x), var(--shape-three-y), 0) rotate(-45deg);
+}
+
+body app-hero .hero__shape--four {
+  width: clamp(95px, 15vw, 250px);
+  height: clamp(95px, 15vw, 250px);
+  top: 47%;
+  left: 52%;
+  border: 1px solid var(--color-dark);
+  background: rgba(255, 255, 255, .42);
+  transform: translate3d(var(--shape-four-x), var(--shape-four-y), 0) rotate(45deg);
+  filter: none;
+}
+
+body app-hero .hero__content {
+  display: flex;
+  min-height: calc(100svh - 13rem);
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+body app-hero .hero h1 {
+  position: relative;
+  z-index: 2;
+  max-width: none;
+  margin: 0;
+  font-size: clamp(4rem, 10.7vw, 11.2rem);
+  font-weight: 900;
+  line-height: .76;
+  letter-spacing: -.082em;
+  text-transform: none;
+}
+
+body app-hero .hero h1 em {
+  color: var(--color-dark);
+  font-style: normal;
+}
+
+body app-hero .hero__intro {
+  position: relative;
+  z-index: 4;
+  max-width: none;
+  display: grid;
+  grid-template-columns: minmax(240px, 390px) auto;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+body app-hero .hero__copy > p {
+  color: var(--color-dark);
+  font-size: clamp(1rem, 1.35vw, 1.3rem);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+body app-hero .hero__services {
+  color: var(--color-accent);
+  font-size: .68rem;
+  letter-spacing: .12em;
+}
+
+body app-hero .hero__scroll {
+  right: var(--page-gutter);
+  bottom: 2rem;
+  color: var(--color-dark);
+  font-weight: 900;
+}
+
+/* Posicionamento */
+body app-positioning .positioning {
+  margin: 0;
+  padding: var(--section-space) 0;
+  border-bottom: 1px solid var(--grid-line);
+  text-align: left;
+}
+
+body app-positioning .positioning__content {
+  display: grid;
+  grid-template-columns: minmax(130px, 1fr) 4fr;
+  column-gap: clamp(2rem, 5vw, 7rem);
+}
+
+body app-positioning .positioning__content > p {
+  align-self: start;
+  margin: .6rem 0 0;
+  color: var(--color-accent);
+  font-size: .68rem;
+  letter-spacing: .14em;
+}
+
+body app-positioning .positioning h2 {
+  grid-column: 2;
+  margin: 0 0 clamp(3rem, 6vw, 7rem);
+  color: var(--color-dark);
+  font-size: clamp(4rem, 11vw, 11rem);
+  font-weight: 900;
+  line-height: .78;
+  letter-spacing: -.08em;
+}
+
+body app-positioning .positioning h2 em {
+  color: var(--color-accent);
+}
+
+body app-positioning .positioning__copy {
+  grid-column: 2;
+  max-width: 850px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 45px 1fr;
+  gap: 0 1.5rem;
+  border-top: 1px solid var(--color-dark);
+  padding-top: 1.25rem;
+}
+
+body app-positioning .positioning__copy span {
+  grid-row: 1 / span 2;
+  color: var(--color-accent);
+}
+
+body app-positioning .positioning__copy p {
+  margin: 0 0 1rem;
+  color: var(--color-dark);
+  font-size: clamp(1.05rem, 1.7vw, 1.45rem);
+  line-height: 1.48;
+}
+
+/* Títulos compartilhados */
+body app-section-title .section-title {
+  max-width: 1080px;
+  margin-bottom: clamp(3rem, 6vw, 6rem);
+  display: grid;
+  grid-template-columns: minmax(130px, 1fr) 4fr;
+  column-gap: clamp(2rem, 5vw, 7rem);
+}
+
+body app-section-title .section-title__eyebrow {
+  margin: .55rem 0 0;
+  color: var(--color-accent);
+  font-size: .68rem;
+  letter-spacing: .14em;
+}
+
+body app-section-title .section-title h2 {
+  grid-column: 2;
+  color: inherit;
+  font-size: clamp(3.5rem, 7.2vw, 7.8rem);
+  font-weight: 900;
+  line-height: .84;
+  letter-spacing: -.072em;
+}
+
+body app-section-title .section-title__description {
+  grid-column: 2;
+  max-width: 670px;
+  color: currentColor;
+  opacity: .65;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Serviços */
+body app-services-grid .services {
+  padding: var(--section-space) 0;
+  border-bottom: 1px solid var(--grid-line);
+}
+
+body app-services-grid .services__grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--color-dark);
+  border-left: 1px solid var(--color-dark);
+}
+
+body app-services-grid .service-card {
+  min-height: clamp(250px, 26vw, 410px);
+  padding: clamp(1.25rem, 2.2vw, 2.5rem);
+  border: 0;
+  border-right: 1px solid var(--color-dark);
+  border-bottom: 1px solid var(--color-dark);
+  border-radius: 0;
+  background: rgba(241, 240, 236, .78);
+}
+
+body app-services-grid .service-card span {
+  color: var(--color-accent);
+  font-size: .68rem;
+  letter-spacing: .12em;
+}
+
+body app-services-grid .service-card h3 {
+  margin: auto 0 1rem;
+  font-size: clamp(1.55rem, 2.5vw, 2.75rem);
+  line-height: .96;
+}
+
+body app-services-grid .service-card p {
+  max-width: 34ch;
+  font-size: .93rem;
+}
+
+body app-services-grid .service-card:hover,
+body app-services-grid .service-card:focus-visible {
+  background: var(--color-accent);
+  color: #fff;
+  transform: none;
+}
+
+body app-services-grid .service-card:hover span,
+body app-services-grid .service-card:focus-visible span {
+  color: #fff;
+}
+
+/* Método */
+body app-method-steps .method {
+  padding: var(--section-space) 0;
+  border-radius: 0;
+  background: var(--color-dark);
+  color: #fff;
+}
+
+body app-method-steps .method::before {
+  content: 'PROCESSO / 04 ETAPAS';
+  display: block;
+  width: calc(100% - (var(--page-gutter) * 2));
+  margin: 0 auto 2rem;
+  color: var(--color-accent);
+  font-size: .68rem;
+  font-weight: 900;
+  letter-spacing: .14em;
+}
+
+body app-method-steps app-section-title .section-title--dark {
+  color: #fff;
+}
+
+body app-method-steps .method__grid {
+  border-color: rgba(255, 255, 255, .35);
+}
+
+body app-method-steps .method li {
+  min-height: 330px;
+  border-color: rgba(255, 255, 255, .35);
+}
+
+body app-method-steps .method span {
+  color: var(--color-accent);
+  font-size: clamp(4rem, 8vw, 8rem);
+}
+
+body app-method-steps .method h3 {
+  margin-top: auto;
+  font-size: clamp(1.4rem, 2vw, 2.15rem);
+}
+
+body app-method-steps .method li p {
+  color: rgba(255, 255, 255, .62);
+}
+
+body app-method-steps .method__statement {
+  max-width: 1200px;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, .35);
+  font-size: clamp(2rem, 4.5vw, 5rem);
+  line-height: .98;
+}
+
+/* Cases */
+body app-featured-cases .featured {
+  padding: var(--section-space) 0;
+  border-bottom: 1px solid var(--grid-line);
+}
+
+body app-featured-cases .featured__grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--color-dark);
+  border: 1px solid var(--color-dark);
+}
+
+body app-featured-cases .case {
+  border-radius: 0;
+  background: var(--color-paper);
+}
+
+body app-featured-cases .case__visual {
+  height: clamp(250px, 32vw, 520px);
+  background:
+    linear-gradient(135deg, transparent 50%, rgba(29, 33, 255, .9) 50%),
+    linear-gradient(145deg, #242424, #050505);
+}
+
+body app-featured-cases .case__body {
+  min-height: 230px;
+  border-top: 1px solid var(--color-dark);
+  background: var(--color-paper);
+}
+
+body app-featured-cases .case__body h3 {
+  font-size: clamp(1.7rem, 2.5vw, 2.7rem);
+  line-height: .98;
+}
+
+/* Sobre */
+body app-about .about {
+  padding: var(--section-space) 0 0;
+  border-bottom: 1px solid var(--grid-line);
+}
+
+body app-about .about__grid {
+  grid-template-columns: 1.15fr .85fr;
+  gap: clamp(2rem, 6vw, 8rem);
+  align-items: stretch;
+}
+
+body app-about .eyebrow {
+  color: var(--color-accent);
+  font-size: .68rem;
+}
+
+body app-about .about h2 {
+  margin: clamp(4rem, 9vw, 9rem) 0 2rem;
+  font-size: clamp(4rem, 10vw, 10rem);
+  line-height: .76;
+}
+
+body app-about .about__lead {
+  max-width: 680px;
+  font-size: clamp(1.15rem, 1.8vw, 1.6rem);
+}
+
+body app-about .about__portrait {
+  aspect-ratio: 4 / 5;
+  border: 1px solid var(--color-dark);
+  border-radius: 0;
+  background: var(--color-accent);
+}
+
+body app-about .about__portrait img {
+  filter: grayscale(1) contrast(1.08);
+  mix-blend-mode: multiply;
+}
+
+body app-about .work-strip {
+  margin-top: var(--section-space);
+  border-top: 1px solid var(--color-dark);
+}
+
+body app-about .work-strip__track {
+  gap: 1px;
+  background: var(--color-dark);
+}
+
+body app-about .work-strip__track div {
+  height: 270px;
+  border-radius: 0;
+  background:
+    linear-gradient(135deg, transparent 55%, var(--color-accent) 55%),
+    var(--color-dark);
+}
+
+/* Manifesto */
+body app-manifesto .manifesto {
+  padding: var(--section-space) 0;
+  border-radius: 0;
+  background: var(--color-accent);
+  color: #fff;
+}
+
+body app-manifesto .manifesto__grid {
+  grid-template-columns: minmax(130px, 1fr) 4fr;
+  gap: clamp(2rem, 5vw, 7rem);
+}
+
+body app-manifesto .manifesto__label {
+  color: #fff;
+  font-size: .68rem;
+}
+
+body app-manifesto .manifesto h2 {
+  max-width: 1300px;
+  font-size: clamp(3.2rem, 8vw, 8.6rem);
+  line-height: .84;
+}
+
+body app-manifesto .manifesto__intro,
+body app-manifesto .manifesto__more {
+  max-width: 790px;
+  color: rgba(255, 255, 255, .82);
+}
+
+body app-manifesto .manifesto__more {
+  border-left-color: #fff;
+}
+
+/* Marcas */
+body app-brand-marquee .brands {
+  padding: var(--section-space) 0;
+  border-bottom: 1px solid var(--grid-line);
+}
+
+body app-brand-marquee .brands__eyebrow {
+  color: var(--color-accent);
+  font-size: .68rem;
+}
+
+body app-brand-marquee .brands h2 {
+  max-width: 1100px;
+  font-size: clamp(3.5rem, 8vw, 8.5rem);
+  line-height: .84;
+}
+
+body app-brand-marquee .brands__marquee {
+  border-color: var(--color-dark);
+}
+
+body app-brand-marquee .brands__track span {
+  min-width: 310px;
+  border-right: 1px solid var(--grid-line);
+  font-size: clamp(1.15rem, 2vw, 1.7rem);
+}
+
+/* Depoimentos */
+body app-testimonials .testimonials {
+  padding: var(--section-space) 0;
+  border-bottom: 1px solid var(--grid-line);
+}
+
+body app-testimonials .testimonial {
+  padding: clamp(2rem, 5vw, 5.5rem);
+  border: 1px solid var(--color-dark);
+  border-radius: 0;
+  background: var(--color-dark);
+  color: #fff;
+}
+
+body app-testimonials .testimonial__quote {
+  color: var(--color-accent);
+}
+
+body app-testimonials .testimonial blockquote {
+  max-width: 1100px;
+  font-size: clamp(1.8rem, 4.2vw, 4.5rem);
+  line-height: 1.08;
+}
+
+body app-testimonials .testimonial p,
+body app-testimonials .testimonial strong {
+  color: rgba(255, 255, 255, .7);
+}
+
+body app-testimonials .testimonial__controls > button,
+body app-testimonials .testimonial__controls .dot {
+  border-color: #fff;
+  border-radius: 0;
+  color: #fff;
+}
+
+body app-testimonials .testimonial__controls .dot--active {
+  background: var(--color-accent);
+}
+
+/* Contato */
+body app-contact-cta .contact {
+  padding: var(--section-space) 0;
+  border-bottom: 1px solid var(--grid-line);
+  background: transparent;
+  color: var(--color-dark);
+  text-align: left;
+}
+
+body app-contact-cta .contact__inner {
+  align-items: flex-start;
+}
+
+body app-contact-cta .contact p {
+  color: var(--color-accent);
+  font-size: .68rem;
+}
+
+body app-contact-cta .contact h2 {
+  max-width: 1400px;
+  margin: 2rem 0 3rem;
+  font-size: clamp(4rem, 10vw, 11rem);
+  line-height: .78;
+}
+
+body app-contact-cta .contact small {
+  color: var(--color-muted);
+}
+
+/* Footer */
+body app-footer .footer {
+  padding: clamp(4rem, 7vw, 7rem) 0 1.5rem;
+  border-radius: 0;
+  background: var(--color-dark);
+  color: #fff;
+}
+
+body app-footer .footer__brand img {
+  filter: brightness(0) invert(1);
+}
+
+body app-footer .footer__top {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, .35);
+}
+
+body app-footer .footer__label {
+  color: var(--color-accent);
+  opacity: 1;
+}
+
+body app-footer .footer__name {
+  color: #fff;
+  font-size: clamp(4rem, 15vw, 15rem);
+  line-height: .7;
+}
+
+body app-footer .footer__bottom {
+  border-color: rgba(255, 255, 255, .35);
+}
+
+/* Página de cases */
+body app-cases-page .cases-hero {
+  padding: clamp(9rem, 14vw, 13rem) 0 clamp(5rem, 9vw, 9rem);
+  border-bottom: 1px solid var(--grid-line);
+  border-radius: 0;
+  background: transparent;
+  color: var(--color-dark);
+}
+
+body app-cases-page .cases-hero p {
+  color: var(--color-accent);
+}
+
+body app-cases-page .cases-hero h1 {
+  max-width: 1350px;
+  font-size: clamp(4rem, 10vw, 10.5rem);
+  line-height: .8;
+}
+
+body app-cases-page .cases-hero span {
+  color: var(--color-muted);
+}
+
+body app-cases-page .cases-list {
+  padding: var(--section-space) 0;
+}
+
+body app-cases-page .cases-list__grid {
+  gap: 1px;
+  border: 1px solid var(--color-dark);
+  background: var(--color-dark);
+}
+
+body app-case-card .case-card {
+  height: 100%;
+  border-radius: 0;
+  background: var(--color-paper);
+}
+
+body app-case-card .case-card:hover {
+  transform: none;
+}
+
+body app-case-card .case-card__visual {
+  height: clamp(250px, 34vw, 520px);
+  background:
+    linear-gradient(135deg, transparent 50%, rgba(29, 33, 255, .92) 50%),
+    linear-gradient(145deg, #2b2b2b, #050505);
+}
+
+body app-case-card .case-card__content {
+  border-top: 1px solid var(--color-dark);
+}
+
+body app-case-card .case-card h2 {
+  font-size: clamp(2rem, 3.5vw, 4rem);
+  line-height: .95;
+}
+
+/* Elementos utilitários */
+body app-whatsapp-button .whatsapp {
+  right: var(--page-gutter);
+  bottom: 1.25rem;
+  min-height: 48px;
+  border: 1px solid var(--color-dark);
+  border-radius: 0;
+  background: var(--color-accent);
+  color: #fff;
+  box-shadow: 4px 4px 0 var(--color-dark);
+  font-size: .72rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+body app-social-links .social-links a:hover,
+body app-social-links .social-links a:focus-visible {
+  color: var(--color-blue);
+}
+
+@media (max-width: 900px) {
+  body app-header .navigation {
+    top: 76px;
+    padding: 1rem var(--page-gutter) 2rem;
+    border-bottom: 1px solid var(--color-dark);
+    background: var(--color-paper);
+    color: var(--color-dark);
+  }
+
+  body app-header .navigation a {
+    border-bottom: 1px solid var(--grid-line);
+    font-size: 1rem;
+  }
+
+  body app-hero .hero h1 {
+    font-size: clamp(3.7rem, 12.5vw, 7.5rem);
+  }
+
+  body app-hero .hero__shape--one {
+    left: 48%;
+  }
+
+  body app-hero .hero__shape--two {
+    left: 54%;
+  }
+
+  body app-services-grid .services__grid,
+  body app-featured-cases .featured__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  body app-about .about__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  :root {
+    --page-gutter: 1rem;
+    --section-space: clamp(4.5rem, 18vw, 7rem);
+  }
+
+  body {
+    background-size: 25vw 100%, 100% 7rem;
+  }
+
+  body app-header .site-header__inner {
+    width: calc(100% - 2rem);
+  }
+
+  body app-hero .hero {
+    min-height: 100svh;
+    padding: 6.5rem 0 2rem;
+  }
+
+  body app-hero .hero::before {
+    top: 5.35rem;
+    right: 1rem;
+  }
+
+  body app-hero .hero__content {
+    min-height: calc(100svh - 8.5rem);
+  }
+
+  body app-hero .hero h1 {
+    font-size: clamp(3.25rem, 15vw, 5.4rem);
+    line-height: .79;
+  }
+
+  body app-hero .hero__intro {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  body app-hero .hero__copy {
+    max-width: 330px;
+  }
+
+  body app-hero .hero__art span:nth-child(2),
+  body app-hero .hero__art span:nth-child(3) {
+    display: block;
+  }
+
+  body app-hero .hero__shape--one {
+    width: 51vw;
+    height: 51vw;
+    top: 45%;
+    left: 48%;
+  }
+
+  body app-hero .hero__shape--two {
+    width: 40vw;
+    height: 40vw;
+    top: 49%;
+    left: 55%;
+  }
+
+  body app-hero .hero__shape--three {
+    width: 44vw;
+    height: 8vw;
+    right: 1%;
+    bottom: 25%;
+  }
+
+  body app-hero .hero__shape--four {
+    width: 27vw;
+    height: 27vw;
+    top: 55%;
+    left: 63%;
+  }
+
+  body app-positioning .positioning__content,
+  body app-section-title .section-title,
+  body app-manifesto .manifesto__grid {
+    grid-template-columns: 1fr;
+  }
+
+  body app-positioning .positioning h2,
+  body app-positioning .positioning__copy,
+  body app-section-title .section-title h2,
+  body app-section-title .section-title__description {
+    grid-column: 1;
+  }
+
+  body app-positioning .positioning h2 {
+    margin-top: 2rem;
+  }
+
+  body app-positioning .positioning__copy {
+    grid-template-columns: 30px 1fr;
+  }
+
+  body app-section-title .section-title h2 {
+    margin-top: 1.5rem;
+  }
+
+  body app-services-grid .services__grid,
+  body app-featured-cases .featured__grid,
+  body app-cases-page .cases-list__grid,
+  body app-about .about__grid {
+    grid-template-columns: 1fr;
+  }
+
+  body app-services-grid .service-card {
+    min-height: 230px;
+  }
+
+  body app-method-steps .method__grid {
+    grid-template-columns: 1fr;
+  }
+
+  body app-method-steps .method li,
+  body app-method-steps .method li:not(:first-child) {
+    min-height: 0;
+    padding: 1.5rem 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .35);
+  }
+
+  body app-about .about h2 {
+    margin-top: 3rem;
+  }
+
+  body app-about .about__portrait {
+    max-height: 78svh;
+  }
+
+  body app-footer .footer__top {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 380px) {
+  body app-header .brand {
+    width: 128px;
+  }
+
+  body app-hero .hero h1,
+  body app-positioning .positioning h2,
+  body app-about .about h2,
+  body app-contact-cta .contact h2,
+  body app-cases-page .cases-hero h1 {
+    font-size: 2.85rem;
+  }
+
+  body .button {
+    width: auto;
+  }
+}
