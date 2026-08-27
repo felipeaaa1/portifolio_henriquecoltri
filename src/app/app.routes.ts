@@ -11,5 +11,10 @@ export const routes: Routes = [
     loadComponent: () => import('./cases/pages/cases-page/cases-page.component')
       .then(component => component.CasesPageComponent)
   },
+  {
+    path: 'projetos/:slug',
+    loadComponent: () => import('./projects/pages/project-detail-page/project-detail-page.component')
+      .then(component => component.ProjectDetailPageComponent)
+  },
   { path: '**', redirectTo: '' }
 ];

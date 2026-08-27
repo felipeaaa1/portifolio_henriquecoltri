@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { provideRouter } from '@angular/router';
 import { of } from 'rxjs';
 
 import { CasesPageComponent } from './cases-page.component';
@@ -12,9 +13,12 @@ describe('CasesPageComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [CasesPageComponent],
-      providers: [{ provide: CaseService, useValue: {
-        getCases: () => of([{ id: 1, title: 'Case', slug: 'case', summary: 'Resumo', featured: true, accent: '#fff' }])
-      } }],
+      providers: [
+        provideRouter([]),
+        { provide: CaseService, useValue: {
+          getCases: () => of([{ id: 1, title: 'Case', slug: 'case', summary: 'Resumo', featured: true, accent: '#fff' }])
+        } }
+      ],
       schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();

@@ -1,0 +1,43 @@
+<article *ngIf="project as project" class="project-detail">
+  <header class="project-intro section-dark">
+    <div class="container">
+      <a class="project-intro__back" routerLink="/cases"><span aria-hidden="true">←</span> Voltar aos projetos</a>
+      <p class="project-intro__eyebrow">{{ project.category }}</p>
+      <h1>{{ project.title }}</h1>
+
+      <div class="project-intro__content">
+        <p class="project-intro__summary">{{ project.summary }}</p>
+
+        <dl class="project-meta">
+          <div><dt>Projeto</dt><dd>{{ project.projectType }}</dd></div>
+          <div><dt>Segmento</dt><dd>{{ project.segment }}</dd></div>
+          <div><dt>Criação</dt><dd>{{ project.author }}</dd></div>
+          <div><dt>Período</dt><dd>{{ project.period }}</dd></div>
+        </dl>
+      </div>
+    </div>
+  </header>
+
+  <section class="project-gallery" aria-label="Apresentação visual do projeto">
+    <figure *ngFor="let image of project.gallery; let index = index">
+      <img
+        [src]="image.src"
+        [alt]="image.alt"
+        [width]="image.width"
+        [height]="image.height"
+        [attr.loading]="index < 2 ? 'eager' : 'lazy'"
+        [attr.fetchpriority]="index === 0 ? 'high' : 'auto'"
+        decoding="async">
+    </figure>
+  </section>
+
+  <nav class="project-end section-light" aria-label="Navegação entre projetos">
+    <div class="container project-end__inner">
+      <div>
+        <p>Fim do projeto</p>
+        <h2>Hardcore Game Channel</h2>
+      </div>
+      <a class="button button--dark" routerLink="/cases">Ver todos os projetos <span aria-hidden="true">→</span></a>
+    </div>
+  </nav>
+</article>

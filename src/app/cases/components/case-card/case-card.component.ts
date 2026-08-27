@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { NgIf } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { Case } from '../../../core/models/case.model';
 @Component({
   selector: 'app-case-card',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf, RouterLink],
   templateUrl: './case-card.component.html',
   styleUrl: './case-card.component.scss'
 })

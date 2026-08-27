@@ -1,0 +1,32 @@
+:host { display: block; background: #111; }
+.project-intro { padding: calc(82px + clamp(3.5rem, 8vw, 7rem)) 0 clamp(4rem, 8vw, 7rem); }
+.project-intro__back { display: inline-flex; align-items: center; gap: .6rem; color: rgba(246,241,232,.72); font-size: .8rem; font-weight: 700; text-decoration: none; }
+.project-intro__back:hover, .project-intro__back:focus-visible { color: var(--color-accent); }
+.project-intro__eyebrow { margin: clamp(3.5rem, 8vw, 7rem) 0 1.25rem; color: var(--color-accent); font-size: .75rem; font-weight: 800; text-transform: uppercase; letter-spacing: .15em; }
+.project-intro h1 { max-width: 1050px; margin: 0; font-size: clamp(3.5rem, 9vw, 8.5rem); line-height: .84; letter-spacing: -.075em; }
+.project-intro__content { margin-top: clamp(3rem, 7vw, 6rem); display: grid; grid-template-columns: minmax(280px, .8fr) 1.2fr; gap: clamp(3rem, 8vw, 8rem); align-items: end; }
+.project-intro__summary { max-width: 630px; margin: 0; color: rgba(246,241,232,.72); font-size: clamp(1.05rem, 1.8vw, 1.35rem); line-height: 1.65; }
+.project-meta { margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem 3rem; }
+.project-meta div { padding-top: .9rem; border-top: 1px solid rgba(246,241,232,.24); }
+.project-meta dt { color: rgba(246,241,232,.55); font-size: .68rem; text-transform: uppercase; letter-spacing: .12em; }
+.project-meta dd { margin: .5rem 0 0; font-weight: 700; }
+.project-gallery { width: min(1400px, 100%); margin: 0 auto; background: #111; }
+.project-gallery figure { margin: 0; line-height: 0; }
+.project-gallery img { width: 100%; height: auto; display: block; }
+.project-end { padding: clamp(4rem, 9vw, 8rem) 0; }
+.project-end__inner { display: flex; align-items: end; justify-content: space-between; gap: 3rem; }
+.project-end p { margin: 0 0 .75rem; color: var(--color-accent-strong); font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; }
+.project-end h2 { max-width: 700px; margin: 0; font-size: clamp(2.4rem, 5vw, 5rem); line-height: .9; letter-spacing: -.055em; }
+
+@media(max-width:800px) {
+  .project-intro__content { grid-template-columns: 1fr; }
+  .project-meta { grid-template-columns: 1fr 1fr; }
+  .project-end__inner { align-items: flex-start; flex-direction: column; }
+}
+
+@media(max-width:520px) {
+  .project-intro { padding-top: 8.5rem; }
+  .project-intro__eyebrow { margin-top: 3rem; }
+  .project-meta { grid-template-columns: 1fr; gap: 1.25rem; }
+  .project-end .button { width: 100%; }
+}

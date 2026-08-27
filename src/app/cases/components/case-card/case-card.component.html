@@ -1,1 +1,14 @@
-<article class="case-card" *ngIf="caseItem"><div class="case-card__visual" [style.--case-accent]="caseItem.accent"><span>CASE PROVISÓRIO</span><b aria-hidden="true">{{ caseItem.id < 10 ? '0' + caseItem.id : caseItem.id }}</b></div><div class="case-card__content"><h2>{{ caseItem.title }}</h2><p>{{ caseItem.summary }}</p><span class="case-card__future">Detalhe em preparação para /cases/{{ caseItem.slug }}</span></div></article>
+<article class="case-card" *ngIf="caseItem">
+  <a [routerLink]="caseItem.detailAvailable ? ['/projetos', caseItem.slug] : '/cases'">
+    <div class="case-card__visual" [class.case-card__visual--image]="caseItem.imageUrl" [style.--case-accent]="caseItem.accent">
+      <img *ngIf="caseItem.imageUrl" [src]="caseItem.imageUrl" alt="" loading="lazy" decoding="async">
+      <span>{{ caseItem.detailAvailable ? 'CASE COMPLETO' : 'CASE EM PREPARAÇÃO' }}</span>
+      <b aria-hidden="true">{{ caseItem.id < 10 ? '0' + caseItem.id : caseItem.id }}</b>
+    </div>
+    <div class="case-card__content">
+      <h2>{{ caseItem.title }}</h2>
+      <p>{{ caseItem.summary }}</p>
+      <span class="case-card__future">{{ caseItem.detailAvailable ? 'Ver projeto completo →' : 'Conteúdo em preparação' }}</span>
+    </div>
+  </a>
+</article>

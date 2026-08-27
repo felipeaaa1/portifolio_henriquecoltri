@@ -4,6 +4,7 @@ export interface Case {
   slug: string;
   summary: string;
   imageUrl?: string;
+  detailAvailable?: boolean;
   featured: boolean;
   accent: string;
 }

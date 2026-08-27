@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Case } from '../../../core/models/case.model';
 import { CaseService } from '../../../core/services/case.service';
@@ -8,7 +8,7 @@ import { RevealDirective } from '../../../shared/directives/reveal.directive';
 @Component({
   selector: 'app-featured-cases',
   standalone: true,
-  imports: [NgFor, RouterLink, SectionTitleComponent, RevealDirective],
+  imports: [NgFor, NgIf, RouterLink, SectionTitleComponent, RevealDirective],
   templateUrl: './featured-cases.component.html',
   styleUrl: './featured-cases.component.scss'
 })
