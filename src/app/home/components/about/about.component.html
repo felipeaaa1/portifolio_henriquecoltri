@@ -1,6 +1,18 @@
 <section id="quem-sou" class="about section-light">
   <div class="container about__grid">
-    <div class="about__identity" appReveal="slide-left" [revealDelay]="120"><p class="eyebrow">Quem sou</p><h2>Henrique<br>Coltri</h2><p class="about__lead">Publicitário e estrategista de marcas. Atua na interseção entre estratégia, branding, comunicação e direção criativa.</p><p class="about__pending">Conteúdo biográfico complementar aguardando validação do cliente.</p></div>
+    <div class="about__identity" appReveal="slide-left" [revealDelay]="120">
+      <p class="eyebrow">Quem sou</p>
+      <h2>Henrique<br>Coltri</h2>
+      <p class="about__lead"><strong>Publicitário de formação. Brand designer por escolha.</strong></p>
+      <div class="about__body">
+        <p>Minha relação com a criação começou muito antes de eu perceber que ela poderia se tornar profissão.</p>
+        <p>Do teatro na escola às primeiras campanhas, do marketing digital ao design gráfico, da arquitetura comercial às experiências de marca, cada etapa da minha trajetória foi ampliando a forma como enxergo pessoas, negócios e comunicação.</p>
+        <p>Foi no branding que encontrei o lugar onde tudo isso passou a fazer sentido junto.</p>
+        <p>Hoje, meu trabalho é entender o que existe de mais verdadeiro em uma marca, organizar aquilo que ainda parece disperso e transformar essência em direção, identidade e presença.</p>
+        <p>Depois de todos esses anos, uma ideia passou a orientar cada projeto que desenvolvo:</p>
+        <p class="about__belief"><strong>Não existem marcas pequenas ou grandes. Existem marcas que encontraram sua verdade e aprenderam a expressá-la. E existem marcas que ainda estão descobrindo a melhor maneira de revelá-la.</strong></p>
+      </div>
+    </div>
     <div class="about__portrait" appReveal="slide-right"><img src="assets/images/henrique-coltri-portrait.webp" alt="Retrato de Henrique Coltri" width="720" height="1564" loading="lazy" decoding="async"></div>
   </div>
   <div class="work-strip" tabindex="0" aria-label="Prévia de áreas e trabalhos"><div class="work-strip__track"><div *ngFor="let item of previews" [style.--preview-accent]="item.accent"><span>{{ item.label }}</span></div><div *ngFor="let item of previews" [style.--preview-accent]="item.accent" aria-hidden="true"><span>{{ item.label }}</span></div></div></div>
