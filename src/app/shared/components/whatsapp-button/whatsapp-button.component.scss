@@ -1,3 +1,5 @@
 .whatsapp { position: fixed; z-index: 30; right: 1.25rem; bottom: 1.25rem; display: flex; align-items: center; gap: .5rem; min-height: 48px; padding: .75rem 1rem; border-radius: 999px; background: var(--color-accent); color: var(--color-dark); font-weight: 800; text-decoration: none; box-shadow: 0 10px 30px rgba(0, 0, 0, .25); transition: transform var(--transition); }
+.whatsapp__icon { width: 19px; height: 19px; display: grid; place-items: center; flex: 0 0 auto; }
+.whatsapp__icon img { display: block; width: 100%; height: 100%; }
 .whatsapp:hover, .whatsapp:focus-visible { transform: translateY(-3px); }
-@media (max-width: 520px) { .whatsapp { width: 48px; padding: 0; justify-content: center; } .whatsapp__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); } }
+@media (max-width: 520px) { .whatsapp { width: 48px; padding: 0; justify-content: center; } .whatsapp__icon { width: 21px; height: 21px; } .whatsapp__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); } }
