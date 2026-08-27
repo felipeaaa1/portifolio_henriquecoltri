@@ -44,7 +44,8 @@ body { background: var(--color-dark); color: var(--color-dark); font-family: $fo
 .reveal--scale { transform: scale(.84) translateY(28px); }
 .reveal--tilt { transform: translate3d(0, 64px, 0) rotate(-4deg); transform-origin: 20% 50%; }
 .reveal--clip { clip-path: inset(0 0 100% 0 round var(--radius-card)); transform: translate3d(0, 42px, 0) scale(.97); }
-.reveal--visible { opacity: 1; transform: none; clip-path: inset(0 0 0 0 round var(--radius-card)); }
+.reveal--visible { opacity: 1; transform: none; }
+.reveal--clip.reveal--visible { clip-path: inset(0 0 0 0 round var(--radius-card)); }
 
 @media (max-width: 700px) {
   .reveal--slide-left { transform: translate3d(-56px, 0, 0); }
