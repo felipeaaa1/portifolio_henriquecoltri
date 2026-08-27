@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { NgIf } from '@angular/common';
-import { RevealDirective } from '../../../shared/directives/reveal.directive';
 @Component({
   selector: 'app-manifesto',
   standalone: true,
-  imports: [NgIf, RevealDirective],
+  imports: [NgIf],
   templateUrl: './manifesto.component.html',
   styleUrl: './manifesto.component.scss'
 })
