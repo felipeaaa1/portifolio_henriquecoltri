@@ -1,3 +1,27 @@
-<section id="cases" class="featured section-light"><div class="container"><app-section-title appReveal="slide-left" eyebrow="Cases em destaque" title="Estratégia aplicada, forma em movimento." description="Projetos demonstrativos enquanto os cases reais são preparados."></app-section-title>
-<div class="featured__grid"><article *ngFor="let caseItem of cases; let index = index" class="case" [appReveal]="index % 2 === 0 ? 'slide-left' : 'slide-right'" [revealDelay]="index * 120"><a routerLink="/cases" [attr.aria-label]="'Conhecer ' + caseItem.title"><div class="case__visual" [style.--case-accent]="caseItem.accent"><span>CASE</span></div><div class="case__body"><p>Projeto provisório</p><h3>{{ caseItem.title }}</h3><span>{{ caseItem.summary }}</span><b aria-hidden="true">↗</b></div></a></article></div>
-<a class="button button--dark featured__cta" routerLink="/cases">Confira meus melhores cases <span aria-hidden="true">→</span></a></div></section>
+<section id="cases" class="featured section-light">
+  <div class="container">
+    <div class="featured__heading">
+      <app-section-title eyebrow="Projetos selecionados" title="Estratégia que ganha forma." description="Uma prévia de projetos em que contexto, direção e identidade são construídos como partes do mesmo sistema."></app-section-title>
+      <p class="featured__note">Os cases completos estão sendo preparados. Esta composição apresenta a nova direção visual da página.</p>
+    </div>
+
+    <div class="featured__grid">
+      <article *ngFor="let caseItem of cases; let index = index" class="case" [class.case--large]="index === 0" [appReveal]="index % 2 === 0 ? 'slide-left' : 'slide-right'" [revealDelay]="index * 120">
+        <a routerLink="/cases" [attr.aria-label]="'Conhecer ' + caseItem.title">
+          <div class="case__visual" [style.--case-accent]="caseItem.accent">
+            <span class="case__label">CASE 0{{ index + 1 }}</span>
+            <span class="case__letter" aria-hidden="true">{{ caseItem.title.charAt(0) }}</span>
+            <span class="case__view">Ver projeto ↗</span>
+          </div>
+          <div class="case__body">
+            <p>Projeto selecionado</p>
+            <h3>{{ caseItem.title }}</h3>
+            <span>{{ caseItem.summary }}</span>
+          </div>
+        </a>
+      </article>
+    </div>
+
+    <a class="button button--dark featured__cta" routerLink="/cases">Explorar todos os projetos <span aria-hidden="true">→</span></a>
+  </div>
+</section>

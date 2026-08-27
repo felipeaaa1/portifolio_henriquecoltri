@@ -6,14 +6,14 @@ import { Case } from '../models/case.model';
   providedIn: 'root'
 })
 export class CaseService {
-  // Conteúdo demonstrativo: substituir pelos cases aprovados pelo cliente.
+  // Conteúdo em preparação: completar os cases com imagens e informações aprovadas.
   private readonly cases: Case[] = [
-    { id: 1, title: 'Projeto Horizonte', slug: 'projeto-horizonte',
-      summary: 'Estratégia e linguagem para uma marca em transformação.', featured: true, accent: '#ff6b45' },
-    { id: 2, title: 'Projeto Origem', slug: 'projeto-origem',
-      summary: 'Uma direção de marca construída para ganhar clareza e presença.', featured: true, accent: '#b9d96f' },
-    { id: 3, title: 'Projeto Pulso', slug: 'projeto-pulso',
-      summary: 'Posicionamento e comunicação conectados em um sistema reconhecível.', featured: true, accent: '#8aa7ff' },
+    { id: 1, title: 'Escola Livre Porto', slug: 'escola-livre-porto',
+      summary: 'Branding e comunicação para uma escola orientada por educação humanizada, pertencimento e movimento.', featured: true, accent: '#ff7452' },
+    { id: 2, title: 'JCELL Imports', slug: 'jcell-imports',
+      summary: 'Case selecionado para apresentar estratégia, identidade visual e aplicações da marca.', featured: true, accent: '#8aa7ff' },
+    { id: 3, title: 'Novo case', slug: 'novo-case',
+      summary: 'Um novo projeto será apresentado aqui com contexto, processo, sistema e aplicações.', featured: true, accent: '#b9d96f' },
     { id: 4, title: 'Projeto Encontro', slug: 'projeto-encontro',
       summary: 'Narrativa e identidade preparadas para novos pontos de contato.', featured: false, accent: '#e7a8ce' },
     { id: 5, title: 'Projeto Norte', slug: 'projeto-norte',

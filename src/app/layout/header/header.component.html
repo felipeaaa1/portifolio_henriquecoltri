@@ -8,10 +8,10 @@
     </button>
     <nav id="primary-navigation" class="navigation" [class.navigation--open]="menuOpen" aria-label="Navegação principal">
       <a routerLink="/" fragment="inicio" (click)="closeMenu()">Home</a>
-      <a routerLink="/" fragment="quem-sou" (click)="closeMenu()">Quem sou</a>
+      <a routerLink="/cases" routerLinkActive="active" (click)="closeMenu()">Cases</a>
       <a routerLink="/" fragment="solucoes" (click)="closeMenu()">Soluções</a>
       <a routerLink="/" fragment="metodo" (click)="closeMenu()">Método</a>
-      <a routerLink="/cases" routerLinkActive="active" (click)="closeMenu()">Cases</a>
+      <a routerLink="/" fragment="quem-sou" (click)="closeMenu()">Quem sou</a>
       <a routerLink="/" fragment="contato" (click)="closeMenu()">Contato</a>
       <a class="navigation__cta" [href]="contactUrl" target="_blank" rel="noopener noreferrer" (click)="closeMenu()">Vamos conversar</a>
     </nav>
