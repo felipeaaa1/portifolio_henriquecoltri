@@ -30,6 +30,7 @@
 }
 
 @media(max-width:600px) {
+  .featured { padding-top: calc(var(--section-space) + 1rem); }
   .case:not(.case--large) a { grid-template-columns: 1fr; }
   .case__visual { min-height: 230px; }
   .case__body { min-height: auto; }
