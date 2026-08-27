@@ -1,1 +1,33 @@
-<section class="manifesto section-dark"><div class="container manifesto__grid"><p class="manifesto__label">Manifesto</p><div><h2>Marcas não precisam apenas aparecer. Precisam fazer sentido.</h2><p class="manifesto__intro">Estratégia é a escolha consciente do que uma marca representa e de como ela se apresenta ao mundo.</p><div id="manifesto-completo" *ngIf="expanded" class="manifesto__more"><p>Este espaço receberá o manifesto completo de Henrique. O conteúdo atual é apenas uma indicação editorial e não representa um texto definitivo atribuído ao profissional.</p></div><button type="button" class="button button--outline" [attr.aria-expanded]="expanded" aria-controls="manifesto-completo" (click)="toggle()">{{ expanded ? 'Recolher manifesto' : 'Ler manifesto completo' }}</button></div></div></section>
+<section class="manifesto section-dark">
+  <div class="container manifesto__grid">
+    <p class="manifesto__label">Manifesto</p>
+    <div>
+      <h2>Toda marca carrega uma verdade antes mesmo de carregar um símbolo.</h2>
+      <p class="manifesto__intro">Uma história, uma intenção, uma forma particular de enxergar o mundo. Algo que já existe, mas que nem sempre consegue ser compreendido, expressado ou reconhecido.</p>
+      <div id="manifesto-completo" *ngIf="expanded" class="manifesto__more">
+        <p>Acredito que toda marca carrega uma verdade antes mesmo de carregar um símbolo.</p>
+        <p>Uma história, uma intenção, uma forma particular de enxergar o mundo. Algo que já existe, mas que nem sempre consegue ser compreendido, expressado ou reconhecido.</p>
+        <p>É nesse espaço que eu escolhi trabalhar.</p>
+        <p>Não para inventar aparências.<br>Não para seguir fórmulas.<br>Não para transformar tendências em respostas prontas.</p>
+        <p class="manifesto__highlight"><strong>Eu crio para revelar.</strong></p>
+        <p>Para encontrar clareza onde existem ideias dispersas.<br>Para transformar essência em direção.<br>Para dar forma ao que ainda não encontrou uma maneira de existir no mundo.</p>
+        <p>Porque design sem significado é apenas superfície.</p>
+        <p>Uma marca não se torna forte pelo excesso de elementos, pelo volume da comunicação ou pela repetição de discursos vazios. Ela se fortalece quando existe coerência entre aquilo que acredita, aquilo que entrega e aquilo que demonstra.</p>
+        <p>Por isso, cada escolha precisa ter intenção.</p>
+        <p>Cada forma precisa sustentar uma ideia.<br>Cada palavra precisa carregar verdade.<br>Cada detalhe precisa contribuir para algo maior.</p>
+        <p>Acredito na estratégia como o ponto de partida.<br>Na criatividade como ferramenta de transformação.<br>Na simplicidade como resultado de um pensamento profundo.<br>Na autenticidade como o único caminho capaz de atravessar o tempo.</p>
+        <p>Também acredito que marcas não existem isoladas.</p>
+        <p>Elas criam relações.<br>Movimentam pessoas.<br>Constroem pertencimento.<br>Influenciam percepções e deixam marcas muito além daquilo que vendem.</p>
+        <p>É por isso que não trabalho apenas para fazer negócios parecerem melhores.</p>
+        <p>Trabalho para ajudá-los a compreender quem são, assumir o lugar que desejam ocupar e se expressar com a força de quem tem algo verdadeiro para dizer.</p>
+        <p>Eu escuto.<br>Questiono.<br>Organizo.<br>Conecto.<br>E transformo significado em presença.</p>
+        <p>Porque quando uma marca encontra sua verdade, ela não precisa gritar para ser percebida.</p>
+        <p>Ela faz sentido.<br>Ela ocupa seu espaço.<br>Ela permanece.</p>
+        <p class="manifesto__signature"><strong>Henrique Coltri</strong><br><strong>Estratégia que ganha forma.</strong></p>
+      </div>
+      <button type="button" class="button button--outline" [attr.aria-expanded]="expanded" aria-controls="manifesto-completo" (click)="toggle()">
+        {{ expanded ? 'Recolher manifesto' : 'Ler manifesto completo' }}
+      </button>
+    </div>
+  </div>
+</section>
