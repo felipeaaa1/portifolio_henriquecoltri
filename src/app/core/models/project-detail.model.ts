@@ -8,6 +8,7 @@ export interface ProjectGalleryImage {
 export interface ProjectDetail {
   slug: string;
   title: string;
+  coverImage: string;
   category: string;
   summary: string;
   projectType: string;

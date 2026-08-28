@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DestroyRef, OnInit } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ProjectDetail } from '../../../core/models/project-detail.model';
 import { ProjectDetailService } from '../../../core/services/project-detail.service';
 
@@ -14,25 +15,35 @@ import { ProjectDetailService } from '../../../core/services/project-detail.serv
 })
 export class ProjectDetailPageComponent implements OnInit {
   project?: ProjectDetail;
+  relatedProjects: ProjectDetail[] = [];
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private projectService: ProjectDetailService,
     private titleService: Title,
-    private metaService: Meta
+    private metaService: Meta,
+    private destroyRef: DestroyRef
   ) { }
 
   ngOnInit(): void {
-    const slug = this.route.snapshot.paramMap.get('slug') ?? '';
-    this.project = this.projectService.getProjectBySlug(slug);
+    this.route.paramMap
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(params => {
+        const slug = params.get('slug') ?? '';
+        const project = this.projectService.getProjectBySlug(slug);
 
-    if (!this.project) {
-      this.router.navigate(['/cases']);
-      return;
-    }
+        if (!project) {
+          this.router.navigate(['/cases']);
+          return;
+        }
 
-    this.titleService.setTitle(`${this.project.title} — Henrique Coltri`);
-    this.metaService.updateTag({ name: 'description', content: this.project.summary });
+        this.project = project;
+        this.relatedProjects = this.projectService.getRelatedProjects(slug);
+        this.titleService.setTitle(`${project.title} — Henrique Coltri`);
+        this.metaService.updateTag({ name: 'description', content: project.summary });
+
+        window.scrollTo({ top: 0, behavior: 'auto' });
+      });
   }
 }

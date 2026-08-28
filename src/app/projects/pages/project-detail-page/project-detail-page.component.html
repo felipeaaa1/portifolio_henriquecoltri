@@ -31,13 +31,41 @@
     </figure>
   </section>
 
-  <nav class="project-end section-light" aria-label="Navegação entre projetos">
-    <div class="container project-end__inner">
-      <div>
-        <p>Fim do projeto</p>
-        <h2>Hardcore Game Channel</h2>
+  <nav class="project-end section-dark" aria-label="Outros projetos do portfólio">
+    <div class="container">
+      <div class="project-end__heading">
+        <p>Continue explorando</p>
+        <h2>Outros projetos</h2>
       </div>
-      <a class="button button--dark" routerLink="/cases">Ver todos os projetos <span aria-hidden="true">→</span></a>
+
+      <div class="related-projects">
+        <a
+          *ngFor="let relatedProject of relatedProjects"
+          class="related-project"
+          [routerLink]="['/projetos', relatedProject.slug]"
+          [attr.aria-label]="'Ver projeto ' + relatedProject.title">
+          <div class="related-project__image">
+            <img
+              [src]="relatedProject.coverImage"
+              [alt]="'Capa do projeto ' + relatedProject.title"
+              width="1400"
+              height="788"
+              loading="lazy"
+              decoding="async">
+          </div>
+          <div class="related-project__content">
+            <div>
+              <p>{{ relatedProject.category }}</p>
+              <h3>{{ relatedProject.title }}</h3>
+            </div>
+            <span aria-hidden="true">↗</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="project-end__action">
+        <a class="button button--accent" routerLink="/cases">Ver todos os projetos <span aria-hidden="true">→</span></a>
+      </div>
     </div>
   </nav>
 </article>
