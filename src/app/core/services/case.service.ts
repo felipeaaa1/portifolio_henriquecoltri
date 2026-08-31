@@ -10,7 +10,7 @@ export class CaseService {
   private readonly cases: Case[] = [
     { id: 1, title: 'Escola Livre Porto', slug: 'escola-livre-porto',
       summary: 'Identidade para uma escola Waldorf que transforma educação integral, criatividade e natureza em uma marca viva.',
-      imageUrl: 'assets/images/projects/escola-livre-porto/01.webp', detailAvailable: true, featured: true, accent: '#ff7452' },
+      imageUrl: 'assets/images/projects/escola-livre-porto/15.webp', detailAvailable: true, featured: true, accent: '#ff7452' },
     { id: 2, title: 'JCELL Imports', slug: 'jcell-imports',
       summary: 'Uma identidade que combina tecnologia, modernidade e atendimento acessível em uma expressão marcante.',
       imageUrl: 'assets/images/projects/jcell-imports/01.webp', detailAvailable: true, featured: true, accent: '#8aa7ff' },
