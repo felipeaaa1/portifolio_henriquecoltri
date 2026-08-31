@@ -32,6 +32,12 @@ export class PortfolioService {
       author: 'Rafael',
       role: 'Garanhuns/PE',
       text: 'Falar do trabalho de Henrique é fácil, ele simplesmente foi fantástico, cumpriu com os prazos, os valores foram excelentes e bem pagos pela qualidade que ele nos entregou! A experiência foi das melhores, desde o momento da venda, até as entregas de todo o material! Recomendo!'
+    },
+    {
+      id: 2,
+      author: 'Carolina Fabri',
+      role: 'São Paulo/SP',
+      text: 'Tive a oportunidade de trabalhar com o Henrique e a experiência foi excelente. Além de entregar um trabalho de alta qualidade, ele sempre foi muito proativo, trouxe ideias criativas e esteve atento às tendências do mercado. É um profissional comprometido, confiável e que faz a diferença em cada projeto. Recomendo o trabalho dele com total confiança.'
     }
   ];
   private readonly socialLinks: SocialLink[] = [
