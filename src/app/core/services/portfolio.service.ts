@@ -38,6 +38,12 @@ export class PortfolioService {
       author: 'Carolina Fabri',
       role: 'São Paulo/SP',
       text: 'Tive a oportunidade de trabalhar com o Henrique e a experiência foi excelente. Além de entregar um trabalho de alta qualidade, ele sempre foi muito proativo, trouxe ideias criativas e esteve atento às tendências do mercado. É um profissional comprometido, confiável e que faz a diferença em cada projeto. Recomendo o trabalho dele com total confiança.'
+    },
+    {
+      id: 3,
+      author: 'Rodrigo Camara',
+      role: 'São Paulo/SP',
+      text: 'Grande Henrique! Tranquilidade, conhecimento técnico e entendimento do que foi solicitado são características que um bom profissional de Design precisa ter. Isso aliado à experiência sempre trouxe ótimas execuções dos trabalhos realizados. Um "detalhe" muito importante sempre foi sua a preocupação com o cumprimento de prazos! Grande profissional!'
     }
   ];
   private readonly socialLinks: SocialLink[] = [
