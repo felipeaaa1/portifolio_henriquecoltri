@@ -16,7 +16,7 @@ export class CaseService {
       imageUrl: 'assets/images/projects/hardcore-game-channel/01.webp', detailAvailable: true, featured: true, accent: '#31b7d4' },
     { id: 2, title: 'JCELL Imports', slug: 'jcell-imports',
       summary: 'Uma identidade que combina tecnologia, modernidade e atendimento acessível em uma expressão marcante.',
-      imageUrl: 'assets/images/projects/jcell-imports/01.webp', detailAvailable: true, featured: true, accent: '#8aa7ff' },
+      imageUrl: 'assets/images/projects/jcell-imports/08.webp', detailAvailable: true, featured: true, accent: '#8aa7ff' },
     { id: 4, title: 'Bahniuk Supermercados', slug: 'bahniuk-supermercados',
       summary: 'Branding que traduz proximidade, confiança e orgulho regional em uma identidade contemporânea.',
       imageUrl: 'assets/images/projects/bahniuk-supermercados/01.webp', detailAvailable: true, featured: false, accent: '#ef7d22' },
