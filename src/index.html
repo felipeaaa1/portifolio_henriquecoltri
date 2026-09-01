@@ -6,12 +6,41 @@
   <meta name="description" content="Portfólio de Henrique Coltri, publicitário e estrategista de marcas.">
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/svg+xml" href="assets/images/brand/favicon.svg?v=2">
+
+  <link
+    id="site-favicon"
+    rel="icon"
+    type="image/svg+xml"
+    href="assets/images/brand/favicon-dark.svg?v=4"
+  >
+
   <script>
-    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    const themeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+    function updateFavicon(event) {
+      const favicon = document.getElementById('site-favicon');
+
+      favicon.href = event.matches
+        ? 'assets/images/brand/favicon-light.svg?v=4'
+        : 'assets/images/brand/favicon-dark.svg?v=4';
+    }
+
+    updateFavicon(themeQuery);
+
+    if (themeQuery.addEventListener) {
+      themeQuery.addEventListener('change', updateFavicon);
+    } else {
+      themeQuery.addListener(updateFavicon);
+    }
+
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
     window.scrollTo(0, 0);
   </script>
 </head>
+
 <body>
   <app-root></app-root>
 </body>
