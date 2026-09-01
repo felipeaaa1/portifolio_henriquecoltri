@@ -1,4 +1,4 @@
 .social-links { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; }
 a { color: inherit; font-weight: 700; text-decoration: none; border-bottom: 1px solid currentColor; }
 a[aria-disabled="true"] { opacity: .6; cursor: not-allowed; }
-a:hover, a:focus-visible { color: var(--color-accent); }
+a:hover, a:focus-visible { color: inherit; }
