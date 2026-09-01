@@ -1,1 +1,86 @@
-<section class="brands section-light" aria-labelledby="brands-title"><div class="container" appReveal="slide-right"><p class="brands__eyebrow">Marcas atendidas</p><h2 id="brands-title">Boas parcerias deixam marcas.</h2><p class="brands__note">Nomes demonstrativos — substituir pelos logos autorizados.</p></div><div class="brands__marquee" tabindex="0"><div class="brands__track"><span *ngFor="let brand of brands">{{ brand.name }}</span><span *ngFor="let brand of brands" aria-hidden="true">{{ brand.name }}</span></div></div></section>
+<section class="brands section-light" aria-labelledby="brands-title">
+
+  <div class="container brands__intro">
+    <p class="brands__eyebrow">Experiência com marcas</p>
+
+    <h2 id="brands-title">
+      Marcas com as quais<br>
+      já trabalhei.
+    </h2>
+
+    <p class="brands__description">
+      Projetos desenvolvidos de forma independente e também em colaboração
+      com agências e parceiros.
+    </p>
+  </div>
+
+  <div class="brands__marquee">
+    <div class="brands__track">
+
+      <div class="brands__group">
+
+        <div
+          class="brands__item"
+          *ngFor="let brand of directBrands"
+        >
+          <img
+            [src]="'assets/images/clientes/' + brand.file"
+            [alt]="brand.name"
+            [style.height.px]="brand.height"
+          >
+        </div>
+
+        <div class="brands__separator" aria-hidden="true">|</div>
+
+        <div
+          class="brands__item"
+          *ngFor="let brand of agencyBrandsOne"
+        >
+          <img
+            [src]="'assets/images/clientes/' + brand.file"
+            [alt]="brand.name"
+            [style.height.px]="brand.height"
+          >
+        </div>
+
+        <div class="brands__separator" aria-hidden="true">|</div>
+
+      </div>
+
+      <div
+        class="brands__group"
+        aria-hidden="true"
+      >
+
+        <div
+          class="brands__item"
+          *ngFor="let brand of directBrands"
+        >
+          <img
+            [src]="'assets/images/clientes/' + brand.file"
+            alt=""
+            [style.height.px]="brand.height"
+          >
+        </div>
+
+        <div class="brands__separator" aria-hidden="true">|</div>
+
+        <div
+          class="brands__item"
+          *ngFor="let brand of agencyBrandsOne"
+        >
+          <img
+            [src]="'assets/images/clientes/' + brand.file"
+            alt=""
+            [style.height.px]="brand.height"
+          >
+        </div>
+
+        <div class="brands__separator" aria-hidden="true">|</div>
+
+      </div>
+
+    </div>
+  </div>
+
+</section>

@@ -1,1 +1,245 @@
-.brands{padding:var(--section-space) 0;overflow:hidden}.brands__eyebrow{color:var(--color-accent-strong);font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.15em}.brands h2{max-width:780px;margin:1rem 0;font-size:clamp(3rem,7vw,6rem);line-height:.9;letter-spacing:-.06em}.brands__note{color:var(--color-muted);font-size:.8rem}.brands__marquee{margin-top:4rem;padding:2rem 0;border-top:1px solid rgba(23,23,23,.2);border-bottom:1px solid rgba(23,23,23,.2);overflow:hidden}.brands__track{display:flex;width:max-content;animation:brand-scroll 25s linear infinite}.brands__track span{min-width:260px;padding:0 2rem;text-align:center;font-size:1.25rem;font-weight:800}.brands__marquee:hover .brands__track,.brands__marquee:focus .brands__track{animation-play-state:paused}@keyframes brand-scroll{to{transform:translateX(-50%)}}@media(prefers-reduced-motion:reduce){.brands__track{animation:none;flex-wrap:wrap;width:auto}.brands__track [aria-hidden=true]{display:none}}
+.brands {
+  padding: var(--section-space) 0;
+  overflow: hidden;
+}
+
+.brands__intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(260px, .5fr);
+  column-gap: 4rem;
+  align-items: end;
+}
+
+.brands__eyebrow {
+  grid-column: 1 / -1;
+  margin: 0 0 1.25rem;
+  color: var(--color-accent-strong);
+  font-size: .75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+}
+
+.brands h2 {
+  max-width: 900px;
+  margin: 0;
+  font-size: clamp(3rem, 6.5vw, 6rem);
+  line-height: .9;
+  letter-spacing: -.06em;
+}
+
+.brands__description {
+  max-width: 420px;
+  margin: 0 0 .35rem;
+  color: var(--color-muted);
+  font-size: .95rem;
+  line-height: 1.65;
+}
+
+
+/* CARROSSEL */
+
+.brands__marquee {
+  width: 100%;
+  margin-top: 5rem;
+  padding: 1.8rem 0;
+  overflow: hidden;
+  border-top: 1px solid rgba(23, 23, 23, .16);
+  border-bottom: 1px solid rgba(23, 23, 23, .16);
+}
+
+.brands__track {
+  display: flex;
+  width: max-content;
+  animation: brands-scroll 65s linear infinite;
+  will-change: transform;
+}
+
+.brands__group {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+
+  /* mesmo espaço entre todas */
+  gap: 4rem;
+
+  /* mesmo espaço na emenda do looping */
+  padding-right: 4rem;
+}
+
+.brands__item {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 105px;
+}
+
+.brands__item img {
+  display: block;
+  width: auto;
+  max-width: 230px;
+  object-fit: contain;
+
+  filter: grayscale(1);
+  opacity: .72;
+
+  transition:
+    filter .3s ease,
+    opacity .3s ease,
+    transform .3s ease;
+}
+
+.brands__item:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+.brands__marquee:hover .brands__track {
+  animation-play-state: paused;
+}
+
+@keyframes brands-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .brands__intro {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+
+  .brands__marquee {
+    margin-top: 4rem;
+  }
+
+  .brands__group {
+    gap: 3.25rem;
+    padding-right: 3.25rem;
+  }
+
+  .brands__item {
+    height: 95px;
+  }
+
+  .brands__item img {
+    max-width: 200px;
+  }
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+  .brands__marquee {
+    margin-top: 3rem;
+    padding: 1.25rem 0;
+  }
+
+  .brands__group {
+    gap: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .brands__item {
+    height: 85px;
+  }
+
+  .brands__item img {
+    max-width: 170px;
+    transform: scale(.82);
+  }
+
+  .brands__item:hover img {
+    transform: scale(.86);
+  }
+
+  .brands h2 {
+    font-size: clamp(2.8rem, 13vw, 4rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brands__track {
+    animation-duration: 100s;
+  }
+}
+/* Divisão entre grupos de marcas */
+.brands__separator {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 105px;
+  padding: 0 .5rem;
+  color: rgba(23, 23, 23, .35);
+  font-size: 3.25rem;
+  font-weight: 300;
+  line-height: 1;
+}
+
+@media (max-width: 900px) {
+  .brands__separator {
+    height: 95px;
+    font-size: 2.75rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .brands__separator {
+    height: 85px;
+    font-size: 2.25rem;
+  }
+}
+
+
+/* Total Varejo: ajuste pela largura */
+.brands__item img[src*="Logo-Total-Varejo.svg"] {
+  width: 320px !important;
+  max-width: none !important;
+  height: auto !important;
+}
+
+
+/* Total Varejo: ajuste pela largura */
+.brands__item img[src*="Logo-Total-Varejo.svg"] {
+  width: 380px !important;
+  max-width: none !important;
+  height: auto !important;
+}
+
+
+/* Fernanda Coltri: ajuste pela largura */
+.brands__item img[src*="Logo-Fernanda-Coltri.svg"] {
+  width: 300px !important;
+  max-width: none !important;
+  height: auto !important;
+}
+
+
+/* Fernanda Coltri e Lu Pagliarini: ajuste pela largura */
+.brands__item img[src*="Logo-Fernanda-Coltri.svg"],
+.brands__item img[src*="Logo-Lu-pagli.svg"] {
+  width: 280px !important;
+  max-width: none !important;
+  height: auto !important;
+}
+
+
+/* O Jardineiro: ajuste pela largura */
+.brands__item img[src*="Logo-o-Jardineiro.svg"] {
+  width: 300px !important;
+  max-width: none !important;
+  height: auto !important;
+}
+
