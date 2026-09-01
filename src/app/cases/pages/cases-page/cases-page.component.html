@@ -1,1 +1,18 @@
-<section class="cases-hero section-dark"><div class="container" appReveal="clip"><p>Portfólio selecionado</p><h1>Cases que unem direção e expressão.</h1><span>Os projetos abaixo usam conteúdo visual e textual provisório até a aprovação dos cases reais.</span></div></section><section class="cases-list section-light"><div class="container cases-list__grid"><app-case-card *ngFor="let caseItem of cases; let index = index" [caseItem]="caseItem" [appReveal]="index % 2 === 0 ? 'slide-left' : 'slide-right'" [revealDelay]="index * 90"></app-case-card></div></section>
+<section class="cases-hero section-dark">
+  <div class="container">
+    <p>Projetos selecionados</p>
+    <h1>Estratégia que ganhou forma.</h1>
+    <span>Uma seleção de projetos em que posicionamento, identidade e comunicação se encontram para construir marcas mais claras, coerentes e reconhecíveis.</span>
+  </div>
+</section>
+
+<section class="cases-list section-light">
+  <div class="container cases-list__grid">
+    <app-case-card
+      *ngFor="let caseItem of cases; let index = index"
+      [caseItem]="caseItem"
+      [appReveal]="index % 2 === 0 ? 'slide-left' : 'slide-right'"
+      [revealDelay]="index * 90">
+    </app-case-card>
+  </div>
+</section>
