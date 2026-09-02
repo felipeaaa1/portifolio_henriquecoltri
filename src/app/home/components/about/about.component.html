@@ -16,5 +16,63 @@
     </div>
     <div class="about__portrait" appReveal="slide-right"><img src="assets/images/henrique-coltri-portrait.webp" alt="Retrato de Henrique Coltri" width="720" height="1564" loading="lazy" decoding="async"></div>
   </div>
-  <div class="work-strip" tabindex="0" aria-label="Prévia de áreas e trabalhos"><div class="work-strip__track"><div *ngFor="let item of previews" [style.--preview-accent]="item.accent"><span>{{ item.label }}</span></div><div *ngFor="let item of previews" [style.--preview-accent]="item.accent" aria-hidden="true"><span>{{ item.label }}</span></div></div></div>
+    <div class="work-strip" tabindex="0" aria-label="Cases selecionados">
+    <div class="work-strip__track">
+
+      <a
+        *ngFor="let item of cases"
+        class="work-strip__case"
+        [routerLink]="['/projetos', item.slug]">
+
+        <img
+          [src]="item.imageUrl"
+          [alt]="'Projeto ' + item.title"
+          loading="lazy"
+          decoding="async">
+
+        <span class="work-strip__overlay"></span>
+
+        <div class="work-strip__content">
+          <span class="work-strip__number">
+            CASE
+          </span>
+
+          <strong>{{ item.title }}</strong>
+
+          <span class="work-strip__view">
+            Ver projeto ↗
+          </span>
+        </div>
+      </a>
+
+      <a
+        *ngFor="let item of cases"
+        class="work-strip__case"
+        [routerLink]="['/projetos', item.slug]"
+        aria-hidden="true"
+        tabindex="-1">
+
+        <img
+          [src]="item.imageUrl"
+          alt=""
+          loading="lazy"
+          decoding="async">
+
+        <span class="work-strip__overlay"></span>
+
+        <div class="work-strip__content">
+          <span class="work-strip__number">
+            CASE
+          </span>
+
+          <strong>{{ item.title }}</strong>
+
+          <span class="work-strip__view">
+            Ver projeto ↗
+          </span>
+        </div>
+      </a>
+
+    </div>
+  </div>
 </section>
