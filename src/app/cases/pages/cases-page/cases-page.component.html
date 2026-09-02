@@ -8,11 +8,39 @@
 
 <section class="cases-list section-light">
   <div class="container cases-list__grid">
+
     <app-case-card
       *ngFor="let caseItem of cases; let index = index"
       [caseItem]="caseItem"
       [appReveal]="index % 2 === 0 ? 'slide-left' : 'slide-right'"
       [revealDelay]="index * 90">
     </app-case-card>
+
+    <a
+      class="cases-contact-card"
+      [href]="contactUrl"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Conversar com Henrique Coltri sobre um projeto de branding">
+
+      <span class="cases-contact-card__eyebrow">
+        SUA MARCA
+      </span>
+
+      <div class="cases-contact-card__content">
+        <h2>O próximo case pode ser o seu.</h2>
+
+        <p>
+          Vamos transformar estratégia em uma marca que as pessoas
+          reconhecem, entendem e lembram.
+        </p>
+      </div>
+
+      <span class="cases-contact-card__cta">
+        Quero construir minha marca ↗
+      </span>
+
+    </a>
+
   </div>
 </section>

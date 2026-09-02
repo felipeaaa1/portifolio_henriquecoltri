@@ -39,7 +39,7 @@
 
 .cases-list__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem;
 }
 
@@ -48,3 +48,96 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* CASE CTA START */
+
+.cases-contact-card {
+  position: relative;
+  min-height: 505px;
+  padding: 2rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--color-dark);
+  background: var(--color-accent);
+  border-radius: var(--radius-card);
+  text-decoration: none;
+  transition:
+    transform var(--transition),
+    background-color var(--transition);
+}
+
+.cases-contact-card::before {
+  content: '↗';
+  position: absolute;
+  top: -1.8rem;
+  right: 1.25rem;
+  font-size: clamp(8rem, 14vw, 13rem);
+  font-weight: 900;
+  line-height: 1;
+  opacity: .09;
+  transition: transform 500ms cubic-bezier(.16, 1, .3, 1);
+}
+
+.cases-contact-card:hover,
+.cases-contact-card:focus-visible {
+  transform: translateY(-4px);
+  background: #ff8062;
+}
+
+.cases-contact-card:hover::before,
+.cases-contact-card:focus-visible::before {
+  transform: translate(8px, -8px);
+}
+
+.cases-contact-card__eyebrow {
+  position: relative;
+  z-index: 1;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+.cases-contact-card__content {
+  position: relative;
+  z-index: 1;
+  max-width: 520px;
+}
+
+.cases-contact-card h2 {
+  max-width: 480px;
+  margin: 0;
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  line-height: .9;
+  letter-spacing: -.065em;
+}
+
+.cases-contact-card p {
+  max-width: 440px;
+  margin: 1.5rem 0 0;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.cases-contact-card__cta {
+  position: relative;
+  z-index: 1;
+  width: fit-content;
+  padding-bottom: .3rem;
+  border-bottom: 1px solid currentColor;
+  font-size: .82rem;
+  font-weight: 800;
+}
+
+@media (max-width: 760px) {
+  .cases-contact-card {
+    min-height: 420px;
+  }
+
+  .cases-contact-card h2 {
+    font-size: clamp(2.6rem, 12vw, 4rem);
+  }
+}
+
+/* CASE CTA END */
