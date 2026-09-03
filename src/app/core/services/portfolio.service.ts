@@ -44,6 +44,12 @@ export class PortfolioService {
       author: 'Rodrigo Camara',
       role: 'São Paulo/SP',
       text: 'Grande Henrique! Tranquilidade, conhecimento técnico e entendimento do que foi solicitado são características que um bom profissional de Design precisa ter. Isso aliado à experiência sempre trouxe ótimas execuções dos trabalhos realizados. Um "detalhe" muito importante sempre foi sua a preocupação com o cumprimento de prazos! Grande profissional!'
+    },
+    {
+      id: 4,
+      author: 'Danilo Ganzert e Magda Ganzert',
+      role: 'Cuiabá/MT',
+      text: 'O Henrique Coltri conseguiu traduzir perfeitamente o que imaginávamos para a identidade da Santa Imagem Cuiabá: uma marca que une o religioso e o tradicional a uma linguagem contemporânea, sofisticada e alinhada ao universo de casamentos, festas e eventos.\n\nAlém da criatividade e originalidade, destacamos a atenção e o suporte durante todo o processo, desde as aplicações da marca até os materiais para redes sociais e futuros desdobramentos.\n\nO resultado superou nossas expectativas. Recomendamos muito o trabalho do Henrique pela qualidade, cuidado e, principalmente, pela capacidade de transformar uma ideia em uma identidade que realmente representa a nossa marca.'
     }
   ];
   private readonly socialLinks: SocialLink[] = [
