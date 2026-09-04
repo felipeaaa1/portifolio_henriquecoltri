@@ -1,6 +1,6 @@
 .positioning { margin-top: -1px; padding: var(--section-space) 0; }
 .positioning__content { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(320px, .8fr); gap: clamp(3rem, 8vw, 8rem); align-items: end; }
-.positioning__heading > p { color: var(--color-accent); text-transform: uppercase; letter-spacing: .15em; font-size: .75rem; font-weight: 800; }
+.positioning__heading > p { color: var(--color-accent); text-transform: uppercase; letter-spacing: .15em; font-size: .75rem; font-weight: 700; }
 h2 { margin: 1rem 0 0; font-size: clamp(3.5rem, 8vw, 7.5rem); line-height: .82; letter-spacing: -.07em; }
 h2 em { color: var(--color-accent); font-style: normal; }
 .positioning__copy { max-width: 620px; padding-bottom: .4rem; }

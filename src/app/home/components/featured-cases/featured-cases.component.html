@@ -6,9 +6,9 @@
 
     <div class="featured__grid">
       <article *ngFor="let caseItem of cases; let index = index" class="case" [class.case--large]="index === 0" [appReveal]="index % 2 === 0 ? 'slide-left' : 'slide-right'" [revealDelay]="index * 120">
-        <a [routerLink]="caseItem.detailAvailable ? ['/projetos', caseItem.slug] : '/cases'" [attr.aria-label]="'Conhecer ' + caseItem.title">
+        <a [routerLink]="caseItem.detailAvailable ? ['/projetos', caseItem.slug] : '/cases'">
           <div class="case__visual" [class.case__visual--image]="caseItem.imageUrl" [style.--case-accent]="caseItem.accent">
-            <img *ngIf="caseItem.imageUrl" [src]="caseItem.imageUrl" alt="" loading="lazy" decoding="async">
+            <img *ngIf="caseItem.imageUrl" [src]="caseItem.imageUrl" alt="" width="1400" height="788" loading="lazy" decoding="async">
             <span class="case__label">CASE 0{{ index + 1 }}</span>
             <span *ngIf="!caseItem.imageUrl" class="case__letter" aria-hidden="true">{{ caseItem.title.charAt(0) }}</span>
             <span class="case__view">Ver projeto ↗</span>

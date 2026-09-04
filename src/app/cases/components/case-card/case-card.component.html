@@ -1,7 +1,7 @@
 <article class="case-card" *ngIf="caseItem">
   <a [routerLink]="caseItem.detailAvailable ? ['/projetos', caseItem.slug] : '/cases'">
     <div class="case-card__visual" [class.case-card__visual--image]="caseItem.imageUrl" [style.--case-accent]="caseItem.accent">
-      <img *ngIf="caseItem.imageUrl" [src]="caseItem.imageUrl" alt="" loading="lazy" decoding="async">
+      <img *ngIf="caseItem.imageUrl" [src]="caseItem.imageUrl" alt="" width="1400" height="788" loading="lazy" decoding="async">
       <span>{{ caseItem.detailAvailable ? 'CASE COMPLETO' : 'CASE EM PREPARAÇÃO' }}</span>
       <b aria-hidden="true">{{ caseItem.id < 10 ? '0' + caseItem.id : caseItem.id }}</b>
     </div>

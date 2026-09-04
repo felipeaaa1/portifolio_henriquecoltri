@@ -2,7 +2,7 @@
 .project-intro { padding: calc(82px + clamp(3.5rem, 8vw, 7rem)) 0 clamp(4rem, 8vw, 7rem); }
 .project-intro__back { display: inline-flex; align-items: center; gap: .6rem; color: rgba(246,241,232,.72); font-size: .8rem; font-weight: 700; text-decoration: none; }
 .project-intro__back:hover, .project-intro__back:focus-visible { color: var(--color-accent); }
-.project-intro__eyebrow { margin: clamp(3.5rem, 8vw, 7rem) 0 1.25rem; color: var(--color-accent); font-size: .75rem; font-weight: 800; text-transform: uppercase; letter-spacing: .15em; }
+.project-intro__eyebrow { margin: clamp(3.5rem, 8vw, 7rem) 0 1.25rem; color: var(--color-accent); font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .15em; }
 .project-intro h1 { max-width: 1050px; margin: 0; font-size: clamp(3.5rem, 9vw, 8.5rem); line-height: .84; letter-spacing: -.075em; }
 .project-intro__content { margin-top: clamp(3rem, 7vw, 6rem); display: grid; grid-template-columns: minmax(280px, .8fr) 1.2fr; gap: clamp(3rem, 8vw, 8rem); align-items: end; }
 .project-intro__summary { max-width: 630px; margin: 0; color: rgba(246,241,232,.72); font-size: clamp(1.05rem, 1.8vw, 1.35rem); line-height: 1.65; }
@@ -16,7 +16,7 @@
 .project-end { padding: clamp(5rem, 10vw, 9rem) 0; background: #111; }
 .project-end__heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; margin-bottom: clamp(2rem, 4vw, 3.5rem); }
 .project-end__heading p,
-.related-project__content p { margin: 0; color: var(--color-accent); font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; }
+.related-project__content p { margin: 0; color: var(--color-accent); font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; }
 .project-end__heading h2 { margin: 0; color: var(--color-light); font-size: clamp(2.7rem, 6vw, 5.7rem); line-height: .88; letter-spacing: -.06em; }
 .related-projects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 1.75rem); }
 .related-project { min-width: 0; color: var(--color-light); text-decoration: none; }

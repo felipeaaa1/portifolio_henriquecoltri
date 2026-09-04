@@ -22,16 +22,16 @@ export class CaseService {
       imageUrl: 'assets/images/projects/bahniuk-supermercados/01.webp', detailAvailable: true, featured: false, accent: '#ef7d22' },
     { id: 5, title: 'Heróis da Galáxia', slug: 'herois-da-galaxia',
       summary: 'Branding e identidade visual desenvolvido para uma pizzaria.',
-      imageUrl: 'assets/images/projects/herois-da-galaxia/01.png', detailAvailable: true, featured: false, accent: '#ff7452' },
+      imageUrl: 'assets/images/projects/herois-da-galaxia/01.webp', detailAvailable: true, featured: false, accent: '#ff7452' },
     { id: 6, title: 'O Jardineiro', slug: 'o-jardineiro',
       summary: 'Branding que conecta natureza, sofisticação e uma expressão visual contemporânea.',
-      imageUrl: 'assets/images/projects/o-jardineiro/01.png', detailAvailable: true, featured: false, accent: '#76a174' },
+      imageUrl: 'assets/images/projects/o-jardineiro/01.webp', detailAvailable: true, featured: false, accent: '#76a174' },
     { id: 7, title: 'Equipa', slug: 'equipa',
       summary: 'Branding para uma marca de artigos de camping, caça e pesca que une aventura, segurança e conexão com a vida ao ar livre.',
-      imageUrl: 'assets/images/projects/equipa/01.png', detailAvailable: true, featured: false, accent: '#38463d' },
+      imageUrl: 'assets/images/projects/equipa/01.webp', detailAvailable: true, featured: false, accent: '#38463d' },
     { id: 8, title: 'Deon', slug: 'deon',
       summary: 'Branding para uma loja de calçados, construindo uma identidade contemporânea, marcante e alinhada ao universo da moda.',
-      imageUrl: 'assets/images/projects/deon/01.png', detailAvailable: true, featured: false, accent: '#171717' }
+      imageUrl: 'assets/images/projects/deon/01.webp', detailAvailable: true, featured: false, accent: '#171717' }
   ];
 
   constructor() { }

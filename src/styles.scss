@@ -8,7 +8,7 @@
   --color-paper: #f4ebdd;
   --color-muted: #6d6a65;
   --color-accent: #ff7452;
-  --color-accent-strong: #c33f22;
+  --color-accent-strong: #bf3c20;
   --color-blue: #8aa7ff;
   --container: 1240px;
   --section-space: clamp(5rem, 10vw, 9rem);
@@ -22,7 +22,7 @@ body { background: var(--color-dark); color: var(--color-dark); font-family: $fo
 .container { width: min(var(--container), calc(100% - 2.5rem)); margin-right: auto; margin-left: auto; }
 .section-light { background: var(--color-paper); color: var(--color-dark); }
 .section-dark { background: var(--color-dark); color: var(--color-light); }
-.button { display: inline-flex; align-items: center; justify-content: center; gap: .8rem; min-height: 50px; padding: .8rem 1.25rem; border: 1px solid transparent; border-radius: 999px; font-weight: 800; text-decoration: none; transition: transform var(--transition), background var(--transition), color var(--transition); }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: .8rem; min-height: 50px; padding: .8rem 1.25rem; border: 1px solid transparent; border-radius: 999px; font-weight: 700; text-decoration: none; transition: transform var(--transition), background var(--transition), color var(--transition); }
 .button:hover, .button:focus-visible { transform: translateY(-3px); }
 .button--accent { background: var(--color-accent); color: var(--color-dark); }
 .button--dark { background: var(--color-dark); color: var(--color-light); }

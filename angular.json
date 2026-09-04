@@ -1,63 +1,100 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1,
-  "newProjectRoot": "projects",
-  "projects": {
-    "henrique-coltri-portfolio": {
-      "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss",
-          "standalone": true
-        }
-      },
-      "root": "",
-      "sourceRoot": "src",
-      "prefix": "app",
-      "architect": {
-        "build": {
-          "builder": "@angular/build:application",
-          "options": {
-            "outputPath": "dist/henrique-coltri-portfolio",
-            "index": "src/index.html",
-            "browser": "src/main.ts",
-            "polyfills": ["zone.js"],
-            "tsConfig": "tsconfig.app.json",
-            "assets": [
-              { "glob": "favicon.ico", "input": "src" },
-              { "glob": "**/*", "input": "src/assets", "output": "assets" }
-            ],
-            "styles": ["src/styles.scss"]
-          },
-          "configurations": {
-            "production": {
-              "budgets": [
-                { "type": "initial", "maximumWarning": "500kB", "maximumError": "1MB" },
-                { "type": "anyComponentStyle", "maximumWarning": "8kB", "maximumError": "12kB" }
-              ],
-              "outputHashing": "all"
-            },
-            "development": {
-              "optimization": false,
-              "extractLicenses": false,
-              "sourceMap": true
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "serve": {
-          "builder": "@angular/build:dev-server",
-          "configurations": {
-            "production": { "buildTarget": "henrique-coltri-portfolio:build:production" },
-            "development": { "buildTarget": "henrique-coltri-portfolio:build:development" }
-          },
-          "defaultConfiguration": "development"
-        },
-        "test": {
-          "builder": "@angular/build:unit-test",
-          "options": { "tsConfig": "tsconfig.spec.json" }
-        }
-      }
-    }
-  }
+    "$schema":  "./node_modules/@angular/cli/lib/config/schema.json",
+    "version":  1,
+    "newProjectRoot":  "projects",
+    "projects":  {
+                     "henrique-coltri-portfolio":  {
+                                                       "projectType":  "application",
+                                                       "schematics":  {
+                                                                          "@schematics/angular:component":  {
+                                                                                                                "style":  "scss",
+                                                                                                                "standalone":  true
+                                                                                                            }
+                                                                      },
+                                                       "root":  "",
+                                                       "sourceRoot":  "src",
+                                                       "prefix":  "app",
+                                                       "architect":  {
+                                                                         "build":  {
+                                                                                       "builder":  "@angular/build:application",
+                                                                                       "options":  {
+                                                                                                       "outputPath":  "dist/henrique-coltri-portfolio",
+                                                                                                       "index":  "src/index.html",
+                                                                                                       "browser":  "src/main.ts",
+                                                                                                       "polyfills":  [
+                                                                                                                         "zone.js"
+                                                                                                                     ],
+                                                                                                       "tsConfig":  "tsconfig.app.json",
+                                                                                                       "assets":  [
+                                                                                                                      {
+                                                                                                                          "glob":  "favicon.ico",
+                                                                                                                          "input":  "src"
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                          "glob":  "**/*",
+                                                                                                                          "input":  "src/assets",
+                                                                                                                          "output":  "assets"
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                          "glob":  "robots.txt",
+                                                                                                                          "input":  "src",
+                                                                                                                          "output":  "/"
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                          "glob":  "sitemap.xml",
+                                                                                                                          "input":  "src",
+                                                                                                                          "output":  "/"
+                                                                                                                      }
+                                                                                                                  ],
+                                                                                                       "styles":  [
+                                                                                                                      "src/styles.scss"
+                                                                                                                  ],
+                                                                                                       "server":  "src/main.server.ts",
+                                                                                                       "outputMode":  "static"
+                                                                                                   },
+                                                                                       "configurations":  {
+                                                                                                              "production":  {
+                                                                                                                                 "budgets":  [
+                                                                                                                                                 {
+                                                                                                                                                     "type":  "initial",
+                                                                                                                                                     "maximumWarning":  "500kB",
+                                                                                                                                                     "maximumError":  "1MB"
+                                                                                                                                                 },
+                                                                                                                                                 {
+                                                                                                                                                     "type":  "anyComponentStyle",
+                                                                                                                                                     "maximumWarning":  "8kB",
+                                                                                                                                                     "maximumError":  "12kB"
+                                                                                                                                                 }
+                                                                                                                                             ],
+                                                                                                                                 "outputHashing":  "all"
+                                                                                                                             },
+                                                                                                              "development":  {
+                                                                                                                                  "optimization":  false,
+                                                                                                                                  "extractLicenses":  false,
+                                                                                                                                  "sourceMap":  true
+                                                                                                                              }
+                                                                                                          },
+                                                                                       "defaultConfiguration":  "production"
+                                                                                   },
+                                                                         "serve":  {
+                                                                                       "builder":  "@angular/build:dev-server",
+                                                                                       "configurations":  {
+                                                                                                              "production":  {
+                                                                                                                                 "buildTarget":  "henrique-coltri-portfolio:build:production"
+                                                                                                                             },
+                                                                                                              "development":  {
+                                                                                                                                  "buildTarget":  "henrique-coltri-portfolio:build:development"
+                                                                                                                              }
+                                                                                                          },
+                                                                                       "defaultConfiguration":  "development"
+                                                                                   },
+                                                                         "test":  {
+                                                                                      "builder":  "@angular/build:unit-test",
+                                                                                      "options":  {
+                                                                                                      "tsConfig":  "tsconfig.spec.json"
+                                                                                                  }
+                                                                                  }
+                                                                     }
+                                                   }
+                 }
 }

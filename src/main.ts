@@ -1,24 +1,26 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { provideRouter, withInMemoryScrolling } from '@angular/router';
 
 import { AppComponent } from './app/app.component';
-import { routes } from './app/app.routes';
+import { appConfig } from './app/app.config';
 
-const startAtTop = () => {
+const startAtTop = (): void => {
+  if (typeof window === 'undefined') {
+    return;
+  }
+
   if (!window.location.hash || window.location.hash === '#inicio') {
     window.scrollTo(0, 0);
   }
 };
 
-if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-startAtTop();
-window.addEventListener('load', startAtTop, { once: true });
+if (typeof window !== 'undefined') {
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
 
-bootstrapApplication(AppComponent, {
-  providers: [
-    provideRouter(routes, withInMemoryScrolling({
-      anchorScrolling: 'enabled',
-      scrollPositionRestoration: 'top'
-    }))
-  ]
-}).catch(error => console.error(error));
+  startAtTop();
+  window.addEventListener('load', startAtTop, { once: true });
+}
+
+bootstrapApplication(AppComponent, appConfig)
+  .catch(error => console.error(error));
