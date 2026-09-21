@@ -9,4 +9,7 @@ import { Case } from '../../../core/models/case.model';
   templateUrl: './case-card.component.html',
   styleUrl: './case-card.component.scss'
 })
-export class CaseCardComponent { @Input({ required: true }) caseItem!: Case; }
+export class CaseCardComponent {
+  @Input({ required: true }) caseItem!: Case;
+  @Input() priority = false;
+}

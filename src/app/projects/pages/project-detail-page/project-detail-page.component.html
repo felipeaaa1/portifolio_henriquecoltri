@@ -22,6 +22,8 @@
     <figure *ngFor="let image of project.gallery; let index = index">
       <img
         [src]="image.src"
+        [attr.srcset]="index === 0 ? image.src.replace('.webp', '-480.webp') + ' 480w, ' + image.src.replace('.webp', '-800.webp') + ' 800w, ' + image.src.replace('.webp', '-1200.webp') + ' 1200w, ' + image.src + ' ' + image.width + 'w' : null"
+        [attr.sizes]="index === 0 ? '100vw' : null"
         [alt]="image.alt"
         [width]="image.width"
         [height]="image.height"
@@ -42,11 +44,10 @@
         <a
           *ngFor="let relatedProject of relatedProjects"
           class="related-project"
-          [routerLink]="['/projetos', relatedProject.slug]"
-          [attr.aria-label]="'Ver projeto ' + relatedProject.title">
+          [routerLink]="['/projetos', relatedProject.slug]">
           <div class="related-project__image">
             <img
-              [src]="relatedProject.coverImage"
+              [src]="relatedProject.coverImage" [attr.srcset]="relatedProject.coverImage.replace('.webp', '-480.webp') + ' 480w, ' + relatedProject.coverImage.replace('.webp', '-800.webp') + ' 800w, ' + relatedProject.coverImage.replace('.webp', '-1200.webp') + ' 1200w, ' + relatedProject.coverImage + ' 1400w'" sizes="(max-width: 760px) calc(100vw - 24px), 33vw"
               [alt]="'Capa do projeto ' + relatedProject.title"
               width="1400"
               height="788"

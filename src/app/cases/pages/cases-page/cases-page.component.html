@@ -1,4 +1,20 @@
 <section class="cases-hero section-dark">
+  <img
+    class="cases-hero__background"
+    src="assets/images/projects/bahniuk-supermercados/17.webp"
+    srcset="
+      assets/images/projects/bahniuk-supermercados/17-480.webp 480w,
+      assets/images/projects/bahniuk-supermercados/17-800.webp 800w,
+      assets/images/projects/bahniuk-supermercados/17-1200.webp 1200w,
+      assets/images/projects/bahniuk-supermercados/17.webp 1400w"
+    sizes="100vw"
+    alt=""
+    aria-hidden="true"
+    width="1400"
+    height="788"
+    loading="eager"
+    fetchpriority="high"
+    decoding="async">
   <div class="container">
     <p>Projetos selecionados</p>
     <h1>Estratégia que ganhou forma.</h1>
@@ -12,6 +28,7 @@
     <app-case-card
       *ngFor="let caseItem of cases; let index = index"
       [caseItem]="caseItem"
+      [priority]="index === 0"
       [appReveal]="index % 2 === 0 ? 'slide-left' : 'slide-right'"
       [revealDelay]="index * 90">
     </app-case-card>
@@ -21,7 +38,7 @@
       [href]="contactUrl"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Conversar com Henrique Coltri sobre um projeto de branding">
+     >
 
       <span class="cases-contact-card__eyebrow">
         SUA MARCA
