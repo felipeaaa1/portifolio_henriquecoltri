@@ -10,7 +10,7 @@ export class CaseService {
   private readonly cases: Case[] = [
     { id: 1, title: 'Escola Livre Porto', slug: 'escola-livre-porto',
       summary: 'Identidade para uma escola Waldorf que transforma educação integral, criatividade e natureza em uma marca viva.',
-      imageUrl: 'assets/images/projects/escola-livre-porto/15.webp', detailAvailable: true, featured: true, accent: '#ff7452' },
+      imageUrl: 'assets/images/projects/escola-livre-porto/featured-card.webp', detailAvailable: true, featured: true, accent: '#ff7452' },
     { id: 2, title: 'Hardcore Game Channel', slug: 'hardcore-game-channel',
       summary: 'Branding e identidade visual para uma produtora de conteúdo sobre jogos, reality shows e entretenimento.',
       imageUrl: 'assets/images/projects/hardcore-game-channel/01.webp', detailAvailable: true, featured: true, accent: '#31b7d4' },
