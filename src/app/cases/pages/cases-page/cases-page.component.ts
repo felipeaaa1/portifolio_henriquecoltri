@@ -63,10 +63,10 @@ export class CasesPageComponent implements OnInit {
           'CollectionPage',
 
         '@id':
-          'https://henriquecoltri.com.br/cases#collection',
+          'https://www.henriquecoltri.com.br/cases#collection',
 
         url:
-          'https://henriquecoltri.com.br/cases',
+          'https://www.henriquecoltri.com.br/cases',
 
         name:
           'Cases de Branding e Identidade Visual',
@@ -79,7 +79,7 @@ export class CasesPageComponent implements OnInit {
 
         author: {
           '@id':
-            'https://henriquecoltri.com.br/#person'
+            'https://www.henriquecoltri.com.br/#person'
         },
 
         mainEntity: {
@@ -92,56 +92,56 @@ export class CasesPageComponent implements OnInit {
             {
               '@type': 'ListItem',
               position: 1,
-              url: 'https://henriquecoltri.com.br/projetos/escola-livre-porto',
+              url: 'https://www.henriquecoltri.com.br/projetos/escola-livre-porto',
               name: 'Escola Livre Porto'
             },
 
             {
               '@type': 'ListItem',
               position: 2,
-              url: 'https://henriquecoltri.com.br/projetos/hardcore-game-channel',
+              url: 'https://www.henriquecoltri.com.br/projetos/hardcore-game-channel',
               name: 'Hardcore Game Channel'
             },
 
             {
               '@type': 'ListItem',
               position: 3,
-              url: 'https://henriquecoltri.com.br/projetos/jcell-imports',
+              url: 'https://www.henriquecoltri.com.br/projetos/jcell-imports',
               name: 'JCELL Imports'
             },
 
             {
               '@type': 'ListItem',
               position: 4,
-              url: 'https://henriquecoltri.com.br/projetos/bahniuk-supermercados',
+              url: 'https://www.henriquecoltri.com.br/projetos/bahniuk-supermercados',
               name: 'Bahniuk Supermercados'
             },
 
             {
               '@type': 'ListItem',
               position: 5,
-              url: 'https://henriquecoltri.com.br/projetos/herois-da-galaxia',
+              url: 'https://www.henriquecoltri.com.br/projetos/herois-da-galaxia',
               name: 'Heróis da Galáxia'
             },
 
             {
               '@type': 'ListItem',
               position: 6,
-              url: 'https://henriquecoltri.com.br/projetos/o-jardineiro',
+              url: 'https://www.henriquecoltri.com.br/projetos/o-jardineiro',
               name: 'O Jardineiro'
             },
 
             {
               '@type': 'ListItem',
               position: 7,
-              url: 'https://henriquecoltri.com.br/projetos/equipa',
+              url: 'https://www.henriquecoltri.com.br/projetos/equipa',
               name: 'Equipa'
             },
 
             {
               '@type': 'ListItem',
               position: 8,
-              url: 'https://henriquecoltri.com.br/projetos/deon',
+              url: 'https://www.henriquecoltri.com.br/projetos/deon',
               name: 'Deon'
             }
 

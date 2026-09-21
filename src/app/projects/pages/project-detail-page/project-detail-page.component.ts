@@ -88,10 +88,10 @@ export class ProjectDetailPageComponent implements OnInit {
             .getRelatedProjects(slug);
 
         const projectUrl =
-          `https://henriquecoltri.com.br/projetos/${project.slug}`;
+          `https://www.henriquecoltri.com.br/projetos/${project.slug}`;
 
         const projectImage =
-          `https://henriquecoltri.com.br/${project.coverImage}`;
+          `https://www.henriquecoltri.com.br/${project.coverImage}`;
 
         this.seoService.setPage({
 
@@ -147,12 +147,12 @@ export class ProjectDetailPageComponent implements OnInit {
 
                 creator: {
                   '@id':
-                    'https://henriquecoltri.com.br/#person'
+                    'https://www.henriquecoltri.com.br/#person'
                 },
 
                 isPartOf: {
                   '@id':
-                    'https://henriquecoltri.com.br/#website'
+                    'https://www.henriquecoltri.com.br/#website'
                 }
               },
 
@@ -176,7 +176,7 @@ export class ProjectDetailPageComponent implements OnInit {
                       'Home',
 
                     item:
-                      'https://henriquecoltri.com.br/'
+                      'https://www.henriquecoltri.com.br/'
                   },
 
                   {
@@ -190,7 +190,7 @@ export class ProjectDetailPageComponent implements OnInit {
                       'Cases',
 
                     item:
-                      'https://henriquecoltri.com.br/cases'
+                      'https://www.henriquecoltri.com.br/cases'
                   },
 
                   {

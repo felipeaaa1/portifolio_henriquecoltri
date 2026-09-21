@@ -66,16 +66,16 @@ export class HomePageComponent implements OnInit {
             '@type': 'Person',
 
             '@id':
-              'https://henriquecoltri.com.br/#person',
+              'https://www.henriquecoltri.com.br/#person',
 
             name:
               'Henrique Coltri',
 
             url:
-              'https://henriquecoltri.com.br/',
+              'https://www.henriquecoltri.com.br/',
 
             image:
-              'https://henriquecoltri.com.br/assets/images/henrique-coltri-portrait.webp',
+              'https://www.henriquecoltri.com.br/assets/images/henrique-coltri-portrait.webp',
 
             jobTitle:
               'Estrategista de Marcas e Brand Designer',
@@ -101,10 +101,10 @@ export class HomePageComponent implements OnInit {
             '@type': 'WebSite',
 
             '@id':
-              'https://henriquecoltri.com.br/#website',
+              'https://www.henriquecoltri.com.br/#website',
 
             url:
-              'https://henriquecoltri.com.br/',
+              'https://www.henriquecoltri.com.br/',
 
             name:
               'Henrique Coltri',
@@ -114,7 +114,7 @@ export class HomePageComponent implements OnInit {
 
             publisher: {
               '@id':
-                'https://henriquecoltri.com.br/#person'
+                'https://www.henriquecoltri.com.br/#person'
             }
           }
 

@@ -17,7 +17,7 @@ interface SeoPageConfig {
 export class SeoService {
 
   private readonly domain =
-    'https://henriquecoltri.com.br';
+    'https://www.henriquecoltri.com.br';
 
   private readonly defaultImage =
     'assets/images/projects/escola-livre-porto/15.webp';
