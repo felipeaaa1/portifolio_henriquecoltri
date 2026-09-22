@@ -1,4 +1,4 @@
 <section id="solucoes" class="services section-light"><div class="container">
   <app-section-title eyebrow="Atuação / Soluções" title="Soluções" description="Consistência do plano à execução."></app-section-title>
   <div class="services__grid"><article class="service-card" *ngFor="let service of services; let index = index" tabindex="0" [appReveal]="index % 2 === 0 ? 'slide-left' : 'slide-right'" [revealDelay]="index * 85"><span>0{{ service.id }}</span><h3>{{ service.title }}</h3><p>{{ service.description }}</p><b aria-hidden="true">↗</b></article></div>
-</div></section>
+<a class="button button--dark services__cta" routerLink="/solucoes">Conhecer todas as soluções <span aria-hidden="true">→</span></a></div></section>

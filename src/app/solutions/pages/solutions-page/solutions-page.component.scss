@@ -1,0 +1,2630 @@
+:host {
+  display: block;
+}
+
+.solutions-eyebrow {
+  margin: 0;
+  color: var(--color-accent);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+
+/* HERO */
+
+.solutions-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 10.5rem 0 7rem;
+  border-radius: 0 0 var(--radius-large) var(--radius-large);
+  background:
+    radial-gradient(
+      circle at 70% 45%,
+      rgba(255, 116, 82, .19),
+      transparent 34%
+    ),
+    var(--color-dark);
+}
+
+.solutions-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .16;
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, .04) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, .04) 1px,
+      transparent 1px
+    );
+  background-size: 60px 60px;
+}
+
+.solutions-hero__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.18fr)
+    minmax(330px, .62fr);
+  gap: clamp(3rem, 7vw, 8rem);
+  align-items: start;
+}
+
+.solutions-hero h1 {
+  max-width: 850px;
+  margin: 1.25rem 0 2rem;
+  font-size: clamp(3.8rem, 7vw, 7.8rem);
+  line-height: .84;
+  letter-spacing: -.07em;
+}
+
+.solutions-hero h1 em {
+  display: block;
+  margin-top: .12em;
+  color: var(--color-accent);
+  font-size: .72em;
+  font-weight: 500;
+  line-height: .92;
+  letter-spacing: -.055em;
+  font-style: normal;
+}
+
+.solutions-hero__lead {
+  max-width: 670px;
+  margin: 0 0 1rem;
+  color: rgba(246, 241, 232, .72);
+  font-size: clamp(1rem, 1.7vw, 1.2rem);
+  line-height: 1.65;
+}
+
+.solutions-hero__actions {
+  margin-top: 2.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .9rem;
+}
+
+.solutions-map {
+  margin-top: 3rem;
+  padding: 1.7rem;
+  border: 1px solid rgba(246, 241, 232, .18);
+  border-radius: var(--radius-card);
+  background: rgba(255, 255, 255, .035);
+  backdrop-filter: blur(12px);
+}
+
+.solutions-map > p {
+  max-width: 300px;
+  margin: 0 0 1.5rem;
+  color: rgba(246, 241, 232, .55);
+  font-size: .8rem;
+  line-height: 1.5;
+}
+
+.solutions-map a {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  align-items: center;
+  color: var(--color-light);
+  border-top: 1px solid rgba(246, 241, 232, .13);
+  text-decoration: none;
+  transition:
+    color var(--transition),
+    padding-left var(--transition);
+}
+
+.solutions-map a:hover,
+.solutions-map a:focus-visible {
+  padding-left: .5rem;
+  color: var(--color-accent);
+}
+
+.solutions-map span {
+  color: var(--color-accent);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+.solutions-map strong {
+  font-size: clamp(1.25rem, 2vw, 1.7rem);
+  letter-spacing: -.035em;
+}
+
+
+/* HEADINGS */
+
+.solutions-section-heading {
+  max-width: 850px;
+}
+
+.solutions-section-heading h2,
+.stage-heading h2,
+.solutions-contact h2 {
+  margin: 1rem 0 1.5rem;
+  font-size: clamp(3rem, 6vw, 6.5rem);
+  line-height: .88;
+  letter-spacing: -.065em;
+}
+
+.solutions-section-heading > p:last-child {
+  max-width: 680px;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+
+/* JORNADA */
+
+.solutions-journey {
+  padding: var(--section-space) 0;
+}
+
+.journey-grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .9rem;
+}
+
+.journey-card {
+  min-height: 390px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--color-dark);
+  border: 1px solid rgba(23, 23, 23, .18);
+  border-radius: var(--radius-card);
+  text-decoration: none;
+  transition:
+    transform 450ms cubic-bezier(.16, 1, .3, 1),
+    background var(--transition);
+}
+
+.journey-card:hover,
+.journey-card:focus-visible {
+  transform: translateY(-7px);
+}
+
+.journey-card--accent {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+}
+
+.journey-card--dark {
+  color: var(--color-light);
+  border-color: var(--color-dark);
+  background: var(--color-dark);
+}
+
+.journey-card__number {
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+.journey-card div > p {
+  margin: 0 0 .7rem;
+  color: var(--color-accent-strong);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.journey-card--dark div > p {
+  color: var(--color-accent);
+}
+
+.journey-card h3 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.65rem, 2.5vw, 2.4rem);
+  line-height: .95;
+  letter-spacing: -.05em;
+}
+
+.journey-card div > span {
+  display: block;
+  font-size: .9rem;
+  line-height: 1.55;
+  opacity: .72;
+}
+
+.journey-card b {
+  align-self: flex-end;
+  font-size: 1.4rem;
+}
+
+.journey-note {
+  max-width: 650px;
+  margin: 2rem 0 0 auto;
+  color: var(--color-muted);
+  font-size: .88rem;
+  line-height: 1.6;
+  text-align: right;
+}
+
+
+/* ESTAGIOS */
+
+.solutions-stage {
+  padding: var(--section-space) 0;
+}
+
+.solutions-stage--dark {
+  margin-top: calc(var(--radius-large) * -1);
+  padding-top:
+    calc(var(--section-space) + var(--radius-large));
+}
+
+.solutions-stage--presence {
+  background: #eee2d0;
+  color: var(--color-dark);
+}
+
+.solutions-stage--consulting {
+  border-radius: 0 0 var(--radius-large) var(--radius-large);
+}
+
+.stage-heading {
+  margin-bottom: 4rem;
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.stage-heading > div {
+  padding-top: .4rem;
+}
+
+.stage-heading > div span {
+  display: block;
+  margin-bottom: .7rem;
+  color: var(--color-accent);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+.stage-heading > div p {
+  margin: 0;
+  font-size: .85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.stage-heading h2 {
+  max-width: 900px;
+  margin-top: 0;
+}
+
+.stage-heading h2 em {
+  color: var(--color-accent);
+  font-style: normal;
+}
+
+.stage-lead {
+  max-width: 720px;
+  margin: -1.5rem 0 4rem 180px;
+  color: var(--color-muted);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.section-dark .stage-lead {
+  color: rgba(246, 241, 232, .62);
+}
+
+
+/* SOLUCOES */
+
+.solution-detail {
+  position: relative;
+  margin-bottom: 1.25rem;
+  padding: clamp(1.5rem, 3vw, 2.6rem);
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(320px, .95fr);
+  gap: clamp(2.5rem, 6vw, 6rem);
+  border: 1px solid rgba(23, 23, 23, .15);
+  border-radius: var(--radius-card);
+  background: rgba(255, 255, 255, .16);
+}
+
+.solution-detail__intro {
+  align-self: start;
+}
+
+.solution-detail__number {
+  margin: 0 0 3.5rem !important;
+  color: var(--color-accent-strong);
+  font-size: .68rem !important;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.solution-detail h3 {
+  max-width: 650px;
+  margin: 0 0 1.5rem;
+  font-size: clamp(2.35rem, 4vw, 4.3rem);
+  line-height: .92;
+  letter-spacing: -.06em;
+}
+
+.solution-detail__intro > p:not(.solution-detail__number) {
+  max-width: 630px;
+  margin: 0 0 1rem;
+  line-height: 1.65;
+}
+
+.solution-detail__info {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: start;
+}
+
+.solution-detail__info > div {
+  padding: 1.2rem 0;
+  border-top: 1px solid rgba(23, 23, 23, .16);
+}
+
+.solution-detail__info span {
+  display: block;
+  margin-bottom: .5rem;
+  color: var(--color-accent-strong);
+  font-size: .67rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.solution-detail__info p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: .92rem;
+  line-height: 1.58;
+}
+
+.solution-detail__cta {
+  grid-column: 1 / -1;
+  width: fit-content;
+  padding-bottom: .3rem;
+  color: inherit;
+  border-bottom: 1px solid currentColor;
+  font-size: .82rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.solution-detail__cta:hover,
+.solution-detail__cta:focus-visible {
+  color: var(--color-accent-strong);
+}
+
+
+/* DARK CARDS */
+
+.solution-detail--dark,
+.solution-detail--consulting {
+  border-color: rgba(246, 241, 232, .14);
+  background: rgba(255, 255, 255, .035);
+}
+
+.solution-detail--dark .solution-detail__number,
+.solution-detail--consulting .solution-detail__number,
+.solution-detail--dark .solution-detail__info span,
+.solution-detail--consulting .solution-detail__info span {
+  color: var(--color-accent);
+}
+
+.solution-detail--dark .solution-detail__intro > p:not(.solution-detail__number),
+.solution-detail--consulting .solution-detail__intro > p:not(.solution-detail__number),
+.solution-detail--dark .solution-detail__info p,
+.solution-detail--consulting .solution-detail__info p {
+  color: rgba(246, 241, 232, .65);
+}
+
+.solution-detail--dark .solution-detail__info > div,
+.solution-detail--consulting .solution-detail__info > div {
+  border-color: rgba(246, 241, 232, .14);
+}
+
+.solution-detail--dark .solution-detail__cta:hover,
+.solution-detail--consulting .solution-detail__cta:hover {
+  color: var(--color-accent);
+}
+
+
+/* BRANDING COMPLETO */
+
+.solution-detail--featured {
+  overflow: hidden;
+  color: var(--color-light);
+  border-color: var(--color-dark);
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(255, 116, 82, .22),
+      transparent 35%
+    ),
+    var(--color-dark);
+}
+
+.solution-detail--featured::after {
+  content: 'B';
+  position: absolute;
+  right: -1rem;
+  bottom: -5rem;
+  color: rgba(246, 241, 232, .035);
+  font-size: clamp(16rem, 32vw, 31rem);
+  font-weight: 900;
+  line-height: .7;
+  pointer-events: none;
+}
+
+.solution-detail--featured > * {
+  position: relative;
+  z-index: 1;
+}
+
+.solution-detail__featured-label {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  padding: .55rem .8rem;
+  color: var(--color-dark);
+  background: var(--color-accent);
+  border-radius: 999px;
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.solution-detail--featured .solution-detail__number,
+.solution-detail--featured .solution-detail__info span {
+  color: var(--color-accent);
+}
+
+.solution-detail--featured .solution-detail__intro > p:not(.solution-detail__number),
+.solution-detail--featured .solution-detail__info p {
+  color: rgba(246, 241, 232, .67);
+}
+
+.solution-detail--featured .solution-detail__info > div {
+  border-color: rgba(246, 241, 232, .14);
+}
+
+.solution-detail--featured .solution-detail__cta:hover {
+  color: var(--color-accent);
+}
+
+
+/* REDES */
+
+.solution-detail--network {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(138, 167, 255, .14),
+      transparent 45%
+    ),
+    rgba(255, 255, 255, .18);
+}
+
+
+/* GUIA */
+
+.solutions-guide {
+  padding: var(--section-space) 0;
+}
+
+.guide-list {
+  margin-top: 4rem;
+  border-top: 1px solid rgba(23, 23, 23, .2);
+}
+
+.guide-row {
+  padding: 1.35rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  border-bottom: 1px solid rgba(23, 23, 23, .2);
+}
+
+.guide-row p {
+  margin: 0;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+}
+
+.guide-row strong {
+  justify-self: end;
+  color: var(--color-accent-strong);
+  font-size: .82rem;
+  text-align: right;
+}
+
+
+/* CTA FINAL */
+
+.solutions-contact {
+  padding: var(--section-space) 0
+    calc(var(--section-space) + 2rem);
+}
+
+.solutions-contact__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.solutions-contact h2 {
+  max-width: 960px;
+}
+
+.solutions-contact__inner > p:not(.solutions-eyebrow) {
+  max-width: 680px;
+  margin: 0 0 2rem;
+  color: rgba(246, 241, 232, .65);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+
+/* TABLET */
+
+@media (max-width: 980px) {
+
+  .solutions-map {
+    margin-top: 0;
+  }
+
+  .solutions-hero__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .solutions-map {
+    margin-top: 3rem;
+  }
+
+  .solutions-map {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .solutions-map > p {
+    grid-column: 1 / -1;
+  }
+
+  .solutions-map a {
+    padding-right: 1rem;
+  }
+
+  .journey-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stage-heading {
+    grid-template-columns: 130px minmax(0, 1fr);
+  }
+
+  .stage-lead {
+    margin-left: 130px;
+  }
+
+  .solution-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .solution-detail__cta {
+    grid-column: 1;
+  }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .solutions-hero {
+    padding: 8.5rem 0 5rem;
+  }
+
+  .solutions-hero h1 {
+    font-size: clamp(3.2rem, 15vw, 5rem);
+  }
+
+  .solutions-hero__actions {
+    flex-direction: column;
+  }
+
+  .solutions-hero__actions .button {
+    width: 100%;
+  }
+
+  .solutions-map {
+    grid-template-columns: 1fr;
+  }
+
+  .solutions-map > p {
+    grid-column: 1;
+  }
+
+  .journey-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .journey-card {
+    min-height: 300px;
+  }
+
+  .journey-note {
+    text-align: left;
+  }
+
+  .stage-heading {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .stage-heading h2 {
+    font-size: clamp(3rem, 14vw, 4.7rem);
+  }
+
+  .stage-lead {
+    margin: -1.5rem 0 3rem;
+  }
+
+  .solution-detail {
+    padding: 1.35rem;
+    gap: 2rem;
+  }
+
+  .solution-detail__number {
+    margin-bottom: 2.5rem !important;
+  }
+
+  .solution-detail h3 {
+    font-size: clamp(2.4rem, 11vw, 3.8rem);
+  }
+
+  .solution-detail__featured-label {
+    position: static;
+    width: fit-content;
+    margin-bottom: 2rem;
+  }
+
+  .guide-row {
+    grid-template-columns: 1fr;
+    gap: .55rem;
+  }
+
+  .guide-row strong {
+    justify-self: start;
+    text-align: left;
+  }
+
+  .solutions-section-heading h2,
+  .solutions-contact h2 {
+    font-size: clamp(3rem, 14vw, 4.7rem);
+  }
+}
+/* TRANSICAO ARREDONDADA HERO / SOLUCOES */
+
+.solutions-hero {
+  position: relative;
+  z-index: 2;
+  border-radius: 0 0 var(--radius-large) var(--radius-large);
+}
+
+.solutions-journey {
+  position: relative;
+  z-index: 1;
+  margin-top: calc(var(--radius-large) * -1);
+  padding-top: calc(var(--section-space) + var(--radius-large));
+}
+
+@media (max-width: 980px) {
+
+}
+@media (max-width: 980px) {
+
+}
+
+/* COLUNA DIREITA DO HERO - DEFINITIVO */
+
+.solutions-hero__grid {
+  align-items: start;
+}
+
+.solutions-hero__side {
+  width: 100%;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.solutions-hero__side .solutions-map {
+  width: 100%;
+  margin-top: 0;
+}
+
+.solutions-hero__side-cta {
+  width: fit-content;
+  margin-top: 1.25rem;
+  align-self: flex-start;
+}
+
+@media (max-width: 980px) {
+
+  .solutions-hero__side {
+    margin-top: 0;
+  }
+
+  .solutions-hero__side-cta {
+    width: 100%;
+  }
+}
+
+/* TITULO DA ESTEIRA */
+
+.solutions-journey .solutions-section-heading {
+  max-width: 1150px;
+}
+
+.journey-title > span {
+  display: block;
+}
+
+.journey-title__accent {
+  color: var(--color-accent);
+}
+
+@media (min-width: 981px) {
+
+  .journey-title > span {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 980px) {
+
+  .journey-title > span {
+    white-space: normal;
+  }
+}
+
+/* TEXTO DA ESTEIRA COM A MESMA LARGURA DO TITULO */
+
+.solutions-journey .solutions-section-heading > p:last-child {
+  max-width: 1150px;
+}
+
+/* CORES DEFINITIVAS DOS CARDS DA ESTEIRA */
+
+.journey-grid .journey-card:nth-child(1),
+.journey-grid .journey-card:nth-child(3) {
+  color: var(--color-light);
+  background: var(--color-dark);
+  border-color: var(--color-dark);
+}
+
+.journey-grid .journey-card:nth-child(2),
+.journey-grid .journey-card:nth-child(4) {
+  color: var(--color-dark);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* Marcadores dos cards pretos */
+
+.journey-grid .journey-card:nth-child(1) div > p,
+.journey-grid .journey-card:nth-child(3) div > p {
+  color: var(--color-accent);
+}
+
+/* Marcadores dos cards laranja */
+
+.journey-grid .journey-card:nth-child(2) div > p,
+.journey-grid .journey-card:nth-child(4) div > p {
+  color: var(--color-accent-strong);
+}
+
+/* Texto secundario */
+
+.journey-grid .journey-card:nth-child(1) div > span,
+.journey-grid .journey-card:nth-child(3) div > span {
+  color: rgba(246, 241, 232, .72);
+}
+
+/* ALINHAMENTO VERTICAL DOS CARDS DA ESTEIRA */
+
+.journey-grid .journey-card {
+  justify-content: flex-start;
+}
+
+.journey-grid .journey-card > div {
+  margin-top: 3rem;
+}
+
+.journey-grid .journey-card > b {
+  margin-top: auto;
+}
+
+/* ROTULOS DOS CARDS LARANJA */
+
+.journey-grid .journey-card:nth-child(2) div > p,
+.journey-grid .journey-card:nth-child(4) div > p {
+  color: var(--color-light);
+}
+
+/* TITULO CARD 03 NO MESMO TAMANHO DOS DEMAIS */
+
+.journey-grid .journey-card:nth-child(3) h3 {
+  font-size: clamp(1.65rem, 2.5vw, 2.4rem);
+  line-height: .95;
+  letter-spacing: -.05em;
+}
+
+/* FRASE FINAL DA ESTEIRA ALINHADA A ESQUERDA */
+
+.journey-note {
+  margin: 2rem 0 0;
+  text-align: left;
+}
+
+/* FUNDO VISIVEL DA SECAO 01 ENTENDER */
+
+#entender {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--color-dark) !important;
+}
+
+#entender::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url('/assets/images/solutions/entender-bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: .55;
+  pointer-events: none;
+}
+
+#entender::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10, 10, 10, .78) 0%,
+      rgba(10, 10, 10, .52) 48%,
+      rgba(10, 10, 10, .66) 100%
+    );
+  pointer-events: none;
+}
+
+#entender > .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* FUNDO ENTENDER - CORRECAO FINAL */
+
+#entender {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #111 !important;
+}
+
+#entender::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  background-image: url('/assets/images/solutions/entender-bg.webp') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  opacity: 1 !important;
+  filter: brightness(1.25) contrast(1.05);
+  pointer-events: none;
+}
+
+#entender::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block;
+  background: rgba(10, 10, 10, .42) !important;
+  pointer-events: none;
+}
+
+#entender > .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* CORES BLOCOS CONSTRUIR - INICIO */
+
+/* 02, 04 e 06 — LARANJA */
+
+#estrategia,
+#identidade-verbal,
+#rebranding {
+  color: var(--color-dark);
+  background: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
+}
+
+#estrategia .solution-detail__number,
+#identidade-verbal .solution-detail__number,
+#rebranding .solution-detail__number,
+#estrategia .solution-detail__info span,
+#identidade-verbal .solution-detail__info span,
+#rebranding .solution-detail__info span {
+  color: var(--color-light);
+}
+
+#estrategia .solution-detail__intro > p:not(.solution-detail__number),
+#identidade-verbal .solution-detail__intro > p:not(.solution-detail__number),
+#rebranding .solution-detail__intro > p:not(.solution-detail__number),
+#estrategia .solution-detail__info p,
+#identidade-verbal .solution-detail__info p,
+#rebranding .solution-detail__info p {
+  color: rgba(23, 23, 23, .78);
+}
+
+#estrategia .solution-detail__info > div,
+#identidade-verbal .solution-detail__info > div,
+#rebranding .solution-detail__info > div {
+  border-color: rgba(23, 23, 23, .18);
+}
+
+#estrategia .solution-detail__cta,
+#identidade-verbal .solution-detail__cta,
+#rebranding .solution-detail__cta {
+  color: var(--color-dark);
+}
+
+
+/* 03 e 05 — PRETO */
+
+#identidade-visual,
+#branding {
+  color: var(--color-light);
+  background: var(--color-dark) !important;
+  border-color: var(--color-dark) !important;
+}
+
+#identidade-visual .solution-detail__number,
+#branding .solution-detail__number,
+#identidade-visual .solution-detail__info span,
+#branding .solution-detail__info span {
+  color: var(--color-accent);
+}
+
+#identidade-visual .solution-detail__intro > p:not(.solution-detail__number),
+#branding .solution-detail__intro > p:not(.solution-detail__number),
+#identidade-visual .solution-detail__info p,
+#branding .solution-detail__info p {
+  color: rgba(246, 241, 232, .68);
+}
+
+#identidade-visual .solution-detail__info > div,
+#branding .solution-detail__info > div {
+  border-color: rgba(246, 241, 232, .15);
+}
+
+#identidade-visual .solution-detail__cta,
+#branding .solution-detail__cta {
+  color: var(--color-light);
+}
+
+#identidade-visual .solution-detail__cta:hover,
+#branding .solution-detail__cta:hover {
+  color: var(--color-accent);
+}
+
+/* CORES BLOCOS CONSTRUIR - FIM */
+
+/* Texto alinhado com "05 / BRANDING COMPLETO" */
+#branding .solution-detail__featured-label {
+  position: absolute;
+  top: clamp(1.5rem, 3vw, 2.6rem);
+  left: clamp(1.5rem, 3vw, 2.6rem);
+  right: auto;
+
+  margin: 0;
+  padding: 0;
+
+  color: var(--color-accent);
+  background: transparent;
+
+  border-radius: 0;
+
+  font-size: .68rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+
+  transform: none;
+  z-index: 3;
+}
+
+/* Forma laranja começa ABAIXO dos dois títulos */
+#branding .solution-detail__featured-label::after {
+  content: '';
+  position: absolute;
+
+  top: 2.2rem;
+  left: 0;
+
+  width: clamp(430px, 39vw, 560px);
+  height: clamp(310px, 28vw, 395px);
+
+  background: var(--color-accent);
+
+  border-radius:
+    9rem
+    9rem
+    9rem
+    9rem;
+
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Caso exista alguma forma antiga via pseudo-elemento */
+#branding::before {
+
+}
+
+@media (max-width: 700px) {
+
+  #branding .solution-detail__featured-label::after {
+    display: none;
+  }
+}
+
+
+/* BRANDING COMPLETO - LAYOUT FINAL */
+
+#branding {
+  position: relative;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  grid-template-rows:
+    430px
+    auto
+    auto;
+
+  gap:
+    2.5rem
+    clamp(3rem, 6vw, 6rem);
+
+  color: var(--color-light);
+  background: var(--color-dark) !important;
+  border-color: var(--color-dark) !important;
+}
+
+
+/* SOLUCAO COMPLETA */
+
+#branding .solution-detail__featured-label {
+  position: absolute;
+
+  top: clamp(1.5rem, 3vw, 2.6rem);
+  left: clamp(1.5rem, 3vw, 2.6rem);
+  right: auto;
+
+  margin: 0;
+  padding: 0;
+
+  color: var(--color-accent);
+  background: transparent;
+
+  border: 0;
+  border-radius: 0;
+
+  font-size: .68rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+
+  transform: none;
+  z-index: 3;
+}
+
+
+/* FORMA LARANJA */
+
+#branding::before {
+  content: '';
+
+  position: absolute;
+
+  top: 5.2rem;
+  left: clamp(1.5rem, 3vw, 2.6rem);
+
+  width: 43%;
+  height: 390px;
+
+  background: var(--color-accent);
+
+  border-radius: 9rem;
+
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+/* TITULO E TEXTO DA DIREITA */
+
+#branding .solution-detail__intro {
+  grid-column: 2;
+  grid-row: 1;
+
+  align-self: start;
+}
+
+#branding .solution-detail__number {
+  margin: 0 0 3.5rem !important;
+
+  color: var(--color-accent);
+  font-size: .68rem !important;
+  line-height: 1;
+}
+
+
+/* INFORMACOES ABAIXO DA FORMA */
+
+#branding .solution-detail__info {
+  grid-column: 1;
+  grid-row: 2;
+
+  align-self: start;
+}
+
+
+/* CTA */
+
+#branding .solution-detail__cta {
+  grid-column: 1;
+  grid-row: 3;
+
+  color: var(--color-light);
+}
+
+
+/* Mantem o B decorativo */
+
+#branding::after {
+  content: 'B';
+
+  position: absolute;
+
+  right: -1rem;
+  bottom: -5rem;
+
+  color: rgba(246, 241, 232, .035);
+
+  font-size: clamp(16rem, 32vw, 31rem);
+  font-weight: 900;
+  line-height: .7;
+
+  pointer-events: none;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  #branding {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  #branding::before {
+    display: none;
+  }
+
+  #branding .solution-detail__featured-label {
+    position: static;
+
+    width: fit-content;
+    margin-bottom: 2rem;
+  }
+
+  #branding .solution-detail__intro,
+  #branding .solution-detail__info,
+  #branding .solution-detail__cta {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+/* BRANDING INFO EM COLUNAS - INICIO */
+
+#branding .solution-detail__info {
+  grid-column: 1 / -1;
+  grid-row: 2;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+
+  width: 100%;
+}
+
+#branding .solution-detail__info > div {
+  padding: 1.4rem 0 0;
+  border-top: 1px solid rgba(246, 241, 232, .14);
+}
+
+#branding .solution-detail__info > div + div {
+  border-left: 1px solid rgba(246, 241, 232, .10);
+  padding-left: 2rem;
+}
+
+@media (max-width: 900px) {
+
+  #branding .solution-detail__info {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  #branding .solution-detail__info > div + div {
+    border-left: 0;
+    padding-left: 0;
+  }
+}
+
+/* BRANDING INFO EM COLUNAS - FIM */
+
+/* FOTO BRANDING COMPLETO - DEFINITIVO */
+
+#branding::before {
+  content: '' !important;
+
+  position: absolute !important;
+
+  top: 5.2rem !important;
+  left: clamp(1.5rem, 3vw, 2.6rem) !important;
+
+  width: 43% !important;
+  height: 390px !important;
+
+  display: block !important;
+
+  background:
+    url('/assets/images/solutions/14-jcell.webp')
+    center center / cover
+    no-repeat !important;
+
+  border-radius: 9rem !important;
+
+  z-index: 0 !important;
+  pointer-events: none;
+}
+
+/* FOTO FINAL BRANDING - INICIO */
+
+#branding::before {
+  content: '' !important;
+
+  position: absolute !important;
+
+  top: 5.2rem !important;
+  left: clamp(1.5rem, 3vw, 2.6rem) !important;
+
+  width: 43% !important;
+  height: 390px !important;
+
+  display: block !important;
+
+  background:
+    url('/assets/images/solutions/14-jcell.webp')
+    center center / cover
+    no-repeat !important;
+
+  background-color: transparent !important;
+
+  border-radius: 9rem !important;
+
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+
+/* FOTO FINAL BRANDING - FIM */
+
+/* FOTO BRANDING EM ELEMENTO REAL - INICIO */
+
+/* Desliga definitivamente a forma antiga */
+#branding::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* Nova forma com imagem */
+#branding .solution-detail__featured-media {
+  position: absolute !important;
+
+  top: 5.2rem !important;
+  left: clamp(1.5rem, 3vw, 2.6rem) !important;
+
+  width: 43% !important;
+  height: 390px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  background-image:
+    url('/assets/images/solutions/14-jcell.webp') !important;
+
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+
+  border-radius: 9rem !important;
+
+  z-index: 1 !important;
+  pointer-events: none;
+}
+
+/* Mantem os textos acima da foto */
+#branding > *:not(.solution-detail__featured-media) {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 700px) {
+
+  #branding .solution-detail__featured-media {
+    display: none !important;
+  }
+}
+
+/* FOTO BRANDING EM ELEMENTO REAL - FIM */
+
+/* REMOVE FORMA LARANJA ANTIGA DO BRANDING */
+
+#branding .solution-detail__featured-label::after {
+  content: none !important;
+  display: none !important;
+}
+
+#branding .solution-detail__featured-media {
+  z-index: 5 !important;
+  overflow: hidden !important;
+  background-color: transparent !important;
+}
+
+/* ALINHAMENTO FINAL DOS TITULOS BRANDING */
+
+#branding .solution-detail__featured-label {
+  position: absolute !important;
+  top: 2.6rem !important;
+  left: 2.6rem !important;
+  right: auto !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  color: var(--color-accent) !important;
+  background: transparent !important;
+
+  transform: none !important;
+
+  z-index: 10 !important;
+}
+
+/* TAMANHO FINAL DA IMAGEM BRANDING */
+
+#branding .solution-detail__featured-media {
+  width: 38% !important;
+  height: 345px !important;
+  left: clamp(1.5rem, 3vw, 2.6rem) !important;
+  top: 5.2rem !important;
+}
+
+/* IMAGEM DEFINITIVA BRANDING JCELL */
+
+#branding .solution-detail__featured-media {
+  background-image:
+    url('/assets/images/solutions/14-jcell.webp') !important;
+
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+
+  background-color: transparent !important;
+}
+
+/* AJUSTE VISUAL BRANDING - INICIO */
+
+#branding {
+  --branding-orange: #ff7448;
+  --branding-cream: #f3ede3;
+}
+
+/* arredondamento da forma principal */
+#branding .solution-detail__featured-media,
+#branding .solution-detail__media,
+#branding .solution-detail__image,
+#branding .solution-detail__shape,
+#branding .solution-detail__visual {
+  border-radius: 4rem !important;
+  overflow: hidden !important;
+}
+
+/* qualquer detalhe azul dentro do bloco vira laranja */
+#branding .is-blue,
+#branding .blue,
+#branding .accent-blue,
+#branding .solution-detail__line,
+#branding .solution-detail__border,
+#branding .solution-detail__highlight,
+#branding .solution-detail__stroke,
+#branding .solution-detail__icon,
+#branding a:hover,
+#branding a:focus {
+  color: var(--branding-orange) !important;
+  border-color: var(--branding-orange) !important;
+}
+
+/* caso o azul esteja em fundo */
+#branding .is-blue-bg,
+#branding .blue-bg,
+#branding .solution-detail__tag,
+#branding .solution-detail__pill,
+#branding .solution-detail__badge {
+  background-color: var(--branding-orange) !important;
+  border-color: var(--branding-orange) !important;
+}
+
+/* textos que estiverem em laranja passam para creme/branco */
+#branding .solution-detail__eyebrow,
+#branding .solution-detail__label,
+#branding .solution-detail__kicker,
+#branding .solution-detail__meta,
+#branding .solution-detail__mini-title,
+#branding .solution-detail__section-title,
+#branding .solution-detail__caption,
+#branding .solution-detail__topline,
+#branding .solution-detail [style*="color: #ff"],
+#branding .solution-detail [style*="color:#ff"],
+#branding .solution-detail [style*="color: rgb(255"],
+#branding .solution-detail [style*="color:rgb(255"] {
+  color: var(--branding-cream) !important;
+}
+
+/* se houver bordas/linhas em laranja nos microtitulos, mantém o texto creme */
+#branding .solution-detail__eyebrow,
+#branding .solution-detail__label,
+#branding .solution-detail__kicker {
+  color: var(--branding-cream) !important;
+}
+
+/* links do bloco em creme, com hover laranja */
+#branding .solution-detail a {
+  color: var(--branding-cream) !important;
+}
+
+#branding .solution-detail a:hover,
+#branding .solution-detail a:focus {
+  color: var(--branding-orange) !important;
+}
+
+/* se existir alguma forma com fundo chapado, deixa arredondada */
+#branding::before,
+#branding::after {
+  border-radius: 4rem !important;
+}
+
+/* AJUSTE VISUAL BRANDING - FIM */
+
+/* SECAO COLOCAR NO MUNDO - INICIO */
+
+.solutions-stage--orange-world {
+  background: var(--color-accent) !important;
+
+  border-radius:
+    var(--radius-large)
+    var(--radius-large)
+    0
+    0 !important;
+
+  overflow: hidden;
+}
+
+
+/* 03 passa de laranja para creme */
+
+.solutions-stage--orange-world
+.stage-heading > div span {
+  color: var(--color-light) !important;
+}
+
+
+/* Destaque laranja do titulo passa para creme */
+
+.solutions-stage--orange-world
+.stage-heading h2 em {
+  color: var(--color-light) !important;
+}
+
+
+/* Caso o numero utilize outra classe */
+
+.solutions-stage--orange-world
+.solutions-eyebrow,
+.solutions-stage--orange-world
+.solution-detail__number {
+  color: var(--color-light) !important;
+}
+
+
+/* Mantem o titulo principal preto */
+
+.solutions-stage--orange-world
+.stage-heading h2 {
+  color: var(--color-dark) !important;
+}
+
+
+/* Mantem "COLOCAR NO MUNDO" preto */
+
+.solutions-stage--orange-world
+.stage-heading > div p {
+  color: var(--color-dark) !important;
+}
+
+
+/* Texto corrido escuro sobre o laranja */
+
+.solutions-stage--orange-world
+.stage-lead {
+  color: rgba(23, 23, 23, .72) !important;
+}
+
+/* SECAO COLOCAR NO MUNDO - FIM *//* garante que nenhuma camada quadrada cubra os cantos */
+.solutions-stage--orange-world::before {
+  content: none !important;
+  display: none !important;
+}
+
+
+/* FUNDO CORRETO DOS CANTOS SECAO 03 */
+
+/*
+  A propria secao fica creme.
+  O laranja passa a ser uma camada interna arredondada.
+  Assim os cantos revelam o mesmo creme do fundo de cima.
+*/
+
+.solutions-stage--orange-world {
+  position: relative !important;
+
+  background: var(--color-light) !important;
+
+  border-radius: 0 !important;
+  overflow: hidden !important;
+
+  isolation: isolate;
+}
+
+.solutions-stage--orange-world::before {
+  content: '' !important;
+
+  position: absolute !important;
+  inset: 0 !important;
+
+  display: block !important;
+
+  background: var(--color-accent) !important;
+
+  border-radius:
+    var(--radius-large)
+    var(--radius-large)
+    0
+    0 !important;
+
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+
+.solutions-stage--orange-world > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* BLOCOS 07 08 09 CREME - INICIO */
+
+/*
+  Aplica o fundo creme apenas nos cards internos
+  da secao laranja "Colocar no mundo", que sao os
+  blocos 07, 08 e 09.
+*/
+
+.solutions-stage--orange-world article,
+.solutions-stage--orange-world .solutions-card,
+.solutions-stage--orange-world .solution-card,
+.solutions-stage--orange-world .solutions-detail-card,
+.solutions-stage--orange-world .solution-detail {
+  background: var(--color-light) !important;
+  background-color: var(--color-light) !important;
+  border: 1px solid rgba(17, 17, 17, 0.10) !important;
+}
+
+/* Mantem textos principais escuros para boa leitura */
+.solutions-stage--orange-world article h1,
+.solutions-stage--orange-world article h2,
+.solutions-stage--orange-world article h3,
+.solutions-stage--orange-world article h4,
+.solutions-stage--orange-world article p,
+.solutions-stage--orange-world article li,
+.solutions-stage--orange-world .solutions-card h1,
+.solutions-stage--orange-world .solutions-card h2,
+.solutions-stage--orange-world .solutions-card h3,
+.solutions-stage--orange-world .solutions-card h4,
+.solutions-stage--orange-world .solutions-card p,
+.solutions-stage--orange-world .solution-card h1,
+.solutions-stage--orange-world .solution-card h2,
+.solutions-stage--orange-world .solution-card h3,
+.solutions-stage--orange-world .solution-card h4,
+.solutions-stage--orange-world .solution-card p,
+.solutions-stage--orange-world .solutions-detail-card h1,
+.solutions-stage--orange-world .solutions-detail-card h2,
+.solutions-stage--orange-world .solutions-detail-card h3,
+.solutions-stage--orange-world .solutions-detail-card h4,
+.solutions-stage--orange-world .solutions-detail-card p,
+.solutions-stage--orange-world .solution-detail h1,
+.solutions-stage--orange-world .solution-detail h2,
+.solutions-stage--orange-world .solution-detail h3,
+.solutions-stage--orange-world .solution-detail h4,
+.solutions-stage--orange-world .solution-detail p {
+  color: #111111 !important;
+}
+
+/* Subtitulos menores continuam com o laranja da marca */
+.solutions-stage--orange-world article .eyebrow,
+.solutions-stage--orange-world article .kicker,
+.solutions-stage--orange-world article .label,
+.solutions-stage--orange-world .solutions-card .eyebrow,
+.solutions-stage--orange-world .solutions-card .kicker,
+.solutions-stage--orange-world .solutions-card .label,
+.solutions-stage--orange-world .solution-card .eyebrow,
+.solutions-stage--orange-world .solution-card .kicker,
+.solutions-stage--orange-world .solution-card .label,
+.solutions-stage--orange-world .solutions-detail-card .eyebrow,
+.solutions-stage--orange-world .solutions-detail-card .kicker,
+.solutions-stage--orange-world .solutions-detail-card .label,
+.solutions-stage--orange-world .solution-detail .eyebrow,
+.solutions-stage--orange-world .solution-detail .kicker,
+.solutions-stage--orange-world .solution-detail .label {
+  color: var(--color-accent) !important;
+}
+
+/* BLOCOS 07 08 09 CREME - FIM */
+
+/* CREME PADRAO 07 08 09 - INICIO */
+
+/*
+  Padroniza os tres produtos da etapa
+  "Colocar no mundo" com o mesmo creme.
+*/
+
+#desdobramentos,
+#redes,
+#site {
+  background: #f4ebdd !important;
+  background-color: #f4ebdd !important;
+}
+
+/* garante que modificadores individuais nao alterem o tom */
+.solutions-stage--orange-world #desdobramentos,
+.solutions-stage--orange-world #redes,
+.solutions-stage--orange-world #site {
+  background: #f4ebdd !important;
+  background-color: #f4ebdd !important;
+}
+
+/* CREME PADRAO 07 08 09 - FIM */
+
+/* CREME UNICO SECAO 03 - INICIO */
+
+/*
+  Mesmo creme usado no fundo geral claro da pagina.
+*/
+:host {
+  --solutions-cream-unified: #f4ebdd;
+}
+
+/* Fundo que aparece nos cantos do laranja */
+.solutions-stage--orange-world {
+  background-color: var(--solutions-cream-unified) !important;
+}
+
+/* Mantem somente a camada interna laranja */
+.solutions-stage--orange-world::before {
+  background: var(--color-accent) !important;
+}
+
+/* Cards 07, 08 e 09 */
+.solutions-stage--orange-world .solution-detail {
+  background: var(--solutions-cream-unified) !important;
+  background-color: var(--solutions-cream-unified) !important;
+}
+
+/* Caso algum dos cards possua modificador proprio */
+.solutions-stage--orange-world .solution-detail--network,
+.solutions-stage--orange-world .solution-detail--dark,
+.solutions-stage--orange-world .solution-detail--consulting {
+  background: var(--solutions-cream-unified) !important;
+  background-color: var(--solutions-cream-unified) !important;
+}
+
+/* CREME UNICO SECAO 03 - FIM */
+
+/* CREME INTERNO 07 08 09 - INICIO */
+
+:host {
+  --solutions-cream-unified: #f4ebdd;
+}
+
+/*
+  Os 3 cards da etapa "Colocar no mundo"
+  ficam com o mesmo creme no card inteiro.
+*/
+.solutions-stage--orange-world .solution-detail {
+  background: var(--solutions-cream-unified) !important;
+  background-color: var(--solutions-cream-unified) !important;
+}
+
+/*
+  Todos os wrappers internos passam a ser transparentes
+  para o creme do card aparecer em todo o bloco.
+*/
+.solutions-stage--orange-world .solution-detail > *,
+.solutions-stage--orange-world .solution-detail__content,
+.solutions-stage--orange-world .solution-detail__grid,
+.solutions-stage--orange-world .solution-detail__main,
+.solutions-stage--orange-world .solution-detail__aside,
+.solutions-stage--orange-world .solution-detail__body,
+.solutions-stage--orange-world .solution-detail__meta,
+.solutions-stage--orange-world .solution-detail__footer,
+.solutions-stage--orange-world .solution-detail__info,
+.solutions-stage--orange-world .solution-detail__text,
+.solutions-stage--orange-world .solution-detail__column,
+.solutions-stage--orange-world .solution-detail__columns,
+.solutions-stage--orange-world .solution-detail__panel,
+.solutions-stage--orange-world .solution-detail__section {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/*
+  Remove fundos extras de pseudo-elementos,
+  caso algum wrapper esteja desenhando uma camada por cima.
+*/
+.solutions-stage--orange-world .solution-detail::before,
+.solutions-stage--orange-world .solution-detail::after,
+.solutions-stage--orange-world .solution-detail > *::before,
+.solutions-stage--orange-world .solution-detail > *::after {
+  background-color: transparent !important;
+}
+
+/* CREME INTERNO 07 08 09 - FIM */
+
+/* TEXTO EM LARANJA - SOLUCOES */
+.solutions-accent-text {
+  color: var(--color-accent) !important;
+}
+
+
+/* ALINHAMENTO TEXTO SECAO 03 - INICIO */
+
+@media (min-width: 981px) {
+
+  .solutions-stage--orange-world .stage-lead {
+    margin-left: 17.2% !important;
+    margin-right: 0 !important;
+  }
+
+}
+
+/* ALINHAMENTO TEXTO SECAO 03 - FIM */
+
+/* MINI TITULOS LARANJA 07 08 09 - INICIO */
+
+/*
+  Deixa em laranja apenas os mini titulos dos blocos
+  07, 08 e 09, como:
+  IDEAL PARA
+  PODE ENVOLVER
+  RESULTADO
+  O QUE PODEMOS CONSTRUIR
+  etc.
+*/
+
+#desdobramentos .solutions-card__aside h4,
+#desdobramentos .solutions-card__aside h5,
+#desdobramentos .solutions-card__aside h6,
+#desdobramentos .solution-card__aside h4,
+#desdobramentos .solution-card__aside h5,
+#desdobramentos .solution-card__aside h6,
+#desdobramentos .eyebrow,
+#desdobramentos .kicker,
+#desdobramentos .label,
+
+#redes .solutions-card__aside h4,
+#redes .solutions-card__aside h5,
+#redes .solutions-card__aside h6,
+#redes .solution-card__aside h4,
+#redes .solution-card__aside h5,
+#redes .solution-card__aside h6,
+#redes .eyebrow,
+#redes .kicker,
+#redes .label,
+
+#site .solutions-card__aside h4,
+#site .solutions-card__aside h5,
+#site .solutions-card__aside h6,
+#site .solution-card__aside h4,
+#site .solution-card__aside h5,
+#site .solution-card__aside h6,
+#site .eyebrow,
+#site .kicker,
+#site .label {
+  color: var(--color-accent) !important;
+}
+
+/* MINI TITULOS LARANJA 07 08 09 - FIM */
+
+/* FUNDO REAL FAZER EVOLUIR - INICIO */
+
+.solutions-stage--evolve-bg {
+  position: relative !important;
+  isolation: isolate;
+  overflow: hidden !important;
+  background: #151515 !important;
+}
+
+.solutions-stage--evolve-bg .solutions-stage__evolve-background {
+  position: absolute !important;
+  inset: 0 !important;
+
+  display: block !important;
+
+  background:
+    linear-gradient(rgba(12, 12, 12, 0.78), rgba(12, 12, 12, 0.78)), url('/assets/images/solutions/fazer-evoluir-bg.png')
+    center center / cover
+    no-repeat !important;
+
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+
+.solutions-stage--evolve-bg > *:not(.solutions-stage__evolve-background) {
+  position: relative;
+  z-index: 1;
+}
+
+/* FUNDO REAL FAZER EVOLUIR - FIM */
+
+/* VINHETA FAZER EVOLUIR - INICIO */
+
+.solutions-stage--evolve-bg {
+  position: relative !important;
+  isolation: isolate;
+  overflow: hidden !important;
+}
+
+/* Vinheta preta por cima da imagem */
+.solutions-stage--evolve-bg::after {
+  content: '' !important;
+
+  position: absolute !important;
+  inset: 0 !important;
+
+  display: block !important;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, .05) 0%,
+      rgba(0, 0, 0, .18) 42%,
+      rgba(0, 0, 0, .42) 74%,
+      rgba(0, 0, 0, .68) 100%
+    ) !important;
+
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+/* imagem fica abaixo da vinheta */
+.solutions-stage--evolve-bg .solutions-stage__evolve-background {
+  z-index: 0 !important;
+}
+
+/* textos e conteudos ficam acima da vinheta */
+.solutions-stage--evolve-bg > *:not(.solutions-stage__evolve-background) {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* VINHETA FAZER EVOLUIR - FIM */
+
+/* GLASSMORPHISM CONSULTORIA - INICIO */
+
+.solutions-stage--evolve-bg .solution-detail {
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.075) 0%,
+      rgba(255, 255, 255, 0.025) 42%,
+      rgba(0, 0, 0, 0.14) 100%
+    ) !important;
+
+  -webkit-backdrop-filter:
+    blur(24px)
+    saturate(135%)
+    brightness(0.88);
+
+  backdrop-filter:
+    blur(24px)
+    saturate(135%)
+    brightness(0.88);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.18) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.13),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.025),
+    0 24px 70px rgba(0, 0, 0, 0.28);
+
+  border-radius: 2rem !important;
+}
+
+/* reflexo suave na parte superior do vidro */
+.solutions-stage--evolve-bg .solution-detail::before {
+  content: '' !important;
+
+  position: absolute !important;
+  inset: 0 !important;
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.11) 0%,
+      rgba(255, 255, 255, 0.045) 18%,
+      rgba(255, 255, 255, 0.012) 42%,
+      rgba(255, 255, 255, 0) 68%
+    ) !important;
+
+  border-radius: inherit !important;
+
+  opacity: 0.62 !important;
+
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+/* brilho fino na borda interna */
+.solutions-stage--evolve-bg .solution-detail::after {
+  content: '' !important;
+
+  position: absolute !important;
+  inset: 1px !important;
+
+  border-radius: calc(2rem - 1px) !important;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.035) !important;
+
+  box-shadow:
+    inset 0 0 30px rgba(255, 255, 255, 0.015);
+
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+/* conteúdo acima do vidro */
+.solutions-stage--evolve-bg .solution-detail > * {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* GLASSMORPHISM CONSULTORIA - FIM */
+
+/* CANTOS INFERIORES SECAO 03 - INICIO */
+
+/*
+  Mantém o fundo correto:
+  creme nos cantos superiores
+  preto nos cantos inferiores
+*/
+.solutions-stage--orange-world {
+  background:
+    linear-gradient(
+      to bottom,
+      var(--color-light) 0%,
+      var(--color-light) 50%,
+      #151515 50%,
+      #151515 100%
+    ) !important;
+
+  border-radius: 0 !important;
+  overflow: hidden !important;
+}
+
+/* O bloco laranja agora fica arredondado nos 4 cantos */
+.solutions-stage--orange-world::before {
+  border-radius:
+    var(--radius-large)
+    var(--radius-large)
+    var(--radius-large)
+    var(--radius-large) !important;
+}
+
+/* CANTOS INFERIORES SECAO 03 - FIM */
+
+/* DESTAQUE FINAL SOLUCOES - INICIO */
+
+.solutions-final-accent {
+  color: var(--color-accent) !important;
+}
+
+/* DESTAQUE FINAL SOLUCOES - FIM */
+
+/* GLASSMORPHISM DIAGNOSTICO - INICIO */
+
+#entender .solution-detail {
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.075) 0%,
+      rgba(255, 255, 255, 0.025) 42%,
+      rgba(0, 0, 0, 0.14) 100%
+    ) !important;
+
+  -webkit-backdrop-filter:
+    blur(24px)
+    saturate(135%)
+    brightness(0.88);
+
+  backdrop-filter:
+    blur(24px)
+    saturate(135%)
+    brightness(0.88);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.18) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.13),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.025),
+    0 24px 70px rgba(0, 0, 0, 0.28);
+
+  border-radius: 2rem !important;
+}
+
+/* reflexo suave na superficie */
+#entender .solution-detail::before {
+  content: '' !important;
+
+  position: absolute !important;
+  inset: 0 !important;
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.11) 0%,
+      rgba(255, 255, 255, 0.045) 18%,
+      rgba(255, 255, 255, 0.012) 42%,
+      rgba(255, 255, 255, 0) 68%
+    ) !important;
+
+  border-radius: inherit !important;
+
+  opacity: 0.62 !important;
+
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+/* brilho fino na borda interna */
+#entender .solution-detail::after {
+  content: '' !important;
+
+  position: absolute !important;
+  inset: 1px !important;
+
+  border-radius: calc(2rem - 1px) !important;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.035) !important;
+
+  box-shadow:
+    inset 0 0 30px rgba(255, 255, 255, 0.015);
+
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+/* mantem textos e elementos acima do vidro */
+#entender .solution-detail > * {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* GLASSMORPHISM DIAGNOSTICO - FIM */
+
+/* GLASSMORPHISM HERO FORTE - INICIO */
+
+.solutions-hero__aside,
+.solutions-hero__panel,
+.solutions-overview__aside,
+.solutions-overview__panel,
+.solutions-page .solutions-hero aside,
+.solutions-page .solutions-hero__content aside,
+.solutions-page .solutions-hero__content .aside,
+.solutions-page .solutions-hero__content .panel,
+.solutions-page .solutions-hero .hero-aside,
+.solutions-page .solutions-hero .hero-panel {
+
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.10) 0%,
+      rgba(255, 255, 255, 0.045) 35%,
+      rgba(255, 255, 255, 0.018) 68%,
+      rgba(0, 0, 0, 0.10) 100%
+    ) !important;
+
+  -webkit-backdrop-filter:
+    blur(32px)
+    saturate(155%)
+    contrast(105%)
+    brightness(1.02) !important;
+
+  backdrop-filter:
+    blur(32px)
+    saturate(155%)
+    contrast(105%)
+    brightness(1.02) !important;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.24) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    inset 1px 0 0 rgba(255, 255, 255, 0.06),
+    inset -1px 0 0 rgba(255, 255, 255, 0.025),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.04),
+    0 24px 70px rgba(0, 0, 0, 0.30) !important;
+}
+
+
+/* Reflexo de luz sobre o vidro */
+.solutions-hero__aside::before,
+.solutions-hero__panel::before,
+.solutions-overview__aside::before,
+.solutions-overview__panel::before,
+.solutions-page .solutions-hero aside::before,
+.solutions-page .solutions-hero__content aside::before,
+.solutions-page .solutions-hero__content .aside::before,
+.solutions-page .solutions-hero__content .panel::before,
+.solutions-page .solutions-hero .hero-aside::before,
+.solutions-page .solutions-hero .hero-panel::before {
+
+  content: '' !important;
+
+  position: absolute !important;
+  inset: 0 !important;
+
+  border-radius: inherit !important;
+
+  background:
+    radial-gradient(
+      circle at 18% 5%,
+      rgba(255, 255, 255, 0.18) 0%,
+      rgba(255, 255, 255, 0.07) 18%,
+      rgba(255, 255, 255, 0.015) 40%,
+      transparent 58%
+    ),
+    linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.10) 0%,
+      rgba(255, 255, 255, 0.025) 32%,
+      transparent 58%
+    ) !important;
+
+  opacity: 0.72 !important;
+
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+
+/* Linha interna bem fina para dar sensação de espessura */
+.solutions-hero__aside::after,
+.solutions-hero__panel::after,
+.solutions-overview__aside::after,
+.solutions-overview__panel::after,
+.solutions-page .solutions-hero aside::after,
+.solutions-page .solutions-hero__content aside::after,
+.solutions-page .solutions-hero__content .aside::after,
+.solutions-page .solutions-hero__content .panel::after,
+.solutions-page .solutions-hero .hero-aside::after,
+.solutions-page .solutions-hero .hero-panel::after {
+
+  content: '' !important;
+
+  position: absolute !important;
+  inset: 1px !important;
+
+  border-radius: inherit !important;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.045) !important;
+
+  box-shadow:
+    inset 0 0 40px rgba(255, 255, 255, 0.018),
+    inset 0 0 80px rgba(255, 255, 255, 0.012);
+
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+
+/* Conteúdo acima de todas as camadas */
+.solutions-hero__aside > *,
+.solutions-hero__panel > *,
+.solutions-overview__aside > *,
+.solutions-overview__panel > *,
+.solutions-page .solutions-hero aside > *,
+.solutions-page .solutions-hero__content aside > *,
+.solutions-page .solutions-hero__content .aside > *,
+.solutions-page .solutions-hero__content .panel > *,
+.solutions-page .solutions-hero .hero-aside > *,
+.solutions-page .solutions-hero .hero-panel > * {
+
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+/* GLASSMORPHISM HERO FORTE - FIM */
+
+/* OTIMIZACAO COMERCIAL SOLUCOES - INICIO */
+
+
+/* ==================================================
+   SOLUCOES SECUNDARIAS MAIS COMPACTAS
+   ================================================== */
+
+.solution-detail--compact {
+  padding-top: clamp(2.5rem, 4vw, 4rem) !important;
+  padding-bottom: clamp(2.5rem, 4vw, 4rem) !important;
+}
+
+.solution-detail--compact .solution-detail__intro {
+  margin-bottom: clamp(1.75rem, 3vw, 2.75rem) !important;
+}
+
+.solution-detail--compact .solution-detail__info {
+  margin-top: clamp(1.5rem, 2.5vw, 2.5rem) !important;
+  gap: clamp(1.25rem, 2.5vw, 2rem) !important;
+}
+
+.solution-detail--compact .solution-detail__cta {
+  margin-top: clamp(1.75rem, 2.5vw, 2.5rem) !important;
+}
+
+
+/*
+  Quando uma solução possui dois textos explicativos
+  consecutivos, mantém apenas o primeiro.
+  Isso reduz repetição sem retirar o conteúdo principal.
+*/
+
+.solution-detail--compact
+.solution-detail__intro
+> p:not(.solution-detail__number)
++ p:not(.solution-detail__number) {
+
+  display: none !important;
+}
+
+
+/* ==================================================
+   CTA RAPIDO DEPOIS DA ESTEIRA
+   ================================================== */
+
+.solutions-quick-contact {
+  position: relative;
+  padding:
+    clamp(2.5rem, 5vw, 5rem)
+    0
+    clamp(3.5rem, 6vw, 6rem);
+
+  background: #f4ebdd;
+}
+
+.solutions-quick-contact__inner {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: clamp(2rem, 5vw, 6rem);
+
+  padding:
+    clamp(2rem, 4vw, 3.5rem)
+    clamp(2rem, 4vw, 4rem);
+
+  border:
+    1px solid rgba(20, 20, 20, 0.14);
+
+  border-radius:
+    clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.solutions-quick-contact__copy {
+  max-width: 760px;
+}
+
+.solutions-quick-contact__copy h2 {
+  margin:
+    0.6rem
+    0
+    1rem;
+
+  font-size:
+    clamp(2rem, 4vw, 4.2rem);
+
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.solutions-quick-contact__copy h2 span {
+  color: var(--color-accent);
+}
+
+.solutions-quick-contact__copy > p:last-child {
+  max-width: 650px;
+
+  margin: 0;
+
+  line-height: 1.65;
+
+  opacity: 0.74;
+}
+
+.solutions-quick-contact .button {
+  white-space: nowrap;
+}
+
+
+/* ==================================================
+   CTA DEPOIS DO BRANDING COMPLETO
+   ================================================== */
+
+.solutions-inline-cta {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: clamp(2rem, 5vw, 5rem);
+
+  margin:
+    clamp(2rem, 4vw, 3.5rem)
+    0;
+
+  padding:
+    clamp(2rem, 4vw, 3rem)
+    clamp(2rem, 4vw, 3.5rem);
+
+  border:
+    1px solid rgba(20, 20, 20, 0.14);
+
+  border-radius:
+    clamp(1.5rem, 3vw, 2.5rem);
+
+  background:
+    rgba(244, 235, 221, 0.62);
+
+  -webkit-backdrop-filter:
+    blur(18px)
+    saturate(120%);
+
+  backdrop-filter:
+    blur(18px)
+    saturate(120%);
+}
+
+.solutions-inline-cta__eyebrow {
+  margin:
+    0
+    0
+    0.65rem;
+
+  color: var(--color-accent);
+
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.solutions-inline-cta h3 {
+  max-width: 720px;
+
+  margin: 0;
+
+  font-size:
+    clamp(1.7rem, 3vw, 3rem);
+
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+}
+
+.solutions-inline-cta .button {
+  white-space: nowrap;
+}
+
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
+@media (max-width: 900px) {
+
+  .solutions-quick-contact__inner,
+  .solutions-inline-cta {
+
+    grid-template-columns: 1fr;
+  }
+
+  .solutions-quick-contact .button,
+  .solutions-inline-cta .button {
+
+    width: fit-content;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .solution-detail--compact {
+    padding-top: 2.2rem !important;
+    padding-bottom: 2.2rem !important;
+  }
+
+  .solutions-quick-contact__inner,
+  .solutions-inline-cta {
+
+    padding: 1.6rem;
+  }
+
+  .solutions-quick-contact .button,
+  .solutions-inline-cta .button {
+
+    width: 100%;
+
+    white-space: normal;
+
+    text-align: center;
+  }
+
+}
+
+/* OTIMIZACAO COMERCIAL SOLUCOES - FIM */
+
+/* ESPACAMENTO FINAL CTA RAPIDO - INICIO */
+
+.solutions-journey {
+  padding-bottom: clamp(2rem, 3vw, 3rem) !important;
+}
+
+.solutions-quick-contact {
+  padding-top: clamp(0.5rem, 1.5vw, 1.5rem) !important;
+  padding-bottom: clamp(5rem, 8vw, 8rem) !important;
+}
+
+/* ESPACAMENTO FINAL CTA RAPIDO - FIM */
+
+
+
+
+
+
+
+/* BUTTON JOURNEY SEM ALTERAR DESIGN - INICIO */
+
+button.journey-card {
+  -webkit-appearance: none;
+  appearance: none;
+
+  font-family: inherit;
+  text-align: left;
+
+  cursor: pointer;
+}
+
+/*
+  Remove somente estilos nativos do navegador
+  sem mexer em padding, tamanho, background,
+  bordas ou border-radius definidos pelo card.
+*/
+button.journey-card:focus {
+  outline: none;
+}
+
+button.journey-card:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+/* BUTTON JOURNEY SEM ALTERAR DESIGN - FIM */
