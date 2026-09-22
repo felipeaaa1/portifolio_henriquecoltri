@@ -1,0 +1,4168 @@
+:host {
+  display: block;
+}
+
+.method-eyebrow {
+  margin: 0;
+  color: var(--color-accent);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+
+/* HERO */
+
+.method-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 10.5rem 0 8rem;
+  border-radius:
+    0
+    0
+    var(--radius-large)
+    var(--radius-large);
+  background:
+    radial-gradient(
+      circle at 72% 38%,
+      rgba(255, 116, 82, .18),
+      transparent 28%
+    ),
+    var(--color-dark);
+}
+
+.method-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .12;
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, .05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, .05) 1px,
+      transparent 1px
+    );
+  background-size: 72px 72px;
+}
+
+.method-hero__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.method-hero__copy {
+  max-width: 1050px;
+}
+
+.method-hero h1 {
+  max-width: 970px;
+  margin: 1.25rem 0 2rem;
+  font-size: clamp(4rem, 7.4vw, 8rem);
+  line-height: .84;
+  letter-spacing: -.07em;
+}
+
+.method-hero h1 em {
+  display: block;
+  color: var(--color-accent);
+  font-style: normal;
+}
+
+.method-hero__lead {
+  max-width: 610px;
+  margin: 0;
+  color: rgba(246, 241, 232, .66);
+  font-size: clamp(1rem, 1.5vw, 1.18rem);
+  line-height: 1.6;
+}
+
+.method-hero__statement {
+  max-width: 470px;
+  margin: 5rem 0 0 auto;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(246, 241, 232, .2);
+}
+
+.method-hero__statement p {
+  margin: 0 0 .4rem;
+  color: rgba(246, 241, 232, .48);
+  font-size: .88rem;
+}
+
+.method-hero__statement strong {
+  display: block;
+  font-size: clamp(1.5rem, 2.4vw, 2.3rem);
+  line-height: 1;
+  letter-spacing: -.045em;
+}
+
+
+/* MAP */
+
+.method-map {
+  padding: var(--section-space) 0;
+}
+
+.method-map__heading {
+  max-width: 970px;
+}
+
+.method-map__heading h2 {
+  margin: 1rem 0 0;
+  font-size: clamp(3.4rem, 6vw, 6.8rem);
+  line-height: .88;
+  letter-spacing: -.065em;
+}
+
+.method-map__heading h2 span {
+  display: block;
+  color: var(--color-accent);
+}
+
+.method-map__grid {
+  margin-top: 4.5rem;
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+  gap: .9rem;
+}
+
+.method-map-card {
+  -webkit-appearance: none;
+  appearance: none;
+  min-height: 370px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--color-dark);
+  border: 1px solid rgba(23, 23, 23, .18);
+  border-radius: var(--radius-card);
+  background: transparent;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform 450ms cubic-bezier(.16, 1, .3, 1),
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition);
+}
+
+.method-map-card:hover,
+.method-map-card:focus-visible {
+  transform: translateY(-7px);
+}
+
+.method-map-card--accent {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.method-map-card--dark {
+  color: var(--color-light);
+  background: var(--color-dark);
+  border-color: var(--color-dark);
+}
+
+.method-map-card__number {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+.method-map-card div > p {
+  margin: 0 0 .8rem;
+  color: var(--color-accent-strong);
+  font-size: clamp(1.8rem, 2.7vw, 2.7rem);
+  font-weight: 700;
+  line-height: .95;
+  letter-spacing: -.05em;
+}
+
+.method-map-card--accent div > p {
+  color: var(--color-dark);
+}
+
+.method-map-card--dark div > p {
+  color: var(--color-accent);
+}
+
+.method-map-card div > span {
+  display: block;
+  max-width: 220px;
+  font-size: .92rem;
+  line-height: 1.5;
+  opacity: .68;
+}
+
+.method-map-card b {
+  align-self: flex-end;
+  font-size: 1.4rem;
+}
+
+
+/* STAGES */
+
+.method-stage {
+  position: relative;
+  padding: var(--section-space) 0;
+}
+
+.method-stage--dark {
+  color: var(--color-light);
+}
+
+.method-stage--orange {
+  color: var(--color-dark);
+  background: var(--color-accent);
+}
+
+.method-stage--presence {
+  background: #eee2d0;
+}
+
+.method-stage__top {
+  margin-bottom: clamp(4rem, 7vw, 7rem);
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 2rem;
+}
+
+.method-stage__index span {
+  display: block;
+  margin-bottom: .65rem;
+  color: var(--color-accent);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+.method-stage--orange
+.method-stage__index span {
+  color: var(--color-dark);
+}
+
+.method-stage__index p {
+  margin: 0;
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.method-stage__headline h2 {
+  max-width: 960px;
+  margin: 0 0 1.5rem;
+  font-size: clamp(3.2rem, 6vw, 6.7rem);
+  line-height: .88;
+  letter-spacing: -.065em;
+}
+
+.method-stage__headline h2 em {
+  display: block;
+  color: var(--color-accent);
+  font-style: normal;
+}
+
+.method-stage--orange
+.method-stage__headline h2 em {
+  color: #f6f1e8;
+}
+
+.method-stage__headline > p {
+  max-width: 680px;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.method-stage--dark
+.method-stage__headline > p {
+  color: rgba(246, 241, 232, .62);
+}
+
+.method-stage--orange
+.method-stage__headline > p {
+  color: rgba(23, 23, 23, .7);
+}
+
+.method-stage__body {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(320px, .95fr);
+  gap: clamp(2.5rem, 6vw, 7rem);
+  align-items: start;
+}
+
+.method-stage__feature {
+  min-height: 390px;
+  padding: clamp(1.8rem, 3vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: 1px solid rgba(23, 23, 23, .15);
+  border-radius: var(--radius-card);
+  background: rgba(255, 255, 255, .18);
+}
+
+.method-stage--dark
+.method-stage__feature {
+  border-color: rgba(246, 241, 232, .15);
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(255, 116, 82, .18),
+      transparent 35%
+    ),
+    rgba(255, 255, 255, .035);
+}
+
+.method-stage__feature--accent {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 116, 82, .22),
+      rgba(255, 255, 255, .12)
+    );
+}
+
+.method-stage__feature--orange {
+  border-color: rgba(23, 23, 23, .15);
+  background: rgba(246, 241, 232, .16);
+}
+
+.method-stage__label {
+  margin: 0 0 auto !important;
+  color: var(--color-accent-strong);
+  font-size: .68rem !important;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.method-stage--dark
+.method-stage__label {
+  color: var(--color-accent);
+}
+
+.method-stage--orange
+.method-stage__label {
+  color: var(--color-dark);
+}
+
+.method-stage__feature h3 {
+  max-width: 600px;
+  margin: 0 0 1.2rem;
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  line-height: .9;
+  letter-spacing: -.06em;
+}
+
+.method-stage__feature > p:last-child {
+  max-width: 600px;
+  margin: 0;
+  color: var(--color-muted);
+  line-height: 1.65;
+}
+
+.method-stage--dark
+.method-stage__feature > p:last-child {
+  color: rgba(246, 241, 232, .62);
+}
+
+.method-stage--orange
+.method-stage__feature > p:last-child {
+  color: rgba(23, 23, 23, .72);
+}
+
+.method-stage__list {
+  border-top: 1px solid rgba(23, 23, 23, .18);
+}
+
+.method-stage--dark
+.method-stage__list {
+  border-color: rgba(246, 241, 232, .16);
+}
+
+.method-stage__list > div {
+  min-height: 88px;
+  padding: 1.4rem 0;
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 1.3rem;
+  align-items: start;
+  border-bottom: 1px solid rgba(23, 23, 23, .18);
+}
+
+.method-stage--dark
+.method-stage__list > div {
+  border-color: rgba(246, 241, 232, .16);
+}
+
+.method-stage__list span {
+  color: var(--color-accent-strong);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+}
+
+.method-stage--dark
+.method-stage__list span {
+  color: var(--color-accent);
+}
+
+.method-stage--orange
+.method-stage__list span {
+  color: var(--color-dark);
+}
+
+.method-stage__list p {
+  margin: 0;
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  line-height: 1.28;
+  letter-spacing: -.025em;
+}
+
+.method-stage__result {
+  margin-top: clamp(4rem, 7vw, 7rem);
+  padding-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+  border-top: 1px solid rgba(23, 23, 23, .18);
+}
+
+.method-stage--dark
+.method-stage__result {
+  border-color: rgba(246, 241, 232, .16);
+}
+
+.method-stage__result span {
+  color: var(--color-accent-strong);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.method-stage--dark
+.method-stage__result span {
+  color: var(--color-accent);
+}
+
+.method-stage--orange
+.method-stage__result span {
+  color: var(--color-dark);
+}
+
+.method-stage__result strong {
+  max-width: 850px;
+  font-size: clamp(2rem, 4vw, 4.2rem);
+  line-height: .95;
+  letter-spacing: -.05em;
+}
+
+
+/* FLEXIBILITY */
+
+.method-flex {
+  padding: var(--section-space) 0;
+  border-radius:
+    var(--radius-large)
+    var(--radius-large)
+    0
+    0;
+}
+
+.method-flex__grid {
+  display: grid;
+  grid-template-columns: 1.08fr .92fr;
+  gap: clamp(3rem, 8vw, 9rem);
+}
+
+.method-flex__title h2 {
+  margin: 1.2rem 0 0;
+  font-size: clamp(3.3rem, 6vw, 6.5rem);
+  line-height: .88;
+  letter-spacing: -.065em;
+}
+
+.method-flex__title h2 span {
+  display: block;
+  color: var(--color-accent);
+}
+
+.method-flex__copy {
+  padding-top: 2rem;
+}
+
+.method-flex__copy p {
+  margin: 0 0 1.2rem;
+  color: rgba(246, 241, 232, .62);
+  font-size: 1.04rem;
+  line-height: 1.7;
+}
+
+.method-flex__copy strong {
+  display: block;
+  margin-top: 2.4rem;
+  padding-top: 1.5rem;
+  color: var(--color-light);
+  border-top: 1px solid rgba(246, 241, 232, .18);
+  font-size: clamp(1.45rem, 2.5vw, 2.2rem);
+  line-height: 1.12;
+  letter-spacing: -.04em;
+}
+
+
+/* MANIFESTO */
+
+.method-manifesto {
+  padding: var(--section-space) 0;
+}
+
+.method-manifesto__lines {
+  margin-top: 3rem;
+  border-top: 1px solid rgba(23, 23, 23, .18);
+}
+
+.method-manifesto__lines p {
+  margin: 0;
+  padding: 1.4rem 0;
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+  align-items: center;
+  border-bottom: 1px solid rgba(23, 23, 23, .18);
+  font-size: clamp(2.3rem, 5.5vw, 6rem);
+  font-weight: 700;
+  line-height: .95;
+  letter-spacing: -.06em;
+}
+
+.method-manifesto__lines span {
+  color: var(--color-accent);
+  font-size: .72rem;
+  letter-spacing: .14em;
+}
+
+
+/* CONTACT */
+
+.method-contact {
+  padding:
+    var(--section-space)
+    0
+    calc(var(--section-space) + 2rem);
+}
+
+.method-contact__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.method-contact h2 {
+  max-width: 1020px;
+  margin: 1.2rem 0 1.8rem;
+  font-size: clamp(3.5rem, 6.5vw, 7rem);
+  line-height: .86;
+  letter-spacing: -.07em;
+}
+
+.method-contact h2 span {
+  display: block;
+}
+
+.method-contact h2 em {
+  color: var(--color-accent);
+  font-style: normal;
+}
+
+.method-contact__inner > p:not(.method-eyebrow) {
+  max-width: 650px;
+  margin: 0 0 2.2rem;
+  color: rgba(246, 241, 232, .62);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+
+/* TABLET */
+
+@media (max-width: 980px) {
+
+  .method-map__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .method-stage__top,
+  .method-stage__result {
+    grid-template-columns:
+      130px
+      minmax(0, 1fr);
+  }
+
+  .method-stage__body {
+    grid-template-columns: 1fr;
+  }
+
+  .method-flex__grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+  .method-hero {
+    padding:
+      8rem
+      0
+      5rem;
+  }
+
+  .method-hero h1 {
+    font-size: clamp(3.4rem, 15vw, 5rem);
+  }
+
+  .method-hero__statement {
+    margin-top: 3rem;
+  }
+
+  .method-map__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .method-map-card {
+    min-height: 280px;
+  }
+
+  .method-stage__top {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .method-stage__result {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .method-stage__feature {
+    min-height: 330px;
+  }
+
+  .method-manifesto__lines p {
+    grid-template-columns: 42px 1fr;
+  }
+
+}
+
+
+/* HERO METODO REFINADO - INICIO */
+
+.method-hero {
+  position: relative !important;
+  overflow: hidden !important;
+
+  padding:
+    clamp(9rem, 12vw, 12rem)
+    0
+    clamp(6rem, 8vw, 8rem) !important;
+
+  border-radius:
+    0
+    0
+    var(--radius-large)
+    var(--radius-large) !important;
+
+  background:
+    var(--color-dark) !important;
+}
+
+
+/* remove a textura quadriculada */
+
+.method-hero::after {
+  display: none !important;
+}
+
+
+/* estrutura mais editorial */
+
+.method-hero__inner {
+  position: relative !important;
+  z-index: 1 !important;
+
+  display: grid !important;
+
+  grid-template-columns:
+    minmax(0, 1.25fr)
+    minmax(260px, .55fr) !important;
+
+  gap:
+    clamp(4rem, 9vw, 10rem) !important;
+
+  align-items: end !important;
+}
+
+
+/* bloco principal */
+
+.method-hero__copy {
+  max-width: 880px !important;
+}
+
+
+/* titulo menos agressivo */
+
+.method-hero h1 {
+  max-width: 850px !important;
+
+  margin:
+    1.35rem
+    0
+    2.2rem !important;
+
+  font-size:
+    clamp(3.7rem, 6.2vw, 6.6rem) !important;
+
+  line-height:
+    .89 !important;
+
+  letter-spacing:
+    -.06em !important;
+}
+
+
+/* apenas a segunda ideia recebe destaque */
+
+.method-hero h1 em {
+  display: block !important;
+
+  margin-top:
+    .12em !important;
+
+  color:
+    var(--color-accent) !important;
+
+  font-style:
+    normal !important;
+}
+
+
+/* texto de apoio */
+
+.method-hero__lead {
+  max-width:
+    590px !important;
+
+  margin:
+    0 !important;
+
+  color:
+    rgba(246, 241, 232, .58) !important;
+
+  font-size:
+    clamp(1rem, 1.35vw, 1.12rem) !important;
+
+  line-height:
+    1.7 !important;
+}
+
+
+/* frase lateral */
+
+.method-hero__statement {
+  max-width:
+    330px !important;
+
+  margin:
+    0
+    0
+    .5rem !important;
+
+  padding:
+    1.35rem
+    0
+    0 !important;
+
+  border-top:
+    1px solid rgba(246, 241, 232, .18) !important;
+}
+
+.method-hero__statement p {
+  margin:
+    0
+    0
+    .55rem !important;
+
+  color:
+    rgba(246, 241, 232, .42) !important;
+
+  font-size:
+    .82rem !important;
+}
+
+.method-hero__statement strong {
+  display:
+    block !important;
+
+  max-width:
+    300px !important;
+
+  font-size:
+    clamp(1.35rem, 2vw, 1.85rem) !important;
+
+  font-weight:
+    600 !important;
+
+  line-height:
+    1.08 !important;
+
+  letter-spacing:
+    -.035em !important;
+}
+
+
+/* tablet */
+
+@media (max-width: 900px) {
+
+  .method-hero__inner {
+    grid-template-columns:
+      1fr !important;
+
+    gap:
+      4rem !important;
+  }
+
+  .method-hero__statement {
+    max-width:
+      430px !important;
+  }
+
+}
+
+
+/* celular */
+
+@media (max-width: 650px) {
+
+  .method-hero {
+    padding:
+      8rem
+      0
+      5rem !important;
+  }
+
+  .method-hero h1 {
+    font-size:
+      clamp(3.2rem, 14vw, 4.6rem) !important;
+  }
+
+}
+
+/* HERO METODO REFINADO - FIM */
+
+
+
+/* MAPA HERO METODO - INICIO */
+
+.method-hero__inner {
+  grid-template-columns:
+    minmax(0, 1.18fr)
+    minmax(320px, .72fr) !important;
+
+  gap:
+    clamp(4rem, 8vw, 8rem) !important;
+
+  align-items:
+    center !important;
+}
+
+
+/* BLOCO VISUAL */
+
+.method-hero__visual {
+  position: relative;
+
+  max-width: 430px;
+
+  margin-left: auto;
+
+  padding:
+    clamp(1.8rem, 3vw, 2.6rem);
+
+  border:
+    1px solid rgba(246, 241, 232, .14);
+
+  border-radius:
+    var(--radius-card);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, .055),
+      rgba(255, 255, 255, .015)
+    );
+
+  backdrop-filter:
+    blur(18px);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .05);
+}
+
+
+/* FRASE SUPERIOR */
+
+.method-hero__statement {
+  max-width:
+    none !important;
+
+  margin:
+    0
+    0
+    2.4rem !important;
+
+  padding:
+    0
+    0
+    1.6rem !important;
+
+  border-top:
+    0 !important;
+
+  border-bottom:
+    1px solid rgba(246, 241, 232, .14);
+}
+
+.method-hero__statement p {
+  margin:
+    0
+    0
+    .45rem !important;
+
+  color:
+    rgba(246, 241, 232, .42) !important;
+
+  font-size:
+    .8rem !important;
+}
+
+.method-hero__statement strong {
+  max-width:
+    320px !important;
+
+  font-size:
+    clamp(1.45rem, 2.2vw, 2rem) !important;
+
+  line-height:
+    1.05 !important;
+}
+
+
+/* PROCESSO */
+
+.method-hero__process {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.7rem;
+}
+
+
+/* LINHA VERTICAL */
+
+.method-hero__process-line {
+  position: absolute;
+
+  top: 10px;
+  bottom: 10px;
+  left: 16px;
+
+  width: 1px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(246, 241, 232, .12),
+      rgba(255, 116, 82, .75)
+    );
+}
+
+
+/* ITEM */
+
+.method-hero__process-item {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+
+  grid-template-columns:
+    34px
+    1fr;
+
+  gap: 1rem;
+
+  align-items: center;
+}
+
+
+/* NUMERO / PONTO */
+
+.method-hero__process-item > span {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid rgba(246, 241, 232, .18);
+
+  border-radius:
+    50%;
+
+  background:
+    var(--color-dark);
+
+  color:
+    rgba(246, 241, 232, .55);
+
+  font-size:
+    .62rem;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    .08em;
+}
+
+
+/* TEXTO */
+
+.method-hero__process-item strong {
+  display: block;
+
+  color:
+    var(--color-light);
+
+  font-size:
+    1.05rem;
+
+  line-height:
+    1.1;
+}
+
+.method-hero__process-item p {
+  margin:
+    .22rem
+    0
+    0;
+
+  color:
+    rgba(246, 241, 232, .38);
+
+  font-size:
+    .74rem;
+}
+
+
+/* ULTIMA ETAPA */
+
+.method-hero__process-item--accent > span {
+  border-color:
+    var(--color-accent);
+
+  background:
+    var(--color-accent);
+
+  color:
+    var(--color-dark);
+}
+
+.method-hero__process-item--accent strong {
+  color:
+    var(--color-accent);
+}
+
+
+/* MOBILE / TABLET */
+
+@media (max-width: 900px) {
+
+  .method-hero__inner {
+    grid-template-columns:
+      1fr !important;
+  }
+
+  .method-hero__visual {
+    max-width:
+      520px;
+
+    margin:
+      0;
+  }
+
+}
+
+@media (max-width: 650px) {
+
+  .method-hero__visual {
+    padding:
+      1.5rem;
+  }
+
+}
+
+/* MAPA HERO METODO - FIM */
+
+
+
+/* TITULO HERO METODO - INICIO */
+
+.method-hero__title {
+  max-width: 760px !important;
+
+  margin:
+    1.35rem
+    0
+    2.2rem !important;
+
+  font-size:
+    clamp(3.25rem, 5.25vw, 5.7rem) !important;
+
+  line-height:
+    .91 !important;
+
+  letter-spacing:
+    -.058em !important;
+}
+
+.method-hero__title > span,
+.method-hero__title em > span {
+  display: block;
+}
+
+.method-hero__title em {
+  display: block !important;
+
+  margin-top:
+    .16em !important;
+
+  color:
+    var(--color-accent) !important;
+
+  font-style:
+    normal !important;
+}
+
+.method-hero__title em > span:last-child {
+  margin-top:
+    -.03em;
+}
+
+
+/* tablet */
+
+@media (max-width: 900px) {
+
+  .method-hero__title {
+    max-width:
+      720px !important;
+
+    font-size:
+      clamp(3.2rem, 9vw, 5.2rem) !important;
+  }
+
+}
+
+
+/* celular */
+
+@media (max-width: 650px) {
+
+  .method-hero__title {
+    font-size:
+      clamp(2.9rem, 13vw, 4.3rem) !important;
+
+    line-height:
+      .94 !important;
+  }
+
+}
+
+/* TITULO HERO METODO - FIM */
+
+
+
+/* HERO METODO BACKGROUND - INICIO */
+
+.method-hero {
+  position: relative !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(23, 23, 23, .94) 0%,
+      rgba(23, 23, 23, .84) 42%,
+      rgba(23, 23, 23, .62) 70%,
+      rgba(23, 23, 23, .70) 100%
+    ),
+    url('/assets/images/method/capa-hero-metodo.webp')
+    center center / cover
+    no-repeat !important;
+}
+
+
+/* leve fechamento nas bordas para integrar a imagem ao layout */
+
+.method-hero::before {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(23, 23, 23, .08),
+      rgba(23, 23, 23, .20)
+    );
+
+  z-index: 0;
+}
+
+
+/* garante que o conteudo fique acima da imagem */
+
+.method-hero__inner {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+
+/* mantém o elemento visual da direita legível */
+
+.method-hero__visual {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(23, 23, 23, .68),
+      rgba(23, 23, 23, .38)
+    ) !important;
+
+  backdrop-filter:
+    blur(18px) !important;
+
+  -webkit-backdrop-filter:
+    blur(18px) !important;
+}
+
+/* HERO METODO BACKGROUND - FIM */
+
+
+
+/* HERO METODO IMAGEM ESTAVEL - INICIO */
+
+.method-hero {
+  position: relative !important;
+  isolation: isolate;
+  background: var(--color-dark) !important;
+}
+
+
+/* imagem real atrás do conteúdo */
+
+.method-hero__background {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -2;
+
+  background-image:
+    url('/assets/images/method/capa-hero-metodo.webp');
+
+  background-size: 115%;
+
+  background-position: center 68%;
+
+  background-repeat:
+    no-repeat;
+
+  pointer-events:
+    none;
+}
+
+
+/* overlay separado */
+
+.method-hero__background::after {
+  content: '';
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(23, 23, 23, .93) 0%,
+      rgba(23, 23, 23, .82) 42%,
+      rgba(23, 23, 23, .58) 72%,
+      rgba(23, 23, 23, .68) 100%
+    );
+
+  pointer-events:
+    none;
+}
+
+
+/* desliga qualquer background antigo aplicado ao hero */
+
+.method-hero::before,
+.method-hero::after {
+  pointer-events: none;
+}
+
+
+/* conteúdo sempre acima da imagem */
+
+.method-hero__inner {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+
+/* bloco lateral acima da imagem */
+
+.method-hero__visual {
+  position: relative;
+  z-index: 3;
+}
+
+/* HERO METODO IMAGEM ESTAVEL - FIM */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CARDS METODO HOME STYLE - INICIO */
+
+
+/* GRID 2 X 2 */
+
+.method-map__grid {
+  display: grid !important;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr)) !important;
+
+  gap:
+    1rem !important;
+
+  margin-top:
+    4rem !important;
+}
+
+
+/* TODOS OS QUATRO CARDS */
+
+.method-map__grid > .method-map-card,
+.method-map__grid > .method-map-card:nth-child(1),
+.method-map__grid > .method-map-card:nth-child(2),
+.method-map__grid > .method-map-card:nth-child(3),
+.method-map__grid > .method-map-card:nth-child(4) {
+
+  position: relative !important;
+
+  min-height:
+    270px !important;
+
+  padding:
+    1.65rem !important;
+
+  display:
+    flex !important;
+
+  flex-direction:
+    column !important;
+
+  justify-content:
+    flex-start !important;
+
+  background:
+    transparent !important;
+
+  color:
+    #171717 !important;
+
+  border:
+    1px solid rgba(23, 23, 23, .18) !important;
+
+  border-radius:
+    var(--radius-card) !important;
+
+  box-shadow:
+    none !important;
+
+  font-family:
+    inherit !important;
+
+  text-align:
+    left !important;
+}
+
+
+/* NUMERO */
+
+.method-map__grid
+> .method-map-card
+> .method-map-card__number {
+
+  color:
+    #171717 !important;
+
+  font-size:
+    .72rem !important;
+
+  font-weight:
+    700 !important;
+
+  letter-spacing:
+    .04em !important;
+}
+
+
+/* CONTEUDO NA PARTE INFERIOR */
+
+.method-map__grid
+> .method-map-card
+> div {
+
+  margin-top:
+    auto !important;
+
+  padding-right:
+    3rem !important;
+}
+
+
+/* TITULO */
+
+.method-map__grid
+> .method-map-card
+> div
+> p {
+
+  margin:
+    0
+    0
+    .9rem !important;
+
+  color:
+    var(--color-accent-strong) !important;
+
+  font-size:
+    clamp(1.85rem, 2.6vw, 2.65rem) !important;
+
+  font-weight:
+    700 !important;
+
+  line-height:
+    .98 !important;
+
+  letter-spacing:
+    -.045em !important;
+
+  text-transform:
+    none !important;
+}
+
+
+/* DESCRICAO */
+
+.method-map__grid
+> .method-map-card
+> div
+> span {
+
+  display:
+    block !important;
+
+  max-width:
+    540px !important;
+
+  color:
+    rgba(23, 23, 23, .78) !important;
+
+  font-size:
+    1rem !important;
+
+  line-height:
+    1.5 !important;
+
+  opacity:
+    1 !important;
+}
+
+
+/* SETA */
+
+.method-map__grid
+> .method-map-card
+> b {
+
+  position:
+    absolute !important;
+
+  top:
+    1.4rem !important;
+
+  right:
+    1.5rem !important;
+
+  bottom:
+    auto !important;
+
+  color:
+    #171717 !important;
+
+  font-size:
+    1.3rem !important;
+
+  line-height:
+    1 !important;
+
+  transform:
+    rotate(-45deg) !important;
+}
+
+
+/* HOVER */
+
+.method-map__grid
+> .method-map-card:hover,
+.method-map__grid
+> .method-map-card:focus-visible {
+
+  background:
+    var(--color-accent) !important;
+
+  color:
+    #171717 !important;
+
+  border-color:
+    var(--color-accent) !important;
+
+  transform:
+    translateY(-4px) !important;
+
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, .08) !important;
+}
+
+
+/* NO HOVER, TUDO PRETO */
+
+.method-map__grid
+> .method-map-card:hover
+.method-map-card__number,
+
+.method-map__grid
+> .method-map-card:hover
+> div
+> p,
+
+.method-map__grid
+> .method-map-card:hover
+> div
+> span,
+
+.method-map__grid
+> .method-map-card:hover
+> b {
+
+  color:
+    #171717 !important;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+  .method-map__grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr)) !important;
+  }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .method-map__grid {
+    grid-template-columns:
+      1fr !important;
+  }
+
+  .method-map__grid
+  > .method-map-card {
+
+    min-height:
+      235px !important;
+  }
+
+}
+
+
+/* CARDS METODO HOME STYLE - FIM */
+
+
+
+/* TITULOS LARANJA CARDS METODO - INICIO */
+
+.method-map-card h3,
+.method-map-card__title,
+.method-map__grid > .method-map-card > div > p {
+  color: var(--color-accent) !important;
+}
+
+.method-map-card:hover h3,
+.method-map-card:hover .method-map-card__title,
+.method-map__grid > .method-map-card:hover > div > p,
+.method-map-card:focus-visible h3,
+.method-map-card:focus-visible .method-map-card__title,
+.method-map__grid > .method-map-card:focus-visible > div > p {
+  color: var(--color-accent) !important;
+}
+
+/* TITULOS LARANJA CARDS METODO - FIM */
+
+
+
+/* HOVER TEXTO PRETO CARDS METODO - INICIO */
+
+.method-map__grid
+> .method-map-card:hover,
+
+.method-map__grid
+> .method-map-card:focus-visible {
+
+  background:
+    var(--color-accent) !important;
+
+  border-color:
+    var(--color-accent) !important;
+
+  color:
+    #171717 !important;
+}
+
+
+/* numero */
+
+.method-map__grid
+> .method-map-card:hover
+> .method-map-card__number,
+
+.method-map__grid
+> .method-map-card:focus-visible
+> .method-map-card__number {
+
+  color:
+    #171717 !important;
+}
+
+
+/* titulo */
+
+.method-map__grid
+> .method-map-card:hover
+> div
+> p,
+
+.method-map__grid
+> .method-map-card:focus-visible
+> div
+> p {
+
+  color:
+    #171717 !important;
+}
+
+
+/* descricao */
+
+.method-map__grid
+> .method-map-card:hover
+> div
+> span,
+
+.method-map__grid
+> .method-map-card:focus-visible
+> div
+> span {
+
+  color:
+    #171717 !important;
+
+  opacity:
+    .82 !important;
+}
+
+
+/* seta */
+
+.method-map__grid
+> .method-map-card:hover
+> b,
+
+.method-map__grid
+> .method-map-card:focus-visible
+> b {
+
+  color:
+    #171717 !important;
+}
+
+
+/* HOVER TEXTO PRETO CARDS METODO - FIM */
+
+
+
+
+
+
+
+/* HERO METODO CURVA E FUNDO FINAL - INICIO */
+
+
+/* HERO */
+
+.method-hero {
+  position: relative !important;
+  isolation: isolate !important;
+
+  overflow: hidden !important;
+
+  border-radius:
+    0
+    0
+    64px
+    64px !important;
+
+  background:
+    var(--color-dark) !important;
+}
+
+
+/* IMAGEM DE FUNDO */
+
+.method-hero__background {
+  position: absolute !important;
+
+  inset: 0 !important;
+
+  z-index: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  background-image:
+    url('/assets/images/method/capa-hero-metodo.webp') !important;
+
+  background-repeat:
+    no-repeat !important;
+
+  background-size:
+    115% !important;
+
+  background-position:
+    center 68% !important;
+
+  border-radius:
+    0
+    0
+    64px
+    64px !important;
+
+  overflow:
+    hidden !important;
+
+  pointer-events:
+    none !important;
+}
+
+
+/* OVERLAY ESCURO SOBRE A FOTO */
+
+.method-hero__background::after {
+  content: '' !important;
+
+  position: absolute !important;
+
+  inset: 0 !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(23, 23, 23, .94) 0%,
+      rgba(23, 23, 23, .80) 42%,
+      rgba(23, 23, 23, .50) 72%,
+      rgba(23, 23, 23, .60) 100%
+    ) !important;
+
+  border-radius:
+    inherit !important;
+
+  pointer-events:
+    none !important;
+}
+
+
+/* DESLIGA CAMADAS ANTIGAS DO HERO */
+
+.method-hero::before,
+.method-hero::after {
+  display:
+    none !important;
+}
+
+
+/* CONTEUDO ACIMA DA FOTO */
+
+.method-hero__inner {
+  position:
+    relative !important;
+
+  z-index:
+    2 !important;
+}
+
+
+.method-hero__visual {
+  position:
+    relative !important;
+
+  z-index:
+    3 !important;
+}
+
+
+/* GARANTE A CURVA TAMBEM EM TELAS MENORES */
+
+@media (max-width: 650px) {
+
+  .method-hero,
+  .method-hero__background {
+
+    border-radius:
+      0
+      0
+      42px
+      42px !important;
+  }
+
+}
+
+
+/* HERO METODO CURVA E FUNDO FINAL - FIM */
+
+
+
+
+
+
+
+/* FUNDO PARA CURVA HERO METODO - INICIO */
+
+
+/*
+  O fundo creme fica atrás da hero.
+  Assim os cantos arredondados pretos passam
+  a ficar visualmente perceptiveis.
+*/
+
+:host {
+  display: block !important;
+  background: var(--color-paper) !important;
+}
+
+
+/* Hero */
+
+.method-hero {
+  position: relative !important;
+
+  overflow: hidden !important;
+
+  border-radius:
+    0
+    0
+    64px
+    64px !important;
+
+  background:
+    var(--color-dark) !important;
+
+  z-index: 1;
+}
+
+
+/* camada da imagem acompanha exatamente a curva */
+
+.method-hero__background {
+  position: absolute !important;
+
+  inset: 0 !important;
+
+  border-radius:
+    0
+    0
+    64px
+    64px !important;
+
+  overflow:
+    hidden !important;
+}
+
+
+/* garante que nada extrapole a curva */
+
+.method-hero__background::after {
+  border-radius:
+    inherit !important;
+}
+
+
+/* mobile */
+
+@media (max-width: 650px) {
+
+  .method-hero,
+  .method-hero__background {
+
+    border-radius:
+      0
+      0
+      42px
+      42px !important;
+  }
+
+}
+
+
+/* FUNDO PARA CURVA HERO METODO - FIM */
+
+
+
+/* CARD PRETO DIRECAO - INICIO */
+
+.method-card--black {
+  background: var(--color-dark) !important;
+  background-color: var(--color-dark) !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+}
+
+.method-card--black h1,
+.method-card--black h2,
+.method-card--black h3,
+.method-card--black h4,
+.method-card--black h5,
+.method-card--black h6 {
+  color: var(--color-paper) !important;
+}
+
+.method-card--black p,
+.method-card--black li,
+.method-card--black span,
+.method-card--black strong {
+  color: rgba(245, 240, 232, 0.72) !important;
+}
+
+.method-card--black .eyebrow,
+.method-card--black .kicker,
+.method-card--black .label,
+.method-card--black .section-label {
+  color: var(--color-accent) !important;
+}
+
+/* CARD PRETO DIRECAO - FIM */
+
+
+
+/* CARD DIRECAO PREMIUM - INICIO */
+
+
+/*
+  Card da etapa DIRECAO
+  Preto profundo com luz sutil e acabamento premium
+*/
+
+.method-stage__feature--accent {
+  position: relative !important;
+
+  overflow: hidden !important;
+
+  color:
+    var(--color-light) !important;
+
+  background:
+    radial-gradient(
+      circle at 82% 18%,
+      rgba(255, 116, 82, .18) 0%,
+      rgba(255, 116, 82, .07) 24%,
+      transparent 48%
+    ),
+    linear-gradient(
+      145deg,
+      #1c1c1c 0%,
+      #151515 48%,
+      #101010 100%
+    ) !important;
+
+  border:
+    1px solid rgba(246, 241, 232, .13) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .055),
+    inset 0 -1px 0 rgba(0, 0, 0, .45),
+    0 24px 55px rgba(0, 0, 0, .10) !important;
+}
+
+
+/* reflexo discreto no topo */
+
+.method-stage__feature--accent::before {
+  content: '';
+
+  position: absolute;
+
+  top: 0;
+  left: 8%;
+  right: 8%;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, .18),
+      transparent
+    );
+
+  pointer-events: none;
+}
+
+
+/* brilho muito suave no canto */
+
+.method-stage__feature--accent::after {
+  content: '';
+
+  position: absolute;
+
+  width: 240px;
+  height: 240px;
+
+  top: -130px;
+  right: -100px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 116, 82, .07);
+
+  filter:
+    blur(45px);
+
+  pointer-events: none;
+}
+
+
+/* mantem o conteudo acima dos efeitos */
+
+.method-stage__feature--accent > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* etiqueta */
+
+.method-stage__feature--accent
+.method-stage__label {
+  color:
+    var(--color-accent) !important;
+}
+
+
+/* titulo */
+
+.method-stage__feature--accent h3 {
+  color:
+    var(--color-light) !important;
+}
+
+
+/* texto */
+
+.method-stage__feature--accent
+> p:last-child {
+  color:
+    rgba(246, 241, 232, .64) !important;
+}
+
+
+/* CARD DIRECAO PREMIUM - FIM */
+
+
+
+/* CARD LINGUAGEM CREME - INICIO */
+
+.method-stage__feature--cream {
+  background: #f4ebdd !important;
+  border: 1px solid rgba(18, 18, 18, 0.10) !important;
+  box-shadow: none !important;
+  color: #111111 !important;
+}
+
+.method-stage__feature--cream h3 {
+  color: #111111 !important;
+}
+
+.method-stage__feature--cream p,
+.method-stage__feature--cream .method-stage__label,
+.method-stage__feature--cream .method-stage__eyebrow,
+.method-stage__feature--cream .method-stage__text {
+  color: #111111 !important;
+}
+
+.method-stage__feature--cream .method-stage__label,
+.method-stage__feature--cream .method-stage__eyebrow {
+  opacity: 1 !important;
+}
+
+.method-stage__feature--cream:hover {
+  background: #f4ebdd !important;
+  color: #111111 !important;
+}
+
+.method-stage__feature--cream:hover h3,
+.method-stage__feature--cream:hover p,
+.method-stage__feature--cream:hover .method-stage__label,
+.method-stage__feature--cream:hover .method-stage__eyebrow,
+.method-stage__feature--cream:hover .method-stage__text {
+  color: #111111 !important;
+}
+
+/* CARD LINGUAGEM CREME - FIM */
+
+
+
+/* CARD FORMA CREME FINAL - INICIO */
+
+/*
+  Card "A direção ganha linguagem."
+*/
+
+.method-stage__feature--orange {
+  background: var(--color-paper) !important;
+  background-color: var(--color-paper) !important;
+
+  color: var(--color-dark) !important;
+
+  border:
+    1px solid rgba(23, 23, 23, .15) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .30) !important;
+}
+
+
+/* etiqueta */
+
+.method-stage__feature--orange
+.method-stage__label {
+  color:
+    var(--color-accent-strong) !important;
+}
+
+
+/* titulo */
+
+.method-stage__feature--orange h3 {
+  color:
+    var(--color-dark) !important;
+}
+
+
+/* texto */
+
+.method-stage__feature--orange
+> p:last-child {
+  color:
+    rgba(23, 23, 23, .72) !important;
+}
+
+
+/* garante que nenhum efeito anterior cubra o creme */
+
+.method-stage__feature--orange::before,
+.method-stage__feature--orange::after {
+  background:
+    none !important;
+
+  box-shadow:
+    none !important;
+
+  filter:
+    none !important;
+}
+
+
+/* CARD FORMA CREME FINAL - FIM */
+
+
+
+/* RESULTADO FORMA CREME - INICIO */
+
+.method-stage--orange
+.method-stage__result
+.method-stage__result-accent {
+  color: var(--color-paper) !important;
+}
+
+/* RESULTADO FORMA CREME - FIM */
+
+
+
+/* RESULTADO FORMA CREME TAMANHO - INICIO */
+
+.method-stage--orange
+.method-stage__result
+.method-stage__result-accent {
+  color: var(--color-paper) !important;
+
+  font: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+
+  text-transform: none !important;
+}
+
+/* RESULTADO FORMA CREME TAMANHO - FIM */
+
+
+
+
+
+
+
+
+
+
+
+/* NUMEROS CREME FORMA FINAL - INICIO */
+
+
+/*
+  Numero 03 que identifica a etapa FORMA
+*/
+
+.method-stage--orange
+.method-stage__index
+> span {
+  color: var(--color-paper) !important;
+}
+
+
+/*
+  Numeros 01, 02, 03 e 04
+  da lista da etapa FORMA
+*/
+
+.method-stage--orange
+.method-stage__list
+> div
+> span {
+  color: var(--color-paper) !important;
+}
+
+
+/* NUMEROS CREME FORMA FINAL - FIM */
+
+
+
+
+
+/* CARD PRESENCA PRETO FINAL - INICIO */
+
+
+/*
+  SOMENTE o card:
+  "A estratégia encontra o cotidiano."
+*/
+
+.method-stage--presence
+.method-stage__feature {
+
+  background:
+    linear-gradient(
+      145deg,
+      #1b1b1b 0%,
+      #121212 55%,
+      #0d0d0d 100%
+    ) !important;
+
+  color:
+    var(--color-light) !important;
+
+  border:
+    1px solid rgba(246, 241, 232, .14) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .045),
+    0 20px 50px rgba(0, 0, 0, .14) !important;
+}
+
+
+/* "O QUE ACONTECE AQUI" */
+
+.method-stage--presence
+.method-stage__feature
+.method-stage__label {
+
+  color:
+    var(--color-accent) !important;
+}
+
+
+/* TITULO */
+
+.method-stage--presence
+.method-stage__feature
+h3 {
+
+  color:
+    var(--color-light) !important;
+}
+
+
+/* TEXTO DESCRITIVO */
+
+.method-stage--presence
+.method-stage__feature
+> p:last-child {
+
+  color:
+    rgba(246, 241, 232, .64) !important;
+}
+
+
+/*
+  Garante que nenhum pseudo-elemento
+  antigo cubra o card
+*/
+
+.method-stage--presence
+.method-stage__feature::before,
+.method-stage--presence
+.method-stage__feature::after {
+
+  pointer-events:
+    none !important;
+}
+
+
+/* CARD PRESENCA PRETO FINAL - FIM */
+
+
+
+/* CURVA COMPLETA BLOCO PRETO - INICIO */
+
+/*
+  Ajuste para o grande bloco preto:
+  arredondar topo e base
+  e impedir que o fundo interno vaze
+*/
+
+.method-page .method-flexible-process,
+.method-page .method-process-intro,
+.method-page .method-dark-panel,
+.method-page .method-premium-block {
+  border-radius: 3rem !important;
+  overflow: hidden !important;
+}
+
+/* garante as quinas de baixo */
+.method-page .method-flexible-process,
+.method-page .method-process-intro,
+.method-page .method-dark-panel,
+.method-page .method-premium-block {
+  border-bottom-left-radius: 3rem !important;
+  border-bottom-right-radius: 3rem !important;
+}
+
+/* se houver pseudo-elementos no fundo */
+.method-page .method-flexible-process::before,
+.method-page .method-flexible-process::after,
+.method-page .method-process-intro::before,
+.method-page .method-process-intro::after,
+.method-page .method-dark-panel::before,
+.method-page .method-dark-panel::after,
+.method-page .method-premium-block::before,
+.method-page .method-premium-block::after {
+  border-radius: inherit !important;
+}
+
+/* CURVA COMPLETA BLOCO PRETO - FIM */
+
+
+
+/* CURVA COMPLETA METHOD FLEX - INICIO */
+
+.method-flex {
+  border-radius:
+    var(--radius-large) !important;
+
+  overflow:
+    hidden !important;
+}
+
+/* CURVA COMPLETA METHOD FLEX - FIM */
+
+
+/* POLIMENTO FINAL METODO - INICIO */
+
+
+/* ==================================================
+   1. HERO
+   ================================================== */
+
+.method-hero {
+  min-height: auto !important;
+}
+
+.method-hero__inner {
+  gap: clamp(3.5rem, 7vw, 7rem) !important;
+}
+
+.method-hero__copy {
+  max-width: 800px !important;
+}
+
+.method-hero__title {
+  max-width: 750px !important;
+}
+
+.method-hero__lead {
+  max-width: 600px !important;
+}
+
+.method-hero__visual {
+  max-width: 405px !important;
+}
+
+
+/* ==================================================
+   2. MAPA DOS QUATRO MOVIMENTOS
+   ================================================== */
+
+.method-map {
+  padding:
+    clamp(5.5rem, 8vw, 7.5rem)
+    0 !important;
+}
+
+.method-map__heading {
+  max-width: 900px !important;
+}
+
+.method-map__heading h2 {
+  font-size:
+    clamp(3.4rem, 5.5vw, 6rem) !important;
+}
+
+.method-map__grid {
+  margin-top:
+    clamp(3rem, 5vw, 4rem) !important;
+
+  gap:
+    1rem !important;
+}
+
+.method-map__grid > .method-map-card {
+  min-height:
+    245px !important;
+
+  padding:
+    1.6rem !important;
+}
+
+
+/* titulo dos quatro cards */
+
+.method-map__grid
+> .method-map-card
+> div
+> p {
+
+  color:
+    var(--color-accent) !important;
+}
+
+
+/* hover */
+
+.method-map__grid
+> .method-map-card:hover,
+.method-map__grid
+> .method-map-card:focus-visible {
+
+  background:
+    var(--color-accent) !important;
+
+  border-color:
+    var(--color-accent) !important;
+
+  transform:
+    translateY(-4px) !important;
+}
+
+
+/* tudo preto no hover */
+
+.method-map__grid
+> .method-map-card:hover
+> .method-map-card__number,
+
+.method-map__grid
+> .method-map-card:hover
+> div
+> p,
+
+.method-map__grid
+> .method-map-card:hover
+> div
+> span,
+
+.method-map__grid
+> .method-map-card:hover
+> b,
+
+.method-map__grid
+> .method-map-card:focus-visible
+> .method-map-card__number,
+
+.method-map__grid
+> .method-map-card:focus-visible
+> div
+> p,
+
+.method-map__grid
+> .method-map-card:focus-visible
+> div
+> span,
+
+.method-map__grid
+> .method-map-card:focus-visible
+> b {
+
+  color:
+    #171717 !important;
+}
+
+
+/* ==================================================
+   3. ETAPAS
+   ================================================== */
+
+.method-stage {
+  padding:
+    clamp(5.5rem, 8vw, 7.5rem)
+    0 !important;
+}
+
+.method-stage__top {
+  margin-bottom:
+    clamp(3rem, 5vw, 5rem) !important;
+}
+
+.method-stage__headline h2 {
+  font-size:
+    clamp(3.2rem, 5.4vw, 6rem) !important;
+}
+
+.method-stage__headline > p {
+  max-width:
+    650px !important;
+}
+
+
+/* ==================================================
+   4. CARDS PRINCIPAIS DAS ETAPAS
+   ================================================== */
+
+.method-stage__feature {
+  min-height:
+    350px !important;
+
+  padding:
+    clamp(1.8rem, 3vw, 2.7rem) !important;
+}
+
+.method-stage__feature h3 {
+  font-size:
+    clamp(2.5rem, 3.8vw, 4.1rem) !important;
+}
+
+
+/* ==================================================
+   5. LISTAS DAS ETAPAS
+   ================================================== */
+
+.method-stage__list > div {
+  min-height:
+    82px !important;
+
+  padding:
+    1.25rem
+    0 !important;
+}
+
+.method-stage__list p {
+  font-size:
+    clamp(1rem, 1.65vw, 1.25rem) !important;
+}
+
+
+/* ==================================================
+   6. RESULTADOS
+   ================================================== */
+
+.method-stage__result {
+  margin-top:
+    clamp(3rem, 5vw, 5rem) !important;
+
+  padding-top:
+    1.35rem !important;
+}
+
+.method-stage__result strong {
+  max-width:
+    820px !important;
+
+  font-size:
+    clamp(2rem, 3.6vw, 3.8rem) !important;
+}
+
+
+/* ==================================================
+   7. ETAPA FORMA
+   ================================================== */
+
+/* card creme */
+
+.method-stage--orange
+.method-stage__feature--orange {
+
+  background:
+    var(--color-paper) !important;
+
+  border-color:
+    rgba(23, 23, 23, .14) !important;
+
+  color:
+    var(--color-dark) !important;
+}
+
+.method-stage--orange
+.method-stage__feature--orange
+h3 {
+
+  color:
+    var(--color-dark) !important;
+}
+
+.method-stage--orange
+.method-stage__feature--orange
+> p:last-child {
+
+  color:
+    rgba(23, 23, 23, .68) !important;
+}
+
+
+/* numeros creme */
+
+.method-stage--orange
+.method-stage__index
+> span,
+
+.method-stage--orange
+.method-stage__list
+> div
+> span {
+
+  color:
+    var(--color-paper) !important;
+}
+
+
+/* destaque "marca reconhecivel." */
+
+.method-stage--orange
+.method-stage__result
+.method-stage__result-accent {
+
+  color:
+    var(--color-paper) !important;
+
+  font:
+    inherit !important;
+
+  font-size:
+    inherit !important;
+
+  font-weight:
+    inherit !important;
+
+  line-height:
+    inherit !important;
+
+  letter-spacing:
+    inherit !important;
+
+  text-transform:
+    none !important;
+}
+
+
+/* ==================================================
+   8. ETAPA PRESENCA
+   ================================================== */
+
+/*
+  SOMENTE o card
+  "A estrategia encontra o cotidiano."
+*/
+
+.method-stage--presence
+.method-stage__feature {
+
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(255, 116, 82, .10),
+      transparent 42%
+    ),
+    linear-gradient(
+      145deg,
+      #1a1a1a 0%,
+      #101010 100%
+    ) !important;
+
+  color:
+    var(--color-light) !important;
+
+  border-color:
+    rgba(246, 241, 232, .13) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .045),
+    0 18px 42px rgba(0, 0, 0, .10) !important;
+}
+
+.method-stage--presence
+.method-stage__feature
+.method-stage__label {
+
+  color:
+    var(--color-accent) !important;
+}
+
+.method-stage--presence
+.method-stage__feature
+h3 {
+
+  color:
+    var(--color-light) !important;
+}
+
+.method-stage--presence
+.method-stage__feature
+> p:last-child {
+
+  color:
+    rgba(246, 241, 232, .62) !important;
+}
+
+
+/*
+  IMPORTANTE:
+  a lista da direita continua clara
+*/
+
+.method-stage--presence
+.method-stage__list {
+
+  color:
+    var(--color-dark) !important;
+}
+
+
+/* ==================================================
+   9. BLOCO "UM METODO, NAO UMA FORMULA"
+   ================================================== */
+
+.method-flex {
+  padding:
+    clamp(5.5rem, 8vw, 7.5rem)
+    0 !important;
+
+  border-radius:
+    var(--radius-large) !important;
+
+  overflow:
+    hidden !important;
+}
+
+.method-flex__grid {
+  gap:
+    clamp(3rem, 7vw, 7rem) !important;
+}
+
+.method-flex__title h2 {
+  font-size:
+    clamp(3.1rem, 5.3vw, 5.8rem) !important;
+}
+
+.method-flex__copy {
+  padding-top:
+    1.5rem !important;
+}
+
+
+/* ==================================================
+   10. FRASES FINAIS
+   ================================================== */
+
+.method-manifesto {
+  padding:
+    clamp(5.5rem, 8vw, 7.5rem)
+    0 !important;
+}
+
+.method-manifesto__lines {
+  margin-top:
+    2.5rem !important;
+}
+
+.method-manifesto__lines p {
+  padding:
+    1.2rem
+    0 !important;
+
+  font-size:
+    clamp(2.1rem, 4.7vw, 5.2rem) !important;
+}
+
+
+/* ==================================================
+   11. CTA FINAL
+   ================================================== */
+
+.method-contact {
+  padding:
+    clamp(5.5rem, 8vw, 7.5rem)
+    0
+    clamp(6rem, 9vw, 8rem) !important;
+}
+
+.method-contact h2 {
+  font-size:
+    clamp(3.3rem, 5.8vw, 6.3rem) !important;
+}
+
+
+/* ==================================================
+   12. TABLET
+   ================================================== */
+
+@media (max-width: 980px) {
+
+  .method-stage__feature {
+    min-height:
+      315px !important;
+  }
+
+}
+
+
+/* ==================================================
+   13. MOBILE
+   ================================================== */
+
+@media (max-width: 650px) {
+
+  .method-map,
+  .method-stage,
+  .method-flex,
+  .method-manifesto,
+  .method-contact {
+
+    padding-top:
+      4rem !important;
+
+    padding-bottom:
+      4rem !important;
+  }
+
+  .method-map__grid
+  > .method-map-card {
+
+    min-height:
+      215px !important;
+  }
+
+  .method-stage__feature {
+
+    min-height:
+      290px !important;
+  }
+
+}
+
+
+/* POLIMENTO FINAL METODO - FIM */
+
+/* REFINAMENTO FINO METODO - INICIO */
+
+
+/* ==================================================
+   HERO
+   ================================================== */
+
+/*
+  Mantem impacto, mas reduz um pouco
+  a sensacao de primeira dobra longa.
+*/
+
+.method-hero {
+  padding-bottom:
+    clamp(5.2rem, 6.5vw, 6.6rem) !important;
+}
+
+.method-hero__inner {
+  gap:
+    clamp(3.5rem, 6.5vw, 6.5rem) !important;
+}
+
+.method-hero__title {
+  margin-bottom:
+    1.8rem !important;
+}
+
+.method-hero__lead {
+  line-height:
+    1.62 !important;
+}
+
+
+/* ==================================================
+   MAPA DOS 4 MOVIMENTOS
+   ================================================== */
+
+.method-map {
+  padding-top:
+    clamp(5.5rem, 7.5vw, 7rem) !important;
+
+  padding-bottom:
+    clamp(5.5rem, 7.5vw, 7rem) !important;
+}
+
+.method-map__grid {
+  margin-top:
+    clamp(2.8rem, 4.5vw, 3.8rem) !important;
+}
+
+.method-map__grid > .method-map-card {
+  min-height:
+    235px !important;
+}
+
+
+/* ==================================================
+   ETAPAS
+   ================================================== */
+
+.method-stage {
+  padding-top:
+    clamp(5.5rem, 7.5vw, 7.2rem) !important;
+
+  padding-bottom:
+    clamp(5.5rem, 7.5vw, 7.2rem) !important;
+}
+
+
+/*
+  Quando clicar em Absorcao, Direcao,
+  Forma ou Presenca, a secao nao cola
+  no header.
+*/
+
+#absorcao,
+#direcao,
+#forma,
+#presenca {
+  scroll-margin-top:
+    105px;
+}
+
+
+.method-stage__top {
+  margin-bottom:
+    clamp(3rem, 4.5vw, 4.5rem) !important;
+}
+
+.method-stage__body {
+  gap:
+    clamp(2.5rem, 5vw, 5.5rem) !important;
+}
+
+
+/* ==================================================
+   CARDS PRINCIPAIS
+   ================================================== */
+
+.method-stage__feature {
+  min-height:
+    330px !important;
+}
+
+.method-stage__feature h3 {
+  margin-bottom:
+    1.15rem !important;
+}
+
+.method-stage__feature > p:last-child {
+  line-height:
+    1.58 !important;
+}
+
+
+/* ==================================================
+   LISTAS
+   ================================================== */
+
+.method-stage__list > div {
+  min-height:
+    78px !important;
+
+  padding:
+    1.15rem 0 !important;
+}
+
+.method-stage__list p {
+  line-height:
+    1.25 !important;
+}
+
+
+/* ==================================================
+   RESULTADOS
+   ================================================== */
+
+.method-stage__result {
+  margin-top:
+    clamp(3.2rem, 4.8vw, 4.8rem) !important;
+
+  padding-top:
+    1.25rem !important;
+}
+
+.method-stage__result strong {
+  font-size:
+    clamp(2rem, 3.5vw, 3.7rem) !important;
+
+  line-height:
+    .96 !important;
+}
+
+
+/* ==================================================
+   UM METODO, NAO UMA FORMULA
+   ================================================== */
+
+.method-flex {
+  padding-top:
+    clamp(5.5rem, 7.5vw, 7rem) !important;
+
+  padding-bottom:
+    clamp(5.5rem, 7.5vw, 7rem) !important;
+
+  border-radius:
+    var(--radius-large) !important;
+
+  overflow:
+    hidden !important;
+}
+
+.method-flex__grid {
+  gap:
+    clamp(3rem, 6vw, 6rem) !important;
+}
+
+.method-flex__title h2 {
+  font-size:
+    clamp(3rem, 5vw, 5.5rem) !important;
+}
+
+.method-flex__copy {
+  padding-top:
+    1rem !important;
+}
+
+.method-flex__copy p {
+  line-height:
+    1.62 !important;
+}
+
+.method-flex__copy strong {
+  margin-top:
+    2rem !important;
+}
+
+
+/* ==================================================
+   MANIFESTO DOS 4 MOVIMENTOS
+   ================================================== */
+
+.method-manifesto {
+  padding-top:
+    clamp(5.5rem, 7.5vw, 7rem) !important;
+
+  padding-bottom:
+    clamp(5.5rem, 7.5vw, 7rem) !important;
+}
+
+.method-manifesto__lines {
+  margin-top:
+    2.6rem !important;
+}
+
+.method-manifesto__lines p {
+  padding:
+    1.15rem 0 !important;
+
+  font-size:
+    clamp(2.1rem, 4.4vw, 4.8rem) !important;
+
+  line-height:
+    .96 !important;
+}
+
+
+/* ==================================================
+   CTA FINAL
+   ================================================== */
+
+.method-contact {
+  padding-top:
+    clamp(5.5rem, 7.5vw, 7rem) !important;
+
+  padding-bottom:
+    clamp(6rem, 8vw, 8rem) !important;
+}
+
+.method-contact h2 {
+  margin-bottom:
+    1.6rem !important;
+}
+
+
+/* ==================================================
+   TABLET
+   ================================================== */
+
+@media (max-width: 980px) {
+
+  .method-stage__feature {
+    min-height:
+      300px !important;
+  }
+
+  .method-flex__grid {
+    gap:
+      3rem !important;
+  }
+
+}
+
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
+@media (max-width: 650px) {
+
+  .method-hero {
+    padding-bottom:
+      4.5rem !important;
+  }
+
+  .method-map,
+  .method-stage,
+  .method-flex,
+  .method-manifesto,
+  .method-contact {
+
+    padding-top:
+      4rem !important;
+
+    padding-bottom:
+      4rem !important;
+  }
+
+  .method-map__grid > .method-map-card {
+    min-height:
+      210px !important;
+  }
+
+  .method-stage__top {
+    margin-bottom:
+      2.7rem !important;
+  }
+
+  .method-stage__feature {
+    min-height:
+      275px !important;
+  }
+
+  .method-stage__result {
+    margin-top:
+      2.8rem !important;
+  }
+
+  .method-manifesto__lines p {
+    padding:
+      1rem 0 !important;
+  }
+
+}
+
+
+/* REFINAMENTO FINO METODO - FIM */
+
+
+
+
+
+/* CARD ABSORCAO LARANJA - INICIO */
+
+/*
+  SOMENTE o card:
+  "Escuta antes de resposta."
+*/
+
+.method-stage--dark
+.method-stage__feature {
+
+  background:
+    var(--color-accent) !important;
+
+  border-color:
+    var(--color-accent) !important;
+
+  color:
+    var(--color-dark) !important;
+
+  box-shadow:
+    none !important;
+}
+
+
+/* label */
+
+.method-stage--dark
+.method-stage__feature
+.method-stage__label {
+
+  color:
+    var(--color-dark) !important;
+}
+
+
+/* titulo */
+
+.method-stage--dark
+.method-stage__feature
+h3 {
+
+  color:
+    var(--color-dark) !important;
+}
+
+
+/* texto */
+
+.method-stage--dark
+.method-stage__feature
+> p:last-child {
+
+  color:
+    rgba(23, 23, 23, .76) !important;
+}
+
+
+/* garante que efeitos antigos nao cubram o laranja */
+
+.method-stage--dark
+.method-stage__feature::before,
+.method-stage--dark
+.method-stage__feature::after {
+
+  background:
+    none !important;
+
+  box-shadow:
+    none !important;
+
+  filter:
+    none !important;
+}
+
+
+/* CARD ABSORCAO LARANJA - FIM */
+
+/* BRANCO FINAL ABSORCAO - INICIO */
+
+/*
+  Card laranja da etapa 01.
+  Apenas "qualquer resposta." recebe o branco oficial da marca.
+*/
+
+.method-stage--dark
+.method-stage__feature
+h3.method-absorcao-card__title {
+  color: var(--color-dark) !important;
+}
+
+.method-stage--dark
+.method-stage__feature
+h3.method-absorcao-card__title
+> span.method-absorcao-card__white {
+  color: var(--color-light) !important;
+
+  font: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+
+  text-transform: none !important;
+}
+
+/* BRANCO FINAL ABSORCAO - FIM */
+
+/* REFINAMENTO FINAL METODO V2 - INICIO */
+
+
+/* ==================================================
+   01. HERO
+   ================================================== */
+
+.method-hero {
+  padding-bottom:
+    clamp(5rem, 6.4vw, 6.4rem) !important;
+}
+
+.method-hero__inner {
+  gap:
+    clamp(3.5rem, 6vw, 6.2rem) !important;
+}
+
+.method-hero__title {
+  margin-bottom:
+    1.65rem !important;
+}
+
+.method-hero__lead {
+  max-width:
+    570px !important;
+
+  line-height:
+    1.62 !important;
+}
+
+.method-hero__visual {
+  max-width:
+    400px !important;
+}
+
+
+/* ==================================================
+   02. QUATRO MOVIMENTOS
+   ================================================== */
+
+.method-map {
+  padding-top:
+    clamp(5.2rem, 7vw, 6.8rem) !important;
+
+  padding-bottom:
+    clamp(5.2rem, 7vw, 6.8rem) !important;
+}
+
+.method-map__heading h2 {
+  max-width:
+    940px !important;
+}
+
+.method-map__grid {
+  margin-top:
+    clamp(2.8rem, 4.3vw, 3.7rem) !important;
+
+  gap:
+    1rem !important;
+}
+
+.method-map__grid > .method-map-card {
+  min-height:
+    225px !important;
+
+  padding:
+    1.55rem !important;
+
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition),
+    transform 320ms cubic-bezier(.16, 1, .3, 1),
+    box-shadow 320ms cubic-bezier(.16, 1, .3, 1) !important;
+}
+
+.method-map__grid
+> .method-map-card:hover,
+
+.method-map__grid
+> .method-map-card:focus-visible {
+
+  transform:
+    translateY(-3px) !important;
+
+  box-shadow:
+    0 14px 32px rgba(0, 0, 0, .07) !important;
+}
+
+
+/* ==================================================
+   03. ETAPAS
+   ================================================== */
+
+.method-stage {
+  padding-top:
+    clamp(5.4rem, 7.2vw, 7rem) !important;
+
+  padding-bottom:
+    clamp(5.4rem, 7.2vw, 7rem) !important;
+}
+
+.method-stage__top {
+  margin-bottom:
+    clamp(2.9rem, 4.3vw, 4.3rem) !important;
+}
+
+.method-stage__body {
+  gap:
+    clamp(2.6rem, 4.8vw, 5rem) !important;
+}
+
+.method-stage__headline > p {
+  max-width:
+    650px !important;
+
+  line-height:
+    1.6 !important;
+}
+
+
+/* ==================================================
+   04. CARDS PRINCIPAIS DAS ETAPAS
+   ================================================== */
+
+.method-stage__feature {
+  min-height:
+    315px !important;
+
+  padding:
+    clamp(1.8rem, 2.8vw, 2.6rem) !important;
+}
+
+.method-stage__feature h3 {
+  margin-bottom:
+    1.05rem !important;
+}
+
+.method-stage__feature > p:last-child {
+  line-height:
+    1.58 !important;
+}
+
+
+/* ==================================================
+   05. LISTAS DAS ETAPAS
+   ================================================== */
+
+.method-stage__list > div {
+  min-height:
+    74px !important;
+
+  padding:
+    1.08rem 0 !important;
+
+  align-items:
+    center !important;
+}
+
+.method-stage__list p {
+  line-height:
+    1.28 !important;
+}
+
+
+/* ==================================================
+   06. RESULTADO DE CADA ETAPA
+   ================================================== */
+
+.method-stage__result {
+  margin-top:
+    clamp(3rem, 4.4vw, 4.4rem) !important;
+
+  padding-top:
+    1.2rem !important;
+}
+
+.method-stage__result strong {
+  max-width:
+    820px !important;
+
+  line-height:
+    .96 !important;
+}
+
+
+/* ==================================================
+   07. BLOCO "UM METODO, NAO UMA FORMULA"
+   ================================================== */
+
+.method-flex {
+  padding-top:
+    clamp(5.2rem, 7vw, 6.8rem) !important;
+
+  padding-bottom:
+    clamp(5.2rem, 7vw, 6.8rem) !important;
+
+  border-radius:
+    var(--radius-large) !important;
+
+  overflow:
+    hidden !important;
+}
+
+.method-flex__grid {
+  gap:
+    clamp(3rem, 5.6vw, 5.8rem) !important;
+}
+
+.method-flex__title h2 {
+  font-size:
+    clamp(3rem, 4.8vw, 5.3rem) !important;
+
+  line-height:
+    .9 !important;
+}
+
+.method-flex__copy {
+  padding-top:
+    .8rem !important;
+}
+
+.method-flex__copy p {
+  line-height:
+    1.62 !important;
+}
+
+.method-flex__copy strong {
+  margin-top:
+    1.8rem !important;
+}
+
+
+/* ==================================================
+   08. MANIFESTO FINAL
+   ================================================== */
+
+.method-manifesto {
+  padding-top:
+    clamp(5.2rem, 7vw, 6.8rem) !important;
+
+  padding-bottom:
+    clamp(5.2rem, 7vw, 6.8rem) !important;
+}
+
+.method-manifesto__lines {
+  margin-top:
+    2.4rem !important;
+}
+
+.method-manifesto__lines p {
+  padding:
+    1.05rem 0 !important;
+
+  font-size:
+    clamp(2.1rem, 4.25vw, 4.65rem) !important;
+
+  line-height:
+    .97 !important;
+}
+
+
+/* ==================================================
+   09. CTA FINAL
+   ================================================== */
+
+.method-contact {
+  padding-top:
+    clamp(5.2rem, 7vw, 6.8rem) !important;
+
+  padding-bottom:
+    clamp(6rem, 8vw, 7.8rem) !important;
+}
+
+.method-contact h2 {
+  margin-bottom:
+    1.5rem !important;
+}
+
+
+/* ==================================================
+   10. ANCORA / NAVEGACAO
+   ================================================== */
+
+#absorcao,
+#direcao,
+#forma,
+#presenca {
+  scroll-margin-top:
+    105px;
+}
+
+
+/* ==================================================
+   11. FOCO DE TECLADO
+   ================================================== */
+
+.method-map-card:focus-visible,
+.method-stage a:focus-visible,
+.method-contact a:focus-visible {
+
+  outline:
+    2px solid var(--color-accent) !important;
+
+  outline-offset:
+    4px !important;
+}
+
+
+/* ==================================================
+   12. TABLET
+   ================================================== */
+
+@media (max-width: 980px) {
+
+  .method-map__grid > .method-map-card {
+    min-height:
+      215px !important;
+  }
+
+  .method-stage__feature {
+    min-height:
+      290px !important;
+  }
+
+  .method-stage__body {
+    gap:
+      2.8rem !important;
+  }
+
+  .method-flex__grid {
+    gap:
+      3rem !important;
+  }
+
+}
+
+
+/* ==================================================
+   13. MOBILE
+   ================================================== */
+
+@media (max-width: 650px) {
+
+  .method-hero {
+    padding-bottom:
+      4.2rem !important;
+  }
+
+  .method-map,
+  .method-stage,
+  .method-flex,
+  .method-manifesto,
+  .method-contact {
+
+    padding-top:
+      3.8rem !important;
+
+    padding-bottom:
+      3.8rem !important;
+  }
+
+  .method-map__grid {
+    gap:
+      .8rem !important;
+  }
+
+  .method-map__grid > .method-map-card {
+    min-height:
+      195px !important;
+  }
+
+  .method-stage__top {
+    margin-bottom:
+      2.5rem !important;
+  }
+
+  .method-stage__body {
+    gap:
+      2.3rem !important;
+  }
+
+  .method-stage__feature {
+    min-height:
+      260px !important;
+  }
+
+  .method-stage__list > div {
+    min-height:
+      68px !important;
+  }
+
+  .method-stage__result {
+    margin-top:
+      2.6rem !important;
+  }
+
+  .method-flex__title h2 {
+    font-size:
+      clamp(2.8rem, 12vw, 4.2rem) !important;
+  }
+
+  .method-manifesto__lines p {
+    padding:
+      .95rem 0 !important;
+
+    line-height:
+      1 !important;
+  }
+
+}
+
+
+/* ==================================================
+   14. REDUCAO DE MOVIMENTO
+   ================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .method-map-card,
+  .method-stage__feature,
+  .method-contact a {
+
+    transition:
+      none !important;
+  }
+
+  .method-map-card:hover,
+  .method-map-card:focus-visible {
+
+    transform:
+      none !important;
+  }
+
+}
+
+
+/* REFINAMENTO FINAL METODO V2 - FIM */
+
+/* CARD PREMIUM PRESENCA - INICIO */
+
+/* Card da etapa 04 / Presenca */
+.method-stage--presence .method-stage__feature,
+#presenca .method-stage__feature,
+section[id="presenca"] .method-stage__feature,
+[data-stage="presenca"] .method-stage__feature {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(255, 122, 80, 0.16), transparent 30%),
+    linear-gradient(180deg, #131315 0%, #0d0d10 56%, #08080a 100%) !important;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 18px 42px rgba(0, 0, 0, 0.28) !important;
+}
+
+/* Titulo do card */
+.method-stage--presence .method-stage__feature h3,
+#presenca .method-stage__feature h3,
+section[id="presenca"] .method-stage__feature h3,
+[data-stage="presenca"] .method-stage__feature h3 {
+  color: #f3eee6 !important;
+}
+
+/* Textos do card */
+.method-stage--presence .method-stage__feature p,
+#presenca .method-stage__feature p,
+section[id="presenca"] .method-stage__feature p,
+[data-stage="presenca"] .method-stage__feature p {
+  color: rgba(243, 238, 230, 0.74) !important;
+}
+
+/* Eyebrow / rotulo do card */
+.method-stage--presence .method-stage__feature .eyebrow,
+.method-stage--presence .method-stage__feature .section-label,
+.method-stage--presence .method-stage__feature .overline,
+.method-stage--presence .method-stage__feature .kicker,
+#presenca .method-stage__feature .eyebrow,
+#presenca .method-stage__feature .section-label,
+#presenca .method-stage__feature .overline,
+#presenca .method-stage__feature .kicker,
+section[id="presenca"] .method-stage__feature .eyebrow,
+section[id="presenca"] .method-stage__feature .section-label,
+section[id="presenca"] .method-stage__feature .overline,
+section[id="presenca"] .method-stage__feature .kicker,
+[data-stage="presenca"] .method-stage__feature .eyebrow,
+[data-stage="presenca"] .method-stage__feature .section-label,
+[data-stage="presenca"] .method-stage__feature .overline,
+[data-stage="presenca"] .method-stage__feature .kicker {
+  color: var(--color-accent) !important;
+}
+
+/* CARD PREMIUM PRESENCA - FIM */
+
+/* AJUSTE FINO - FRASE LARANJA NO CARD HERO */
+.method-hero-panel__kicker--accent {
+  color: var(--color-accent) !important;
+}
+/* AJUSTE FINO - FRASE LARANJA NO CARD HERO - FIM */
+
+/* CTA HERO DEFINITIVO - INICIO */
+
+
+/* coluna da direita: card + CTA */
+
+.method-hero__side {
+  width: 100%;
+
+  max-width: 405px;
+
+  margin-left: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 1rem;
+
+  align-self: center;
+}
+
+
+/* card continua exatamente como antes */
+
+.method-hero__side
+.method-hero__visual {
+
+  width: 100%;
+
+  max-width: none !important;
+
+  margin: 0 !important;
+}
+
+
+/* CTA separado */
+
+.method-hero__side
+.method-hero__cta {
+
+  width: 100% !important;
+
+  min-height: 54px !important;
+
+  margin: 0 !important;
+
+  padding:
+    0 1.35rem !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  background:
+    rgba(18, 18, 18, .68) !important;
+
+  color:
+    var(--color-light) !important;
+
+  border:
+    1px solid rgba(246, 241, 232, .17) !important;
+
+  border-radius:
+    999px !important;
+
+  text-decoration:
+    none !important;
+
+  font-size:
+    .92rem !important;
+
+  font-weight:
+    700 !important;
+
+  backdrop-filter:
+    blur(16px);
+
+  -webkit-backdrop-filter:
+    blur(16px);
+
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    color var(--transition),
+    transform var(--transition) !important;
+}
+
+
+.method-hero__cta-text {
+
+  color:
+    inherit !important;
+
+  font:
+    inherit !important;
+}
+
+
+.method-hero__cta-arrow {
+
+  color:
+    var(--color-accent) !important;
+
+  font-size:
+    1.25rem !important;
+
+  line-height:
+    1 !important;
+}
+
+
+.method-hero__cta:hover,
+.method-hero__cta:focus-visible {
+
+  background:
+    var(--color-accent) !important;
+
+  border-color:
+    var(--color-accent) !important;
+
+  color:
+    var(--color-dark) !important;
+
+  transform:
+    translateY(-3px) !important;
+}
+
+
+.method-hero__cta:hover
+.method-hero__cta-arrow,
+
+.method-hero__cta:focus-visible
+.method-hero__cta-arrow {
+
+  color:
+    var(--color-dark) !important;
+}
+
+
+/* tablet */
+
+@media (max-width: 900px) {
+
+  .method-hero__side {
+
+    max-width:
+      520px;
+
+    margin:
+      0;
+  }
+
+}
+
+
+/* mobile */
+
+@media (max-width: 650px) {
+
+  .method-hero__side {
+    gap:
+      .85rem;
+  }
+
+  .method-hero__cta {
+
+    min-height:
+      52px !important;
+  }
+
+}
+
+
+/* CTA HERO DEFINITIVO - FIM */
+
+
+/* HOVER FINAL CTA HERO - INICIO */
+
+.method-hero__cta:hover,
+.method-hero__cta:focus-visible {
+  background:
+    var(--color-accent) !important;
+
+  border-color:
+    var(--color-accent) !important;
+
+  color:
+    var(--color-dark) !important;
+}
+
+.method-hero__cta:hover
+.method-hero__cta-text,
+
+.method-hero__cta:focus-visible
+.method-hero__cta-text {
+  color:
+    var(--color-dark) !important;
+}
+
+.method-hero__cta:hover
+.method-hero__cta-arrow,
+
+.method-hero__cta:focus-visible
+.method-hero__cta-arrow {
+  color:
+    var(--color-dark) !important;
+
+  opacity:
+    1 !important;
+
+  visibility:
+    visible !important;
+
+  display:
+    inline-flex !important;
+}
+
+/* HOVER FINAL CTA HERO - FIM */
+
+
+
+/* HOVER CTA TEXTO LARANJA - INICIO */
+
+.method-hero__cta:hover,
+.method-hero__cta:focus-visible {
+  background:
+    var(--color-accent) !important;
+
+  border-color:
+    var(--color-accent) !important;
+}
+
+.method-hero__cta:hover
+.method-hero__cta-text,
+
+.method-hero__cta:focus-visible
+.method-hero__cta-text {
+  color:
+    var(--color-accent) !important;
+}
+
+.method-hero__cta:hover
+.method-hero__cta-arrow,
+
+.method-hero__cta:focus-visible
+.method-hero__cta-arrow {
+  color:
+    var(--color-accent) !important;
+
+  opacity:
+    1 !important;
+
+  visibility:
+    visible !important;
+
+  display:
+    inline-flex !important;
+}
+
+/* HOVER CTA TEXTO LARANJA - FIM */
