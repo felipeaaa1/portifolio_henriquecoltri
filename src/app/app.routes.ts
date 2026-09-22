@@ -17,6 +17,31 @@ export const routes: Routes = [
       .then(component => component.SolutionsPageComponent)
   },
   {
+    path: 'metodo',
+    loadComponent: () => import('./method/pages/method-page/method-page.component')
+      .then(component => component.MethodPageComponent)
+  },
+  {
+    path: 'metodo',
+    loadComponent: () => import('./method/pages/method-page/method-page.component')
+      .then(component => component.MethodPageComponent)
+  },
+
+  {
+    path: 'metodo',
+    loadComponent: () => import('./method/pages/method-page/method-page.component')
+      .then(component => component.MethodPageComponent)
+  },
+  {
+    path: 'metodo',
+    loadComponent: () => import('./method/pages/method-page/method-page.component')
+      .then(component => component.MethodPageComponent)
+  },
+  {
+    path: 'metodo',
+    loadComponent: () => import('./method/pages/method-page/method-page.component')
+      .then(component => component.MethodPageComponent)
+  },{
     path: 'projetos/:slug',
     loadComponent: () => import('./projects/pages/project-detail-page/project-detail-page.component')
       .then(component => component.ProjectDetailPageComponent)

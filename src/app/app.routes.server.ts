@@ -29,6 +29,26 @@ export const serverRoutes: ServerRoute[] = [
     renderMode: RenderMode.Prerender
   },
   {
+    path: 'metodo',
+    renderMode: RenderMode.Prerender
+  },
+  {
+    path: 'metodo',
+    renderMode: RenderMode.Prerender
+  },
+
+  {
+    path: 'metodo',
+    renderMode: RenderMode.Prerender
+  },
+  {
+    path: 'metodo',
+    renderMode: RenderMode.Prerender
+  },
+  {
+    path: 'metodo',
+    renderMode: RenderMode.Prerender
+  },{
     path: 'projetos/:slug',
     renderMode: RenderMode.Prerender,
     fallback: PrerenderFallback.None,
