@@ -1,4 +1,87 @@
-<section id="solucoes" class="services section-light"><div class="container">
-  <app-section-title eyebrow="Atuação / Soluções" title="Soluções" description="Consistência do plano à execução."></app-section-title>
-  <div class="services__grid"><article class="service-card" *ngFor="let service of services; let index = index" tabindex="0" [appReveal]="index % 2 === 0 ? 'slide-left' : 'slide-right'" [revealDelay]="index * 85"><span>0{{ service.id }}</span><h3>{{ service.title }}</h3><p>{{ service.description }}</p><b aria-hidden="true">↗</b></article></div>
-<a class="button button--dark services__cta" routerLink="/solucoes">Conhecer todas as soluções <span aria-hidden="true">→</span></a></div></section>
+<section
+  id="solucoes"
+  class="services section-light">
+
+  <div class="container">
+
+    <div
+      class="services__heading"
+      appReveal="fade-up">
+
+      <p class="services__eyebrow">
+        Atuação / Soluções
+      </p>
+
+      <h2>
+        Sua marca não precisa de tudo.
+        <span class="services__heading-line">
+          Precisa do que faz <strong>sentido agora.</strong>
+        </span>
+      </h2>
+
+      <p class="services__lead">
+        Cada negócio chega em um momento diferente.
+        Meu trabalho é entender esse momento e construir
+        o próximo movimento da marca.
+      </p>
+
+    </div>
+
+    <div class="services__grid">
+
+      <a
+        *ngFor="let service of services; let index = index"
+        class="service-card"
+        [class.service-card--accent]="index === 1 || index === 3"
+        [routerLink]="['/solucoes']"
+        [fragment]="service.anchor"
+        [appReveal]="index % 2 === 0 ? 'slide-left' : 'slide-right'"
+        [revealDelay]="index * 85">
+
+        <span class="service-card__number">
+          0{{ service.id }}
+        </span>
+
+        <div class="service-card__content">
+
+          <p class="service-card__moment">
+            {{ service.moment }}
+          </p>
+
+          <h3 [innerHTML]="service.title"></h3>
+
+          <p class="service-card__description">
+            {{ service.description }}
+          </p>
+
+        </div>
+
+        <b aria-hidden="true">↓</b>
+
+      </a>
+
+    </div>
+
+    <div
+      class="services__footer"
+      appReveal="fade-up">
+
+      <p>
+        Você não precisa contratar tudo.
+        Precisa identificar qual é o próximo movimento da sua marca.
+      </p>
+
+      <a
+        class="button button--dark services__cta"
+        routerLink="/solucoes">
+
+        Conhecer todas as soluções
+        <span aria-hidden="true">→</span>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
