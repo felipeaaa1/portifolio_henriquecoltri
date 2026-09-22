@@ -12,6 +12,11 @@ export const routes: Routes = [
       .then(component => component.CasesPageComponent)
   },
   {
+    path: 'solucoes',
+    loadComponent: () => import('./solutions/pages/solutions-page/solutions-page.component')
+      .then(component => component.SolutionsPageComponent)
+  },
+  {
     path: 'projetos/:slug',
     loadComponent: () => import('./projects/pages/project-detail-page/project-detail-page.component')
       .then(component => component.ProjectDetailPageComponent)
