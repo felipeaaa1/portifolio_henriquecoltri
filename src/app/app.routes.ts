@@ -22,29 +22,17 @@ export const routes: Routes = [
       .then(component => component.MethodPageComponent)
   },
   {
-    path: 'metodo',
-    loadComponent: () => import('./method/pages/method-page/method-page.component')
-      .then(component => component.MethodPageComponent)
-  },
-
-  {
-    path: 'metodo',
-    loadComponent: () => import('./method/pages/method-page/method-page.component')
-      .then(component => component.MethodPageComponent)
+    path: 'quem-sou',
+    loadComponent: () => import('./about/pages/about-page/about-page.component')
+      .then(component => component.AboutPageComponent)
   },
   {
-    path: 'metodo',
-    loadComponent: () => import('./method/pages/method-page/method-page.component')
-      .then(component => component.MethodPageComponent)
-  },
-  {
-    path: 'metodo',
-    loadComponent: () => import('./method/pages/method-page/method-page.component')
-      .then(component => component.MethodPageComponent)
-  },{
     path: 'projetos/:slug',
     loadComponent: () => import('./projects/pages/project-detail-page/project-detail-page.component')
       .then(component => component.ProjectDetailPageComponent)
   },
-  { path: '**', redirectTo: '' }
+  {
+    path: '**',
+    redirectTo: ''
+  }
 ];
