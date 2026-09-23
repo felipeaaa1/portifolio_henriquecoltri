@@ -42,7 +42,7 @@ export class ServicesGridComponent {
     {
       id: 3,
       moment: 'Colocar no mundo',
-      title: 'Presença<br>& Desdobra<br>mentos',
+      title: 'Presença &<br>Desdobramentos',
       description: 'Levar a identidade para os pontos de contato em que a marca realmente acontece.',
       anchor: 'colocar-no-mundo'
     },
