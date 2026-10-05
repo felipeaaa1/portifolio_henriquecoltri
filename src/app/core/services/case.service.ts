@@ -31,7 +31,19 @@ export class CaseService {
       imageUrl: 'assets/images/projects/equipa/01.webp', detailAvailable: true, featured: false, accent: '#38463d' },
     { id: 8, title: 'Deon', slug: 'deon',
       summary: 'Branding para uma loja de calçados, construindo uma identidade contemporânea, marcante e alinhada ao universo da moda.',
-      imageUrl: 'assets/images/projects/deon/01.webp', detailAvailable: true, featured: false, accent: '#171717' }
+      imageUrl: 'assets/images/projects/deon/01.webp', detailAvailable: true, featured: false, accent: '#171717' },
+    { id: 9, title: 'Alkami Automotive', slug: 'alkami-automotive',
+      summary: 'Identidade desenvolvida para uma marca do segmento automotivo, construindo uma presença visual contemporânea, técnica e marcante.',
+      imageUrl: 'assets/images/projects/alkami-automotive/Alkami-01.webp', detailAvailable: true, featured: false, accent: '#171717' },
+    { id: 10, title: 'Wallia', slug: 'wallia',
+      summary: 'Identidade desenvolvida para uma marca do segmento de saúde e estética, construindo uma presença visual contemporânea, sensível e sofisticada.',
+      imageUrl: 'assets/images/projects/wallia/Wallia-01.png', detailAvailable: true, featured: false, accent: '#171717' },
+    { id: 11, title: 'Parrilla do Campo', slug: 'parrilla-do-campo',
+      summary: 'Identidade desenvolvida para um restaurante que une a tradição da parrilla a uma presença contemporânea, acolhedora e marcante.',
+      imageUrl: 'assets/images/projects/parrilla-do-campo/Parrilla-01.png', detailAvailable: true, featured: false, accent: '#171717' },
+    { id: 12, title: 'Kasa Estrela', slug: 'kasa-estrela',
+      summary: 'Identidade desenvolvida para uma marca de utilidades para o lar, equilibrando acolhimento, praticidade e uma expressão visual contemporânea.',
+      imageUrl: 'assets/images/projects/kasa-estrela/Kasa-Estrela-01.png', detailAvailable: true, featured: false, accent: '#171717' }
   ];
 
   constructor() { }
