@@ -50,6 +50,12 @@ export class PortfolioService {
       author: 'Danilo Ganzert e Magda Ganzert',
       role: 'Cuiabá/MT',
       text: 'O Henrique Coltri conseguiu traduzir perfeitamente o que imaginávamos para a identidade da Santa Imagem Cuiabá: uma marca que une o religioso e o tradicional a uma linguagem contemporânea, sofisticada e alinhada ao universo de casamentos, festas e eventos.\n\nAlém da criatividade e originalidade, destacamos a atenção e o suporte durante todo o processo, desde as aplicações da marca até os materiais para redes sociais e futuros desdobramentos.\n\nO resultado superou nossas expectativas. Recomendamos muito o trabalho do Henrique pela qualidade, cuidado e, principalmente, pela capacidade de transformar uma ideia em uma identidade que realmente representa a nossa marca.'
+    },
+    {
+      id: 5,
+      author: 'Gladson Angelo',
+      role: 'São Paulo/SP',
+      text: 'Indico o Henrique de olhos fechados! Tive a oportunidade de acompanhar de perto sua evolução como designer e posso dizer com orgulho que ele se tornou um profissional excelente, extremamente dedicado e caprichoso em tudo o que faz. Seu trabalho une criatividade, planejamento e uma qualidade que impressiona nos mínimos detalhes. É um profissional em quem confio e que recomendo sem pensar duas vezes.'
     }
   ];
   private readonly socialLinks: SocialLink[] = [

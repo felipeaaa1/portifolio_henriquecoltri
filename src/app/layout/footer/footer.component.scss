@@ -7,3 +7,69 @@
 .footer__name { margin-top: 5rem; font-size: clamp(4rem, 14vw, 12rem); font-weight: 900; letter-spacing: -.085em; line-height: .72; overflow-wrap: anywhere; }
 .footer__bottom { display: flex; justify-content: space-between; margin-top: 4rem; padding-top: 1rem; border-top: 1px solid rgba(23,23,23,.35); font-size: .8rem; }
 @media (max-width: 700px) { .footer__top { grid-template-columns: 1fr; } .footer__bottom { flex-direction: column; gap: .5rem; } }
+
+
+
+.footer__brand,
+.footer-brand,
+.site-footer__brand,
+.footer .brand,
+.footer__logo,
+.footer-logo {
+  color: #111111 !important;
+}
+
+.footer__brand svg,
+.footer-brand svg,
+.site-footer__brand svg,
+.footer .brand svg,
+.footer__logo svg,
+.footer-logo svg {
+  color: #111111 !important;
+  fill: currentColor !important;
+}
+
+.footer__brand svg path,
+.footer-brand svg path,
+.site-footer__brand svg path,
+.footer .brand svg path,
+.footer__logo svg path,
+.footer-logo svg path,
+.footer__brand svg circle,
+.footer-brand svg circle,
+.site-footer__brand svg circle,
+.footer .brand svg circle,
+.footer__logo svg circle,
+.footer-logo svg circle,
+.footer__brand svg rect,
+.footer-brand svg rect,
+.site-footer__brand svg rect,
+.footer .brand svg rect,
+.footer__logo svg rect,
+.footer-logo svg rect {
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+.footer__brand img,
+.footer-brand img,
+.site-footer__brand img,
+.footer .brand img,
+.footer__logo img,
+.footer-logo img {
+  width: 168px !important;
+  max-width: 168px !important;
+  height: auto !important;
+}
+
+@media (max-width: 900px) {
+  .footer__brand img,
+  .footer-brand img,
+  .site-footer__brand img,
+  .footer .brand img,
+  .footer__logo img,
+  .footer-logo img {
+    width: 150px !important;
+    max-width: 150px !important;
+  }
+}
