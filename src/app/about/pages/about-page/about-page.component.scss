@@ -1947,7 +1947,7 @@ a.about-instagram__button:focus-visible * {
     #111111 !important;
 
   box-shadow:
-    0 -48px 0 #111111 !important;
+    none !important;
 }
 
 
@@ -2013,7 +2013,7 @@ a.about-instagram__button:focus-visible * {
       0 !important;
 
     box-shadow:
-      0 -32px 0 #111111 !important;
+      none !important;
   }
 
 }
@@ -2888,3 +2888,104 @@ a.about-instagram__button:focus-visible * {
 }
 
 /* EXPERIENCE STATS FINAL - FIM */
+
+
+/* ABOUT PROOF START */
+
+.about-proof {
+  padding: clamp(5rem, 10vw, 9rem) 0;
+  background: var(--color-light);
+}
+
+.about-proof__card {
+  position: relative;
+  padding: clamp(2.5rem, 6vw, 5.5rem);
+  overflow: hidden;
+  color: var(--color-light);
+  background: var(--color-dark);
+  border-radius: var(--radius-large);
+}
+
+.about-proof__quote {
+  position: absolute;
+  top: -2.2rem;
+  right: clamp(1.5rem, 5vw, 4rem);
+  color: var(--color-accent);
+  font-size: clamp(9rem, 20vw, 17rem);
+  font-weight: 700;
+  line-height: 1;
+  opacity: .95;
+}
+
+.about-proof__eyebrow {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 clamp(2.5rem, 5vw, 4.5rem);
+  color: var(--color-accent);
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+}
+
+.about-proof blockquote {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0;
+  font-size: clamp(2.3rem, 5.4vw, 5.4rem);
+  font-weight: 700;
+  line-height: .98;
+  letter-spacing: -.055em;
+}
+
+.about-proof__author {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.about-proof__author strong {
+  font-size: 1rem;
+}
+
+.about-proof__author span {
+  color: rgba(246, 241, 232, .58);
+  font-size: .85rem;
+}
+
+@media (max-width: 760px) {
+
+  .about-proof {
+    padding: 4rem 0;
+  }
+
+  .about-proof__card {
+    padding: 2rem;
+    border-radius: var(--radius-card);
+  }
+
+  .about-proof blockquote {
+    font-size: clamp(2rem, 10vw, 3.4rem);
+  }
+
+  .about-proof__quote {
+    top: -1rem;
+    right: 1rem;
+    font-size: 8rem;
+  }
+}
+
+/* ABOUT PROOF END */
+
+
+/* MANIFESTO SEM FAIXA PRETA - INICIO */
+
+.about-manifesto {
+  box-shadow: none !important;
+}
+
+/* MANIFESTO SEM FAIXA PRETA - FIM */

@@ -176,3 +176,33 @@
 }
 
 /* CASES HERO RESPONSIVO END */
+
+
+/* CASES GAP FINAL - INICIO */
+
+/*
+  Remove o grande respiro que existia no final
+  da grade de cases e aproxima o bloco de depoimentos.
+*/
+
+.cases-list {
+  padding-bottom: 2rem !important;
+  margin-bottom: 0 !important;
+}
+
+.cases-testimonials {
+  position: relative;
+  z-index: 2;
+  margin-top: 0 !important;
+  background: var(--color-dark);
+}
+
+@media (max-width: 760px) {
+
+  .cases-list {
+    padding-bottom: 1.5rem !important;
+  }
+
+}
+
+/* CASES GAP FINAL - FIM */

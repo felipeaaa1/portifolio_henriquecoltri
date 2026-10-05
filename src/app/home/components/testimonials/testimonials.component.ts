@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
 import { Testimonial } from '../../../core/models/portfolio.model';
 import { PortfolioService } from '../../../core/services/portfolio.service';
@@ -12,6 +12,8 @@ import { RevealDirective } from '../../../shared/directives/reveal.directive';
   styleUrl: './testimonials.component.scss'
 })
 export class TestimonialsComponent implements OnInit {
+  @Input() eyebrow = 'Depoimentos';
+  @Input() title = 'O trabalho também é feito de encontros.';
   testimonials: Testimonial[] = [];
   activeIndex = 0;
   constructor(private portfolioService: PortfolioService) { }

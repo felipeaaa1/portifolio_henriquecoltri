@@ -128,3 +128,67 @@ html, body {
     will-change: auto;
   }
 }
+
+
+/* CASES TESTIMONIAL DARK START */
+
+.cases-testimonials .testimonials {
+  padding-top: clamp(2.25rem, 4vw, 3.5rem);
+  padding-bottom: clamp(5rem, 8vw, 7rem);
+  color: var(--color-light);
+  background: var(--color-dark);
+}
+
+.cases-testimonials .section-title {
+  color: var(--color-light);
+}
+
+.cases-testimonials .section-title h2,
+.cases-testimonials .section-title__title {
+  color: var(--color-light);
+}
+
+.cases-testimonials .section-title p,
+.cases-testimonials .section-title__eyebrow {
+  color: var(--color-accent);
+}
+
+/* Mantem o depoimento como card claro dentro da area escura */
+.cases-testimonials .testimonial {
+  background: #fff;
+  color: var(--color-dark);
+}
+
+.cases-testimonials .testimonial blockquote {
+  color: var(--color-dark);
+}
+
+.cases-testimonials .testimonial strong {
+  color: var(--color-dark);
+}
+
+@media (max-width: 760px) {
+
+  .cases-testimonials .testimonials {
+    padding-top: 2rem;
+    padding-bottom: 4.5rem;
+  }
+
+}
+
+/* CASES TESTIMONIAL DARK END */
+
+
+/* CASES TESTIMONIAL TOP SPACING START */
+
+.cases-testimonials .testimonials {
+  padding-top: 2.5rem !important;
+}
+
+@media (max-width: 760px) {
+  .cases-testimonials .testimonials {
+    padding-top: 2rem !important;
+  }
+}
+
+/* CASES TESTIMONIAL TOP SPACING END */

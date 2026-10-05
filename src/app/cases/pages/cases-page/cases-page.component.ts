@@ -8,6 +8,7 @@ import { SeoService } from '../../../core/services/seo.service';
 
 import { CaseCardComponent } from '../../components/case-card/case-card.component';
 import { RevealDirective } from '../../../shared/directives/reveal.directive';
+import { TestimonialsComponent } from '../../../home/components/testimonials/testimonials.component';
 
 @Component({
   selector: 'app-cases-page',
@@ -15,7 +16,8 @@ import { RevealDirective } from '../../../shared/directives/reveal.directive';
   imports: [
     NgFor,
     CaseCardComponent,
-    RevealDirective
+    RevealDirective,
+    TestimonialsComponent
   ],
   templateUrl: './cases-page.component.html',
   styleUrl: './cases-page.component.scss'
