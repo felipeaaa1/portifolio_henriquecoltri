@@ -1,4 +1,4 @@
-﻿.footer { position: relative; overflow: hidden; padding: 5rem 0 1.5rem; background: var(--color-accent); color: var(--color-dark); border-radius: var(--radius-large) var(--radius-large) 0 0; }
+.footer { position: relative; overflow: hidden; padding: 5rem 0 1.5rem; background: var(--color-accent); color: var(--color-dark); border-radius: var(--radius-large) var(--radius-large) 0 0; }
 .footer__brand { margin-bottom: 3.5rem; }
 .footer__brand img { width: min(360px, 72vw); height: auto; }
 .footer__top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }.footer__top > div { display: flex; flex-direction: column; align-items: flex-start; gap: .55rem; }
@@ -75,27 +75,6 @@
 }
 
 
-/* FUNDO DOS CANTOS DO FOOTER - INICIO */
-
-:host {
-  display: block;
-  background: var(--color-paper);
-}
-
-/* FUNDO DOS CANTOS DO FOOTER - FIM */
-
-/* FOOTER CORNERS BACKGROUND FIX - INICIO */
-
-/*
-  O footer laranja possui cantos superiores arredondados.
-  O host recebe o fundo escuro para que a área revelada
-  pelos cantos acompanhe o fundo preto do site.
-*/
-
-:host {
-  display: block;
-  background: var(--color-dark);
-}
-
-/* FOOTER CORNERS BACKGROUND FIX - FIM */
+/* FUNDO DOS CANTOS DO FOOTER - controlado globalmente conforme a pagina */
+:host { display: block; }
 
