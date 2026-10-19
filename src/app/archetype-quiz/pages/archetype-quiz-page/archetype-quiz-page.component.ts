@@ -1131,94 +1131,192 @@ export class ArchetypeQuizPageComponent implements OnInit {
     height: number
   ): void {
 
-    const gradient =
+    const sceneTop = 840;
+
+    const sky =
       context.createLinearGradient(
         0,
-        height * .38,
+        sceneTop,
         0,
         height
       );
 
-    gradient.addColorStop(0, '#171717');
-    gradient.addColorStop(.45, '#201814');
-    gradient.addColorStop(1, '#090909');
+    sky.addColorStop(0, '#171717');
+    sky.addColorStop(.18, '#24130e');
+    sky.addColorStop(.48, '#6f2b1b');
+    sky.addColorStop(.68, '#2b1712');
+    sky.addColorStop(1, '#080808');
 
-    context.fillStyle = gradient;
-    context.fillRect(0, 0, width, height);
+    context.fillStyle = sky;
+    context.fillRect(
+      0,
+      sceneTop,
+      width,
+      height - sceneTop
+    );
 
-    const sunGradient =
+    const glow =
       context.createRadialGradient(
         width * .76,
         height * .61,
-        20,
+        0,
         width * .76,
         height * .61,
-        width * .28
+        width * .33
       );
 
-    sunGradient.addColorStop(0, '#ff9a72');
-    sunGradient.addColorStop(.6, '#ff7452');
-    sunGradient.addColorStop(1, 'rgba(255,116,82,0)');
+    glow.addColorStop(0, 'rgba(255,190,150,.98)');
+    glow.addColorStop(.28, 'rgba(255,116,82,.95)');
+    glow.addColorStop(.68, 'rgba(255,116,82,.30)');
+    glow.addColorStop(1, 'rgba(255,116,82,0)');
 
-    context.fillStyle = sunGradient;
+    context.fillStyle = glow;
     context.beginPath();
     context.arc(
       width * .76,
       height * .61,
-      width * .27,
+      width * .32,
       0,
       Math.PI * 2
     );
     context.fill();
 
-    const mountain = (
-      y: number,
+    context.fillStyle = '#ff7452';
+    context.globalAlpha = .88;
+    context.beginPath();
+    context.arc(
+      width * .77,
+      height * .61,
+      width * .205,
+      0,
+      Math.PI * 2
+    );
+    context.fill();
+    context.globalAlpha = 1;
+
+    const ridge = (
+      baseY: number,
       amplitude: number,
-      alpha: number
+      color: string,
+      phase: number
     ) => {
 
       context.beginPath();
       context.moveTo(0, height);
 
-      for (let x = 0; x <= width; x += 90) {
-        const wave =
-          Math.sin(x * .012) * amplitude +
-          Math.cos(x * .021) * amplitude * .45;
+      for (let x = 0; x <= width + 80; x += 60) {
 
-        context.lineTo(
-          x,
-          y + wave
-        );
+        const y =
+          baseY +
+          Math.sin(x * .013 + phase) * amplitude +
+          Math.cos(x * .025 + phase * .6) * amplitude * .42;
+
+        context.lineTo(x, y);
       }
 
       context.lineTo(width, height);
       context.closePath();
-
-      context.fillStyle =
-        `rgba(9,9,9,${alpha})`;
-
+      context.fillStyle = color;
       context.fill();
     };
 
-    mountain(height * .66, 34, .55);
-    mountain(height * .72, 48, .76);
-    mountain(height * .79, 62, .94);
+    ridge(height * .66, 22, 'rgba(35,18,15,.60)', 0);
+    ridge(height * .705, 32, 'rgba(24,15,14,.76)', .8);
+    ridge(height * .755, 44, 'rgba(15,12,11,.92)', 1.6);
+    ridge(height * .82, 58, '#080808', 2.4);
 
-    context.strokeStyle =
-      'rgba(255,116,82,.42)';
-    context.lineWidth = 3;
-
+    context.strokeStyle = 'rgba(255,116,82,.55)';
+    context.lineWidth = 4;
     context.beginPath();
-    context.moveTo(width * .12, height * .83);
+    context.moveTo(width * .36, height * .81);
     context.bezierCurveTo(
-      width * .35,
-      height * .76,
-      width * .58,
+      width * .48,
+      height * .77,
+      width * .62,
       height * .88,
-      width * .9,
-      height * .73
+      width * .88,
+      height * .72
     );
     context.stroke();
+
+    context.save();
+    context.translate(
+      width * .30,
+      height * .725
+    );
+
+    context.fillStyle = '#090909';
+
+    context.beginPath();
+    context.arc(0, -92, 24, 0, Math.PI * 2);
+    context.fill();
+
+    context.fillRect(-17, -67, 34, 100);
+
+    context.beginPath();
+    context.moveTo(-15, -50);
+    context.lineTo(-48, 15);
+    context.lineTo(-33, 20);
+    context.lineTo(2, -32);
+    context.closePath();
+    context.fill();
+
+    context.beginPath();
+    context.moveTo(15, -48);
+    context.lineTo(44, 5);
+    context.lineTo(31, 15);
+    context.lineTo(-1, -30);
+    context.closePath();
+    context.fill();
+
+    context.beginPath();
+    context.moveTo(-8, 29);
+    context.lineTo(-30, 100);
+    context.lineTo(-10, 102);
+    context.lineTo(8, 32);
+    context.closePath();
+    context.fill();
+
+    context.beginPath();
+    context.moveTo(9, 30);
+    context.lineTo(30, 103);
+    context.lineTo(10, 105);
+    context.lineTo(-8, 34);
+    context.closePath();
+    context.fill();
+
+    context.beginPath();
+    context.ellipse(
+      -29,
+      -37,
+      27,
+      48,
+      -.25,
+      0,
+      Math.PI * 2
+    );
+    context.fill();
+
+    context.restore();
+
+    const vignette =
+      context.createLinearGradient(
+        0,
+        height * .82,
+        0,
+        height
+      );
+
+    vignette.addColorStop(0, 'rgba(0,0,0,0)');
+    vignette.addColorStop(1, 'rgba(0,0,0,.88)');
+
+    context.fillStyle = vignette;
+    context.fillRect(
+      0,
+      height * .78,
+      width,
+      height * .22
+    );
   }
 
 
@@ -1250,7 +1348,7 @@ export class ArchetypeQuizPageComponent implements OnInit {
 
     const dark = '#171717';
     const light = '#f6f1e8';
-    const muted = '#a8a29b';
+    const muted = '#9f9991';
     const accent = '#ff7452';
 
     const copy =
@@ -1264,6 +1362,14 @@ export class ArchetypeQuizPageComponent implements OnInit {
         ? `${this.strongSecondaryInfluence ? 'Com forte influência de' : 'Com influência de'} ${secondary}.`
         : '';
 
+    context.fillStyle = dark;
+    context.fillRect(
+      0,
+      0,
+      canvas.width,
+      canvas.height
+    );
+
     this.drawShareLandscape(
       context,
       canvas.width,
@@ -1275,37 +1381,46 @@ export class ArchetypeQuizPageComponent implements OnInit {
         0,
         0,
         0,
-        1050
+        1020
       );
 
     topFade.addColorStop(0, dark);
-    topFade.addColorStop(.72, 'rgba(23,23,23,.96)');
+    topFade.addColorStop(.74, 'rgba(23,23,23,.98)');
     topFade.addColorStop(1, 'rgba(23,23,23,0)');
 
     context.fillStyle = topFade;
-    context.fillRect(0, 0, canvas.width, 1100);
+    context.fillRect(
+      0,
+      0,
+      canvas.width,
+      1040
+    );
 
-    const x = 76;
-    const maxWidth = 928;
+    const x = 74;
+    const maxWidth = 932;
 
     context.fillStyle = accent;
-    context.font = '700 28px Grandis, Arial, sans-serif';
+    context.font =
+      '700 27px Grandis, Arial, sans-serif';
+
     context.letterSpacing = '3px';
+
     context.fillText(
       'SEU ARQUÉTIPO PREDOMINANTE',
       x,
-      210
+      195
     );
+
     context.letterSpacing = '0px';
 
-    let titleSize = 178;
+    let titleSize = 192;
 
     context.font =
       `900 ${titleSize}px Grandis, Arial, sans-serif`;
 
     while (
       context.measureText(this.primaryResult.name).width > maxWidth &&
-      titleSize > 104
+      titleSize > 108
     ) {
       titleSize -= 6;
       context.font =
@@ -1313,93 +1428,66 @@ export class ArchetypeQuizPageComponent implements OnInit {
     }
 
     context.fillStyle = accent;
+
     context.fillText(
       this.primaryResult.name,
       x,
-      405
+      410
     );
 
     context.fillStyle = light;
-    context.font = '700 66px Grandis, Arial, sans-serif';
+    context.font =
+      '700 70px Grandis, Arial, sans-serif';
 
     const phraseLines =
       this.wrapCanvasText(
         context,
         copy.phrase,
         maxWidth
-      );
+      ).slice(0, 5);
 
     const phraseBottom =
       this.drawCanvasLines(
         context,
         phraseLines,
         x,
-        535,
-        76
+        545,
+        77
       );
 
     context.fillStyle = muted;
-    context.font = '400 34px Grandis, Arial, sans-serif';
+    context.font =
+      '400 34px Grandis, Arial, sans-serif';
+
     context.fillText(
       'Uma leitura sobre o que move você hoje.',
       x,
-      phraseBottom + 28
+      phraseBottom + 34
     );
-
-    let capsuleBottom =
-      phraseBottom + 92;
 
     if (secondaryLabel) {
 
       context.font =
-        '500 30px Grandis, Arial, sans-serif';
+        '500 31px Grandis, Arial, sans-serif';
 
       const capsuleWidth =
         Math.min(
-          maxWidth,
-          context.measureText(secondaryLabel).width + 96
+          760,
+          context.measureText(secondaryLabel).width + 104
         );
 
       const capsuleX = x;
-      const capsuleY = phraseBottom + 66;
-      const capsuleHeight = 72;
-      const radius = 36;
+      const capsuleY = phraseBottom + 76;
+      const capsuleHeight = 78;
+      const radius = 39;
 
       context.beginPath();
-      context.moveTo(capsuleX + radius, capsuleY);
-      context.lineTo(capsuleX + capsuleWidth - radius, capsuleY);
-      context.quadraticCurveTo(
-        capsuleX + capsuleWidth,
-        capsuleY,
-        capsuleX + capsuleWidth,
-        capsuleY + radius
-      );
-      context.lineTo(
-        capsuleX + capsuleWidth,
-        capsuleY + capsuleHeight - radius
-      );
-      context.quadraticCurveTo(
-        capsuleX + capsuleWidth,
-        capsuleY + capsuleHeight,
-        capsuleX + capsuleWidth - radius,
-        capsuleY + capsuleHeight
-      );
-      context.lineTo(
-        capsuleX + radius,
-        capsuleY + capsuleHeight
-      );
-      context.quadraticCurveTo(
-        capsuleX,
-        capsuleY + capsuleHeight,
-        capsuleX,
-        capsuleY + capsuleHeight - radius
-      );
-      context.lineTo(capsuleX, capsuleY + radius);
-      context.quadraticCurveTo(
+      context.roundRect(
         capsuleX,
         capsuleY,
-        capsuleX + radius,
-        capsuleY
+        capsuleWidth,
+        capsuleHeight,
+        radius
       );
 
       context.strokeStyle = accent;
@@ -1407,51 +1495,50 @@ export class ArchetypeQuizPageComponent implements OnInit {
       context.stroke();
 
       context.fillStyle = accent;
-      context.beginPath();
-      context.arc(
-        capsuleX + 36,
-        capsuleY + 36,
-        7,
-        0,
-        Math.PI * 2
+
+      context.save();
+      context.translate(
+        capsuleX + 42,
+        capsuleY + 39
       );
-      context.fill();
+
+      context.rotate(Math.PI / 4);
+      context.fillRect(-8, -8, 16, 16);
+      context.restore();
 
       context.fillStyle = light;
+
       context.fillText(
         secondaryLabel,
-        capsuleX + 62,
-        capsuleY + 46
+        capsuleX + 70,
+        capsuleY + 51
       );
-
-      capsuleBottom =
-        capsuleY + capsuleHeight;
     }
 
-    const descriptionY =
-      Math.max(
-        capsuleBottom + 76,
-        980
+    const footerGradient =
+      context.createLinearGradient(
+        0,
+        1570,
+        0,
+        1920
       );
 
-    context.fillStyle =
-      'rgba(246,241,232,.88)';
-    context.font =
-      '400 34px Grandis, Arial, sans-serif';
+    footerGradient.addColorStop(
+      0,
+      'rgba(0,0,0,0)'
+    );
 
-    const descriptionLines =
-      this.wrapCanvasText(
-        context,
-        copy.description,
-        600
-      ).slice(0, 6);
+    footerGradient.addColorStop(
+      1,
+      'rgba(0,0,0,.98)'
+    );
 
-    this.drawCanvasLines(
-      context,
-      descriptionLines,
-      x,
-      descriptionY,
-      48
+    context.fillStyle = footerGradient;
+    context.fillRect(
+      0,
+      1540,
+      canvas.width,
+      380
     );
 
     const logo =
@@ -1468,7 +1555,7 @@ export class ArchetypeQuizPageComponent implements OnInit {
       context.drawImage(
         logo,
         x,
-        1740,
+        1720,
         logoWidth,
         logoHeight
       );
@@ -1478,32 +1565,52 @@ export class ArchetypeQuizPageComponent implements OnInit {
       context.fillStyle = light;
       context.font =
         '700 34px Grandis, Arial, sans-serif';
+
       context.fillText(
         'HENRIQUE COLTRI',
         x,
-        1805
+        1788
       );
     }
 
+    context.strokeStyle =
+      'rgba(246,241,232,.28)';
+
+    context.lineWidth = 2;
+
+    context.beginPath();
+    context.moveTo(
+      365,
+      1705
+    );
+    context.lineTo(
+      365,
+      1815
+    );
+    context.stroke();
+
     context.fillStyle = light;
     context.font =
-      '500 30px Grandis, Arial, sans-serif';
+      '500 31px Grandis, Arial, sans-serif';
+
     context.fillText(
       'Descubra qual força move você hoje.',
       410,
-      1775
+      1748
     );
 
     context.fillStyle = muted;
     context.font =
       '400 24px Grandis, Arial, sans-serif';
+
     context.fillText(
       'henriquecoltri.com.br/descubra-seu-arquetipo',
       410,
-      1822
+      1794
     );
 
     return await new Promise(resolve => {
+
       canvas.toBlob(
         blob => resolve(blob),
         'image/png',
