@@ -214,3 +214,12 @@ main:has(.archetype-quiz__result) + app-footer {
 }
 
 /* QUIZ DYNAMIC FOOTER BACKGROUND - FIM */
+
+/* QUIZ FOOTER CORNERS - FIX DEFINITIVO */
+body:has(.archetype-quiz__intro) app-footer, body:has(.archetype-quiz__question-screen) app-footer { display:block !important; background:var(--color-paper) !important; }
+body:has(.archetype-quiz__processing) app-footer, body:has(.archetype-quiz__result) app-footer { display:block !important; background:var(--color-dark) !important; }
+
+/* QUIZ FOOTER CORNERS - CORES FINAIS */
+body:has(.archetype-quiz__intro) app-footer { background:var(--color-dark) !important; }
+body:has(.archetype-quiz__question-screen) app-footer { background:var(--color-paper) !important; }
+body:has(.archetype-quiz__processing) app-footer, body:has(.archetype-quiz__result) app-footer { background:var(--color-dark) !important; }
