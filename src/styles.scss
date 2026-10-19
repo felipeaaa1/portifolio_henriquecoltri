@@ -29,7 +29,7 @@ body { background: var(--color-dark); color: var(--color-dark); font-family: $fo
 .button--outline { background: transparent; border-color: rgba(246,241,232,.6); color: var(--color-light); }
 .button--outline:hover { background: var(--color-light); color: var(--color-dark); }
 
-/* Revelações progressivas acionadas pela diretiva appReveal. */
+/* RevelaÃ§Ãµes progressivas acionadas pela diretiva appReveal. */
 .reveal {
   opacity: 0;
   transition:
@@ -59,7 +59,7 @@ body { background: var(--color-dark); color: var(--color-dark); font-family: $fo
 @media (max-width: 600px) { :root { --radius-card: 1.25rem; } .container { width: min(var(--container), calc(100% - 1.5rem)); } }
 
 
-/* Ajustes para telas menores e prevenção de rolagem horizontal. */
+/* Ajustes para telas menores e prevenÃ§Ã£o de rolagem horizontal. */
 html, body {
   max-width: 100%;
   overflow-x: hidden;
@@ -117,7 +117,7 @@ html, body {
 }
 
 
-/* Em telas touch, mantém o conteúdo no lugar mesmo antes da animação observar a seção. */
+/* Em telas touch, mantÃ©m o conteÃºdo no lugar mesmo antes da animaÃ§Ã£o observar a seÃ§Ã£o. */
 @media (max-width: 700px) {
   .reveal,
   .reveal--visible {
@@ -192,3 +192,25 @@ html, body {
 }
 
 /* CASES TESTIMONIAL TOP SPACING END */
+
+/* QUIZ DYNAMIC FOOTER BACKGROUND - INICIO */
+
+/*
+  O footer possui cantos superiores arredondados.
+  O fundo do app-footer acompanha a última área visível
+  de cada etapa do quiz.
+*/
+
+/* Introdução e perguntas: fundo creme */
+main:has(.archetype-quiz__intro) + app-footer,
+main:has(.archetype-quiz__question-screen) + app-footer {
+  background: var(--color-paper) !important;
+}
+
+/* Processamento e resultado: fundo escuro */
+main:has(.archetype-quiz__processing) + app-footer,
+main:has(.archetype-quiz__result) + app-footer {
+  background: var(--color-dark) !important;
+}
+
+/* QUIZ DYNAMIC FOOTER BACKGROUND - FIM */

@@ -1,0 +1,539 @@
+﻿<main class="archetype-quiz">
+
+  <!-- INTRO -->
+
+  <section
+    *ngIf="phase === 'intro'"
+    class="archetype-quiz__intro">
+
+    <div class="container archetype-quiz__intro-inner">
+
+      <div class="archetype-quiz__intro-copy">
+
+        <p class="archetype-quiz__eyebrow">
+          ArquÃ©tipos
+        </p>
+
+        <h1>
+          Descubra seu
+          <span>arquÃ©tipo.</span>
+        </h1>
+
+        <p class="archetype-quiz__subtitle">
+          Uma leitura sobre o que move vocÃª hoje.
+        </p>
+
+        <p class="archetype-quiz__description">
+          VocÃª nÃ£o Ã© uma coisa sÃ³. Mas, em determinados momentos da vida,
+          algumas forÃ§as ficam mais presentes do que outras.
+        </p>
+
+        <p class="archetype-quiz__description">
+          Esta experiÃªncia observa padrÃµes de escolha, motivaÃ§Ã£o e
+          comportamento para identificar qual arquÃ©tipo parece estar
+          conduzindo vocÃª agora.
+        </p>
+
+        <button
+          type="button"
+          class="archetype-quiz__primary-button"
+          (click)="startQuiz()">
+
+          ComeÃ§ar a descoberta
+
+          <span aria-hidden="true">
+            â†’
+          </span>
+
+        </button>
+
+        <p class="archetype-quiz__meta">
+          12 perguntas
+          <span>â€¢</span>
+          cerca de 3 minutos
+          <span>â€¢</span>
+          resultado imediato
+        </p>
+
+      </div>
+
+
+      <div class="archetype-quiz__intro-card">
+
+        <span class="archetype-quiz__intro-card-index">
+          12
+        </span>
+
+        <p class="archetype-quiz__intro-card-label">
+          <span>ARQUÉ</span>
+          <span>TIPOS</span>
+        </p>
+
+        <strong>
+          Nenhum deles define vocÃª por completo.
+        </strong>
+
+        <span>
+          Aqui, vamos observar qual forÃ§a parece falar mais alto neste momento.
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="archetype-quiz__intro-note">
+
+      <div class="container archetype-quiz__intro-note-inner">
+
+        <p class="archetype-quiz__eyebrow">
+          Antes de comeÃ§ar
+        </p>
+
+        <h2>
+          ArquÃ©tipos nÃ£o sÃ£o
+          <span>rÃ³tulos.</span>
+        </h2>
+
+        <p>
+          SÃ£o formas de reconhecer padrÃµes que aparecem na maneira como
+          buscamos liberdade, conexÃ£o, realizaÃ§Ã£o, conhecimento, seguranÃ§a
+          e transformaÃ§Ã£o.
+        </p>
+
+        <button
+          type="button"
+          class="archetype-quiz__secondary-button"
+          (click)="startQuiz()">
+
+          Estou pronto
+
+          <span aria-hidden="true">
+            â†’
+          </span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PERGUNTAS -->
+
+  <section
+    *ngIf="phase === 'question'"
+    class="archetype-quiz__question-screen">
+
+    <div class="container archetype-quiz__question-container">
+
+      <header class="archetype-quiz__progress">
+
+        <div class="archetype-quiz__progress-top">
+
+          <span>
+            {{
+              (currentQuestionIndex + 1)
+                .toString()
+                .padStart(2, '0')
+            }}
+            /
+            {{
+              questions.length
+                .toString()
+                .padStart(2, '0')
+            }}
+          </span>
+
+          <span>
+            Uma leitura sobre vocÃª hoje
+          </span>
+
+        </div>
+
+        <div
+          class="archetype-quiz__progress-track"
+          aria-hidden="true">
+
+          <span
+            [style.width.%]="progress">
+          </span>
+
+        </div>
+
+      </header>
+
+
+      <div class="archetype-quiz__question">
+
+        <p class="archetype-quiz__eyebrow">
+          Pergunta
+          {{
+            (currentQuestionIndex + 1)
+              .toString()
+              .padStart(2, '0')
+          }}
+        </p>
+
+        <h1>
+          {{ currentQuestion.text }}
+        </h1>
+
+
+        <div class="archetype-quiz__options">
+
+          <button
+            *ngFor="let option of currentQuestion.options"
+            type="button"
+            class="archetype-quiz__option"
+            [class.archetype-quiz__option--selected]="selectedOptionId === option.id"
+            (click)="selectOption(option)">
+
+            <span class="archetype-quiz__option-id">
+              {{ option.id }}
+            </span>
+
+            <span class="archetype-quiz__option-text">
+              {{ option.text }}
+            </span>
+
+            <span
+              class="archetype-quiz__option-arrow"
+              aria-hidden="true">
+              â†’
+            </span>
+
+          </button>
+
+        </div>
+
+
+        <footer class="archetype-quiz__question-footer">
+
+          <button
+            type="button"
+            class="archetype-quiz__back"
+            (click)="goBack()">
+
+            â† Voltar
+
+          </button>
+
+          <p>
+            Responda pensando no que vocÃª realmente faria,
+            nÃ£o no que gostaria de fazer.
+          </p>
+
+        </footer>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROCESSAMENTO -->
+
+  <section
+    *ngIf="phase === 'processing'"
+    class="archetype-quiz__processing">
+
+    <div class="container archetype-quiz__processing-inner">
+
+      <p class="archetype-quiz__eyebrow">
+        Sua leitura
+      </p>
+
+      <h1>
+        Algumas respostas falam sobre o que vocÃª faz.
+        <span>Outras revelam o que move vocÃª.</span>
+      </h1>
+
+      <div
+        class="archetype-quiz__processing-line"
+        aria-hidden="true">
+        <span></span>
+      </div>
+
+      <p>
+        Cruzamos os padrÃµes das suas escolhas para encontrar
+        a forÃ§a arquetÃ­pica que apareceu com mais presenÃ§a agora.
+      </p>
+
+      <button
+        type="button"
+        class="archetype-quiz__primary-button"
+        (click)="showResult()">
+
+        Ver minha leitura
+
+        <span aria-hidden="true">
+          â†’
+        </span>
+
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- RESULTADO -->
+
+  <section
+    *ngIf="phase === 'result' && primaryResult"
+    class="archetype-quiz__result">
+
+    <header class="archetype-quiz__result-hero">
+
+      <div class="container archetype-quiz__result-hero-inner">
+
+        <p class="archetype-quiz__eyebrow">
+          Seu arquÃ©tipo predominante
+        </p>
+
+        <h1>
+          {{ primaryResult?.name }}
+        </h1>
+
+        <p class="archetype-quiz__result-central">
+          {{ primaryResult?.centralPhrase }}
+        </p>
+
+        <p class="archetype-quiz__result-subtitle">
+          Uma leitura sobre o que move vocÃª hoje.
+        </p>
+
+        <p
+          *ngIf="strongSecondaryInfluence && secondaryResults[0]"
+          class="archetype-quiz__influence-note">
+
+          Com forte influÃªncia de
+          <strong>
+            {{ secondaryResults[0].name }}
+          </strong>.
+
+        </p>
+
+      </div>
+
+    </header>
+
+
+    <section class="archetype-quiz__result-details">
+
+      <div class="container">
+
+        <div class="archetype-quiz__result-grid">
+
+          <article class="archetype-quiz__result-card">
+
+            <span>
+              01
+            </span>
+
+            <p>
+              O que move vocÃª
+            </p>
+
+            <strong>
+              {{ primaryResult?.motivation }}
+            </strong>
+
+          </article>
+
+
+          <article class="archetype-quiz__result-card">
+
+            <span>
+              02
+            </span>
+
+            <p>
+              Sua forÃ§a
+            </p>
+
+            <strong>
+              {{ primaryResult?.strength }}
+            </strong>
+
+          </article>
+
+
+          <article class="archetype-quiz__result-card">
+
+            <span>
+              03
+            </span>
+
+            <p>
+              Sua sombra
+            </p>
+
+            <strong>
+              {{ primaryResult?.shadow }}
+            </strong>
+
+          </article>
+
+
+          <article class="archetype-quiz__result-card">
+
+            <span>
+              04
+            </span>
+
+            <p>
+              Como vocÃª tende a se expressar
+            </p>
+
+            <div class="archetype-quiz__traits">
+
+              <span
+                *ngFor="let trait of primaryResult?.expression">
+                {{ trait }}
+              </span>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <article class="archetype-quiz__reading">
+
+          <p class="archetype-quiz__eyebrow">
+            Uma leitura sobre vocÃª hoje
+          </p>
+
+          <h2>
+            {{ primaryResult?.reading }}
+          </h2>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <section class="archetype-quiz__secondary">
+
+      <div class="container">
+
+        <div class="archetype-quiz__secondary-heading">
+
+          <p class="archetype-quiz__eyebrow">
+            Outras forÃ§as
+          </p>
+
+          <h2>
+            VocÃª nÃ£o termina em
+            <span>um Ãºnico arquÃ©tipo.</span>
+          </h2>
+
+          <p>
+            Outras duas forÃ§as tambÃ©m apareceram com frequÃªncia
+            nas suas escolhas.
+          </p>
+
+        </div>
+
+
+        <div class="archetype-quiz__secondary-grid">
+
+          <article
+            *ngFor="let result of secondaryResults"
+            class="archetype-quiz__secondary-card">
+
+            <span>
+              InfluÃªncia
+            </span>
+
+            <h3>
+              {{ result.name }}
+            </h3>
+
+            <p>
+              {{ result.secondaryPhrase }}
+            </p>
+
+          </article>
+
+        </div>
+
+
+        <p class="archetype-quiz__disclaimer">
+          Este resultado nÃ£o define quem vocÃª Ã©. Ele representa padrÃµes
+          que apareceram nas respostas dadas hoje e pode mudar conforme
+          vocÃª, suas escolhas e seu momento tambÃ©m mudam.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="archetype-quiz__brand-bridge">
+
+      <div class="container archetype-quiz__brand-bridge-inner">
+
+        <p class="archetype-quiz__eyebrow">
+          Pessoas mudam. Marcas tambÃ©m.
+        </p>
+
+        <h2>
+          E o que move
+          <span>a sua marca?</span>
+        </h2>
+
+        <p>
+          Assim como uma pessoa, uma marca tambÃ©m cria expectativas
+          pela forma como fala, age, se apresenta e se relaciona.
+        </p>
+
+        <p>
+          ArquÃ©tipos podem ajudar a reconhecer esses padrÃµes.
+          Mas escolher um arquÃ©tipo nÃ£o Ã© escolher uma personalidade pronta.
+          Ã‰ compreender qual papel uma marca ocupa na vida das pessoas
+          e encontrar uma maneira coerente de expressÃ¡-lo.
+        </p>
+
+        <div class="archetype-quiz__brand-actions">
+
+          <a
+            class="archetype-quiz__primary-button"
+            [href]="contactUrl"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            Quero entender minha marca
+
+            <span aria-hidden="true">
+              â†—
+            </span>
+
+          </a>
+
+          <button
+            type="button"
+            class="archetype-quiz__restart"
+            (click)="restart()">
+
+            Fazer novamente
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </section>
+
+</main>
