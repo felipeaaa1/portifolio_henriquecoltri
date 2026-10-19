@@ -146,6 +146,22 @@ export class ArchetypeQuizPageComponent implements OnInit {
   };
 
 
+  readonly shareBackgrounds: Record<ArchetypeName, string> = {
+    'Inocente': '/assets/archetypes/share-cards/inocente.png',
+    'Explorador': '/assets/archetypes/share-cards/explorador.png',
+    'Sábio': '/assets/archetypes/share-cards/sabio.png',
+    'Herói': '/assets/archetypes/share-cards/heroi.png',
+    'Rebelde': '/assets/archetypes/share-cards/rebelde.png',
+    'Mago': '/assets/archetypes/share-cards/mago.png',
+    'Pessoa Comum': '/assets/archetypes/share-cards/pessoa-comum.png',
+    'Amante': '/assets/archetypes/share-cards/amante.png',
+    'Bobo da Corte': '/assets/archetypes/share-cards/bobo-da-corte.png',
+    'Cuidador': '/assets/archetypes/share-cards/cuidador.png',
+    'Criador': '/assets/archetypes/share-cards/criador.png',
+    'Governante': '/assets/archetypes/share-cards/governante.png'
+  };
+
+
   readonly questions: QuizQuestion[] = [
 
     {
@@ -1125,197 +1141,133 @@ export class ArchetypeQuizPageComponent implements OnInit {
   }
 
 
-  private drawShareLandscape(
+  private async drawShareLandscape(
     context: CanvasRenderingContext2D,
     width: number,
     height: number
-  ): void {
+  ): Promise<void> {
 
-    const sceneTop = 840;
+    if (!this.primaryResult) {
+      return;
+    }
 
-    const sky =
+    const image =
+      await this.loadCanvasImage(
+        this.shareBackgrounds[this.primaryResult.name]
+      );
+
+    const sceneTop = 820;
+    const sceneHeight = height - sceneTop;
+
+    if (!image) {
+
+      const fallback =
+        context.createLinearGradient(
+          0,
+          sceneTop,
+          0,
+          height
+        );
+
+      fallback.addColorStop(0, '#21140f');
+      fallback.addColorStop(.4, '#7b301d');
+      fallback.addColorStop(1, '#080808');
+
+      context.fillStyle = fallback;
+      context.fillRect(
+        0,
+        sceneTop,
+        width,
+        sceneHeight
+      );
+
+      return;
+    }
+
+    const scale =
+      Math.max(
+        width / image.width,
+        sceneHeight / image.height
+      );
+
+    const drawWidth =
+      image.width * scale;
+
+    const drawHeight =
+      image.height * scale;
+
+    const drawX =
+      (width - drawWidth) / 2;
+
+    const drawY =
+      sceneTop +
+      (sceneHeight - drawHeight) / 2;
+
+    context.drawImage(
+      image,
+      drawX,
+      drawY,
+      drawWidth,
+      drawHeight
+    );
+
+    const sceneFade =
       context.createLinearGradient(
         0,
         sceneTop,
         0,
-        height
+        sceneTop + 360
       );
 
-    sky.addColorStop(0, '#171717');
-    sky.addColorStop(.18, '#24130e');
-    sky.addColorStop(.48, '#6f2b1b');
-    sky.addColorStop(.68, '#2b1712');
-    sky.addColorStop(1, '#080808');
+    sceneFade.addColorStop(
+      0,
+      '#171717'
+    );
 
-    context.fillStyle = sky;
+    sceneFade.addColorStop(
+      .35,
+      'rgba(23,23,23,.86)'
+    );
+
+    sceneFade.addColorStop(
+      1,
+      'rgba(23,23,23,0)'
+    );
+
+    context.fillStyle = sceneFade;
+
     context.fillRect(
       0,
       sceneTop,
       width,
-      height - sceneTop
+      380
     );
 
-    const glow =
-      context.createRadialGradient(
-        width * .76,
-        height * .61,
-        0,
-        width * .76,
-        height * .61,
-        width * .33
-      );
-
-    glow.addColorStop(0, 'rgba(255,190,150,.98)');
-    glow.addColorStop(.28, 'rgba(255,116,82,.95)');
-    glow.addColorStop(.68, 'rgba(255,116,82,.30)');
-    glow.addColorStop(1, 'rgba(255,116,82,0)');
-
-    context.fillStyle = glow;
-    context.beginPath();
-    context.arc(
-      width * .76,
-      height * .61,
-      width * .32,
-      0,
-      Math.PI * 2
-    );
-    context.fill();
-
-    context.fillStyle = '#ff7452';
-    context.globalAlpha = .88;
-    context.beginPath();
-    context.arc(
-      width * .77,
-      height * .61,
-      width * .205,
-      0,
-      Math.PI * 2
-    );
-    context.fill();
-    context.globalAlpha = 1;
-
-    const ridge = (
-      baseY: number,
-      amplitude: number,
-      color: string,
-      phase: number
-    ) => {
-
-      context.beginPath();
-      context.moveTo(0, height);
-
-      for (let x = 0; x <= width + 80; x += 60) {
-
-        const y =
-          baseY +
-          Math.sin(x * .013 + phase) * amplitude +
-          Math.cos(x * .025 + phase * .6) * amplitude * .42;
-
-        context.lineTo(x, y);
-      }
-
-      context.lineTo(width, height);
-      context.closePath();
-      context.fillStyle = color;
-      context.fill();
-    };
-
-    ridge(height * .66, 22, 'rgba(35,18,15,.60)', 0);
-    ridge(height * .705, 32, 'rgba(24,15,14,.76)', .8);
-    ridge(height * .755, 44, 'rgba(15,12,11,.92)', 1.6);
-    ridge(height * .82, 58, '#080808', 2.4);
-
-    context.strokeStyle = 'rgba(255,116,82,.55)';
-    context.lineWidth = 4;
-    context.beginPath();
-    context.moveTo(width * .36, height * .81);
-    context.bezierCurveTo(
-      width * .48,
-      height * .77,
-      width * .62,
-      height * .88,
-      width * .88,
-      height * .72
-    );
-    context.stroke();
-
-    context.save();
-    context.translate(
-      width * .30,
-      height * .725
-    );
-
-    context.fillStyle = '#090909';
-
-    context.beginPath();
-    context.arc(0, -92, 24, 0, Math.PI * 2);
-    context.fill();
-
-    context.fillRect(-17, -67, 34, 100);
-
-    context.beginPath();
-    context.moveTo(-15, -50);
-    context.lineTo(-48, 15);
-    context.lineTo(-33, 20);
-    context.lineTo(2, -32);
-    context.closePath();
-    context.fill();
-
-    context.beginPath();
-    context.moveTo(15, -48);
-    context.lineTo(44, 5);
-    context.lineTo(31, 15);
-    context.lineTo(-1, -30);
-    context.closePath();
-    context.fill();
-
-    context.beginPath();
-    context.moveTo(-8, 29);
-    context.lineTo(-30, 100);
-    context.lineTo(-10, 102);
-    context.lineTo(8, 32);
-    context.closePath();
-    context.fill();
-
-    context.beginPath();
-    context.moveTo(9, 30);
-    context.lineTo(30, 103);
-    context.lineTo(10, 105);
-    context.lineTo(-8, 34);
-    context.closePath();
-    context.fill();
-
-    context.beginPath();
-    context.ellipse(
-      -29,
-      -37,
-      27,
-      48,
-      -.25,
-      0,
-      Math.PI * 2
-    );
-    context.fill();
-
-    context.restore();
-
-    const vignette =
+    const bottomFade =
       context.createLinearGradient(
         0,
-        height * .82,
+        height - 360,
         0,
         height
       );
 
-    vignette.addColorStop(0, 'rgba(0,0,0,0)');
-    vignette.addColorStop(1, 'rgba(0,0,0,.88)');
+    bottomFade.addColorStop(
+      0,
+      'rgba(0,0,0,0)'
+    );
 
-    context.fillStyle = vignette;
+    bottomFade.addColorStop(
+      1,
+      'rgba(0,0,0,.92)'
+    );
+
+    context.fillStyle = bottomFade;
+
     context.fillRect(
       0,
-      height * .78,
+      height - 380,
       width,
-      height * .22
+      380
     );
   }
 
@@ -1370,7 +1322,7 @@ export class ArchetypeQuizPageComponent implements OnInit {
       canvas.height
     );
 
-    this.drawShareLandscape(
+    await this.drawShareLandscape(
       context,
       canvas.width,
       canvas.height
