@@ -1250,11 +1250,34 @@ export class ArchetypeQuizPageComponent implements OnInit {
 
       context.restore();
 
+      const prefix =
+        `${this.strongSecondaryInfluence ? 'Com forte influência de' : 'Com influência de'} `;
+
+      const textX =
+        capsuleX + 88;
+
+      context.font =
+        '500 31px Grandis, Arial, sans-serif';
+
       context.fillStyle = light;
 
       context.fillText(
-        label,
-        capsuleX + 88,
+        prefix,
+        textX,
+        capsuleY + 50
+      );
+
+      const prefixWidth =
+        context.measureText(prefix).width;
+
+      context.font =
+        '700 31px Grandis, Arial, sans-serif';
+
+      context.fillStyle = accent;
+
+      context.fillText(
+        `${secondary}.`,
+        textX + prefixWidth,
         capsuleY + 50
       );
     }
