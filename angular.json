@@ -44,6 +44,11 @@
                                                                                                                           "glob":  "sitemap.xml",
                                                                                                                           "input":  "src",
                                                                                                                           "output":  "/"
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                          "glob":  "manifest.webmanifest",
+                                                                                                                          "input":  "src",
+                                                                                                                          "output":  "/"
                                                                                                                       }
                                                                                                                   ],
                                                                                                        "styles":  [
