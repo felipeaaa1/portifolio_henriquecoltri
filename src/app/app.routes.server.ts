@@ -37,6 +37,10 @@ export const serverRoutes: ServerRoute[] = [
     renderMode: RenderMode.Prerender
   },
   {
+    path: 'arquetipos',
+    renderMode: RenderMode.Prerender
+  },
+  {
     path: 'descubra-seu-arquetipo',
     renderMode: RenderMode.Prerender
   },
