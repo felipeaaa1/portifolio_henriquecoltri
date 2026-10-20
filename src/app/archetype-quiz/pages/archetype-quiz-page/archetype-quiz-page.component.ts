@@ -1202,7 +1202,7 @@ export class ArchetypeQuizPageComponent implements OnInit {
         context.measureText(label).width;
 
       const capsuleX = 76;
-      const capsuleY = 796;
+      const capsuleY = 850;
       const capsuleHeight = 78;
       const capsuleWidth =
         Math.min(
