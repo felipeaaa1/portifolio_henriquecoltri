@@ -313,6 +313,20 @@
             </strong>.
           </p>
 
+          <button
+            type="button"
+            class="archetype-quiz__card-cta"
+            [disabled]="resultCardLoading"
+            (click)="openResultCardPreview()">
+
+            {{ resultCardLoading ? 'Preparando seu card...' : 'Ver meu Card' }}
+
+            <span aria-hidden="true">
+              ↗
+            </span>
+
+          </button>
+
           <!-- QUIZ RESULT SHARE - INICIO -->
           <div class="archetype-quiz__result-share">
 
@@ -581,6 +595,72 @@
       </div>
 
     </section>
+
+    <div
+      *ngIf="resultCardPreviewUrl"
+      class="archetype-quiz__card-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Prévia do seu card de arquétipo"
+      (click)="closeResultCardPreview()">
+
+      <div
+        class="archetype-quiz__card-modal-panel"
+        (click)="$event.stopPropagation()">
+
+        <button
+          type="button"
+          class="archetype-quiz__card-modal-close"
+          aria-label="Fechar prévia"
+          (click)="closeResultCardPreview()">
+          ×
+        </button>
+
+        <div class="archetype-quiz__card-modal-copy">
+
+          <p class="archetype-quiz__eyebrow">
+            Seu card
+          </p>
+
+          <h2>
+            Agora ele é seu.
+          </h2>
+
+          <p>
+            Baixe para guardar ou compartilhe com quem você quiser.
+          </p>
+
+        </div>
+
+        <div class="archetype-quiz__card-preview">
+
+          <img
+            [src]="resultCardPreviewUrl"
+            [alt]="'Card do arquétipo ' + primaryResult?.name">
+
+        </div>
+
+        <div class="archetype-quiz__card-modal-actions">
+
+          <button
+            type="button"
+            class="archetype-quiz__card-download"
+            (click)="downloadResultCard()">
+            Baixar Card
+          </button>
+
+          <button
+            type="button"
+            class="archetype-quiz__card-share"
+            (click)="shareResult()">
+            Compartilhar Card
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
 
   </section>
 

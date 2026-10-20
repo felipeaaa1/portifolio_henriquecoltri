@@ -77,6 +77,10 @@ export class ArchetypeQuizPageComponent implements OnInit {
 
   strongSecondaryInfluence = false;
 
+  resultCardPreviewUrl: string | null = null;
+  resultCardBlob: Blob | null = null;
+  resultCardLoading = false;
+
 
   readonly archetypeOrder: ArchetypeName[] = [
     'Inocente',
@@ -1323,6 +1327,63 @@ export class ArchetypeQuizPageComponent implements OnInit {
   }
 
 
+  async openResultCardPreview(): Promise<void> {
+
+    if (this.resultCardLoading) {
+      return;
+    }
+
+    this.resultCardLoading = true;
+
+    const blob =
+      await this.generateResultImage();
+
+    this.resultCardLoading = false;
+
+    if (!blob) {
+      return;
+    }
+
+    if (this.resultCardPreviewUrl) {
+      URL.revokeObjectURL(
+        this.resultCardPreviewUrl
+      );
+    }
+
+    this.resultCardBlob = blob;
+
+    this.resultCardPreviewUrl =
+      URL.createObjectURL(blob);
+  }
+
+
+  closeResultCardPreview(): void {
+
+    if (this.resultCardPreviewUrl) {
+      URL.revokeObjectURL(
+        this.resultCardPreviewUrl
+      );
+    }
+
+    this.resultCardPreviewUrl = null;
+    this.resultCardBlob = null;
+  }
+
+
+  async downloadResultCard(): Promise<void> {
+
+    const blob =
+      this.resultCardBlob ??
+      await this.generateResultImage();
+
+    if (!blob) {
+      return;
+    }
+
+    this.downloadResultImage(blob);
+  }
+
+
   async shareResult(): Promise<void> {
 
     const blob =
@@ -1440,6 +1501,8 @@ ${window.location.href}`;
   /* QUIZ RESULT SHARE - FIM */
 
   restart(): void {
+
+    this.closeResultCardPreview();
 
     this.answers = {};
 
