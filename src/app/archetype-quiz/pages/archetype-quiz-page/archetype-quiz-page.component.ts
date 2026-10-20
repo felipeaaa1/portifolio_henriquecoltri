@@ -11,7 +11,7 @@ type ArchetypeName =
   | 'Herói'
   | 'Rebelde'
   | 'Mago'
-  | 'Cara Comum'
+  | 'Pessoa Comum'
   | 'Amante'
   | 'Bobo da Corte'
   | 'Cuidador'
@@ -85,13 +85,81 @@ export class ArchetypeQuizPageComponent implements OnInit {
     'Herói',
     'Rebelde',
     'Mago',
-    'Cara Comum',
+    'Pessoa Comum',
     'Amante',
     'Bobo da Corte',
     'Cuidador',
     'Criador',
     'Governante'
   ];
+
+
+  readonly shareCopy: Record<ArchetypeName, { phrase: string; description: string }> = {
+    'Inocente': {
+      phrase: 'Você busca o que é leve, verdadeiro e essencial, mesmo quando o mundo parece pesado demais.',
+      description: 'Hoje, o que move você parece ter mais relação com simplicidade, esperança e a busca por aquilo que preserva o que há de essencial.'
+    },
+    'Explorador': {
+      phrase: 'Você precisa sentir que existe sempre um horizonte além daquele que já conhece.',
+      description: 'Hoje, o que move você parece ter mais relação com liberdade, descoberta, autonomia e a vontade de experimentar novas possibilidades.'
+    },
+    'Sábio': {
+      phrase: 'Antes de escolher um caminho, você precisa compreender.',
+      description: 'Hoje, o que move você parece ter mais relação com conhecimento, clareza, análise e a busca por compreender antes de agir.'
+    },
+    'Herói': {
+      phrase: 'Você se move quando sente que pode agir, superar e fazer a diferença.',
+      description: 'Hoje, o que move você parece ter mais relação com conquista, coragem, superação e a necessidade de transformar intenção em ação.'
+    },
+    'Rebelde': {
+      phrase: 'Você se move quando sente que algo precisa ser rompido para que a verdade apareça.',
+      description: 'Hoje, o que move você parece ter mais relação com ruptura, transformação e a coragem de questionar aquilo que já não faz sentido.'
+    },
+    'Mago': {
+      phrase: 'Você enxerga possibilidades onde outras pessoas ainda enxergam apenas o que existe.',
+      description: 'Hoje, o que move você parece ter mais relação com transformação, visão, conexão entre ideias e a vontade de fazer mudanças significativas acontecerem.'
+    },
+    'Pessoa Comum': {
+      phrase: 'Você acredita que ninguém precisa provar que é especial para merecer pertencer.',
+      description: 'Hoje, o que move você parece ter mais relação com pertencimento, proximidade, igualdade e relações em que as pessoas podem simplesmente ser quem são.'
+    },
+    'Amante': {
+      phrase: 'Você se move pela intensidade dos vínculos, pela beleza e pelo desejo de viver com presença.',
+      description: 'Hoje, o que move você parece ter mais relação com conexão, desejo, sensibilidade e a busca por experiências que tenham significado afetivo.'
+    },
+    'Bobo da Corte': {
+      phrase: 'Você alivia o peso da vida com presença, humor e a coragem de enxergar leveza.',
+      description: 'Hoje, o que move você parece ter mais relação com espontaneidade, liberdade, humor e a capacidade de quebrar tensões sem perder profundidade.'
+    },
+    'Cuidador': {
+      phrase: 'Você encontra sentido quando percebe que alguém está melhor porque você esteve ali.',
+      description: 'Hoje, o que move você parece ter mais relação com cuidado, presença, proteção e a vontade de contribuir para o bem-estar de quem está ao redor.'
+    },
+    'Criador': {
+      phrase: 'Você precisa transformar ideias, sensações e visões em algo que exista no mundo.',
+      description: 'Hoje, o que move você parece ter mais relação com expressão, originalidade, invenção e a vontade de dar forma ao que ainda não existe.'
+    },
+    'Governante': {
+      phrase: 'Você encontra segurança quando consegue organizar o que está ao redor e dar direção ao que importa.',
+      description: 'Hoje, o que move você parece ter mais relação com ordem, responsabilidade, liderança e a necessidade de criar estruturas que sustentem aquilo em que acredita.'
+    }
+  };
+
+
+  readonly shareBackgrounds: Record<ArchetypeName, string> = {
+    'Amante': '/assets/archetypes/share-cards/Amante-Card.png',
+    'Pessoa Comum': '/assets/archetypes/share-cards/Pessoa-Comum-Card.png',
+    'Herói': '/assets/archetypes/share-cards/Heroi-Card.png',
+    'Cuidador': '/assets/archetypes/share-cards/Cuidador-Card.png',
+    'Explorador': '/assets/archetypes/share-cards/Explorador-Card.png',
+    'Rebelde': '/assets/archetypes/share-cards/Rebelde-Card.png',
+    'Governante': '/assets/archetypes/share-cards/Governante-Card.png',
+    'Sábio': '/assets/archetypes/share-cards/Sabio-Card.png',
+    'Mago': '/assets/archetypes/share-cards/Mago-Card.png',
+    'Bobo da Corte': '/assets/archetypes/share-cards/Bobo-da-Corte-Card.png',
+    'Criador': '/assets/archetypes/share-cards/Criador-Card.png',
+    'Inocente': '/assets/archetypes/share-cards/Inocente-Card.png'
+  };
 
 
   readonly questions: QuizQuestion[] = [
@@ -168,7 +236,7 @@ export class ArchetypeQuizPageComponent implements OnInit {
           text: 'Saber que estou fazendo diferença na vida de alguém.',
           scores: [
             { archetype: 'Cuidador', weight: 3 },
-            { archetype: 'Cara Comum', weight: 1 }
+            { archetype: 'Pessoa Comum', weight: 1 }
           ]
         }
       ]
@@ -198,7 +266,7 @@ export class ArchetypeQuizPageComponent implements OnInit {
           id: 'C',
           text: 'Como as pessoas estão se relacionando.',
           scores: [
-            { archetype: 'Cara Comum', weight: 3 },
+            { archetype: 'Pessoa Comum', weight: 3 },
             { archetype: 'Amante', weight: 1 }
           ]
         },
@@ -277,7 +345,7 @@ export class ArchetypeQuizPageComponent implements OnInit {
           text: 'Construir uma conexão verdadeira.',
           scores: [
             { archetype: 'Amante', weight: 3 },
-            { archetype: 'Cara Comum', weight: 1 }
+            { archetype: 'Pessoa Comum', weight: 1 }
           ]
         },
         {
@@ -308,7 +376,7 @@ export class ArchetypeQuizPageComponent implements OnInit {
           text: 'Tento não deixar aquilo pesar mais do que merece e encontro um jeito leve de lidar com a situação.',
           scores: [
             { archetype: 'Bobo da Corte', weight: 3 },
-            { archetype: 'Cara Comum', weight: 1 }
+            { archetype: 'Pessoa Comum', weight: 1 }
           ]
         },
         {
@@ -362,7 +430,7 @@ export class ArchetypeQuizPageComponent implements OnInit {
           id: 'D',
           text: 'Ver pessoas diferentes trabalhando juntas por algo em comum.',
           scores: [
-            { archetype: 'Cara Comum', weight: 3 },
+            { archetype: 'Pessoa Comum', weight: 3 },
             { archetype: 'Cuidador', weight: 1 }
           ]
         }
@@ -402,7 +470,7 @@ export class ArchetypeQuizPageComponent implements OnInit {
           text: 'Tento diminuir o peso da situação e devolver um pouco de leveza.',
           scores: [
             { archetype: 'Bobo da Corte', weight: 3 },
-            { archetype: 'Cara Comum', weight: 1 }
+            { archetype: 'Pessoa Comum', weight: 1 }
           ]
         }
       ]
@@ -433,7 +501,7 @@ export class ArchetypeQuizPageComponent implements OnInit {
           text: 'Falta de cuidado entre as pessoas.',
           scores: [
             { archetype: 'Cuidador', weight: 3 },
-            { archetype: 'Cara Comum', weight: 1 }
+            { archetype: 'Pessoa Comum', weight: 1 }
           ]
         },
         {
@@ -510,7 +578,7 @@ export class ArchetypeQuizPageComponent implements OnInit {
           id: 'C',
           text: 'O efeito dessa decisão sobre as pessoas das quais faço parte.',
           scores: [
-            { archetype: 'Cara Comum', weight: 3 },
+            { archetype: 'Pessoa Comum', weight: 3 },
             { archetype: 'Amante', weight: 1 }
           ]
         },
@@ -557,7 +625,7 @@ export class ArchetypeQuizPageComponent implements OnInit {
           id: 'D',
           text: 'Uma presença humana, acessível e com a qual as pessoas se sintam à vontade.',
           scores: [
-            { archetype: 'Cara Comum', weight: 3 },
+            { archetype: 'Pessoa Comum', weight: 3 },
             { archetype: 'Bobo da Corte', weight: 1 }
           ]
         }
@@ -707,8 +775,8 @@ export class ArchetypeQuizPageComponent implements OnInit {
         'A capacidade de transformar percepção em possibilidade.'
     },
 
-    'Cara Comum': {
-      name: 'Cara Comum',
+    'Pessoa Comum': {
+      name: 'Pessoa Comum',
       centralPhrase:
         'Você acredita que ninguém precisa provar que é especial para merecer pertencer.',
       motivation:
@@ -991,8 +1059,13 @@ export class ArchetypeQuizPageComponent implements OnInit {
     const name =
       this.primaryResult?.name ?? 'meu arquétipo';
 
+    const copy =
+      this.primaryResult
+        ? this.shareCopy[this.primaryResult.name]
+        : null;
+
     const phrase =
-      this.primaryResult?.centralPhrase ?? '';
+      copy?.phrase ?? this.primaryResult?.centralPhrase ?? '';
 
     return phrase
       ? `Meu arquétipo predominante é ${name}. ${phrase}`
@@ -1000,34 +1073,309 @@ export class ArchetypeQuizPageComponent implements OnInit {
   }
 
 
-  async shareResult(): Promise<void> {
+  private wrapCanvasText(
+    context: CanvasRenderingContext2D,
+    text: string,
+    maxWidth: number
+  ): string[] {
 
-    const text =
-      this.getResultShareText();
+    const words = text.split(/\s+/);
+    const lines: string[] = [];
+    let current = '';
+
+    for (const word of words) {
+
+      const candidate =
+        current ? `${current} ${word}` : word;
+
+      if (
+        current &&
+        context.measureText(candidate).width > maxWidth
+      ) {
+        lines.push(current);
+        current = word;
+      }
+      else {
+        current = candidate;
+      }
+    }
+
+    if (current) {
+      lines.push(current);
+    }
+
+    return lines;
+  }
+
+
+  private drawCanvasLines(
+    context: CanvasRenderingContext2D,
+    lines: string[],
+    x: number,
+    y: number,
+    lineHeight: number
+  ): number {
+
+    lines.forEach((line, index) => {
+      context.fillText(
+        line,
+        x,
+        y + index * lineHeight
+      );
+    });
+
+    return y + lines.length * lineHeight;
+  }
+
+
+  private async loadCanvasImage(src: string): Promise<HTMLImageElement | null> {
+
+    return await new Promise(resolve => {
+
+      const image = new Image();
+
+      image.onload = () => resolve(image);
+      image.onerror = () => resolve(null);
+      image.src = src;
+    });
+  }
+
+
+  private async generateResultImage(): Promise<Blob | null> {
+
+    if (
+      !this.primaryResult ||
+      typeof document === 'undefined'
+    ) {
+      return null;
+    }
+
+    if (document.fonts?.ready) {
+      await document.fonts.ready;
+    }
+
+    const baseImage =
+      await this.loadCanvasImage(
+        this.shareBackgrounds[this.primaryResult.name]
+      );
+
+    if (!baseImage) {
+      return null;
+    }
+
+    const canvas =
+      document.createElement('canvas');
+
+    canvas.width = 1080;
+    canvas.height = 1920;
+
+    const context =
+      canvas.getContext('2d');
+
+    if (!context) {
+      return null;
+    }
+
+    context.drawImage(
+      baseImage,
+      0,
+      0,
+      canvas.width,
+      canvas.height
+    );
+
+    const secondary =
+      this.secondaryResults[0]?.name ?? null;
+
+    if (secondary) {
+
+      const accent = '#ff7452';
+      const light = '#f6f1e8';
+
+      const prefix =
+        `${this.strongSecondaryInfluence ? 'Com forte influência de' : 'Com influência de'} `;
+
+      context.font =
+        '500 31px Grandis, Arial, sans-serif';
+
+      const prefixWidth =
+        context.measureText(prefix).width;
+
+      context.font =
+        '700 31px Grandis, Arial, sans-serif';
+
+      const secondaryWidth =
+        context.measureText(`${secondary}.`).width;
+
+      const capsuleX = 76;
+      const capsuleY = 850;
+      const capsuleHeight = 78;
+      const capsuleWidth =
+        Math.min(
+          900,
+          Math.max(
+            520,
+            prefixWidth + secondaryWidth + 150
+          )
+        );
+
+      context.beginPath();
+      context.roundRect(
+        capsuleX,
+        capsuleY,
+        capsuleWidth,
+        capsuleHeight,
+        39
+      );
+
+      context.fillStyle =
+        'rgba(23,23,23,.72)';
+      context.fill();
+
+      context.strokeStyle = accent;
+      context.lineWidth = 2;
+      context.stroke();
+
+      context.save();
+
+      context.translate(
+        capsuleX + 52,
+        capsuleY + 39
+      );
+
+      context.rotate(Math.PI / 4);
+
+      context.fillStyle = accent;
+
+      context.fillRect(
+        -10,
+        -10,
+        20,
+        20
+      );
+
+      context.restore();
+
+      const textX =
+        capsuleX + 88;
+
+      context.font =
+        '500 31px Grandis, Arial, sans-serif';
+
+      context.fillStyle = light;
+
+      context.fillText(
+        prefix,
+        textX,
+        capsuleY + 50
+      );
+
+      context.font =
+        '700 31px Grandis, Arial, sans-serif';
+
+      context.fillStyle = accent;
+
+      context.fillText(
+        `${secondary}.`,
+        textX + prefixWidth,
+        capsuleY + 50
+      );
+    }
+
+    return await new Promise(resolve => {
+
+      canvas.toBlob(
+        blob => resolve(blob),
+        'image/png',
+        1
+      );
+    });
+  }
+
+
+  private downloadResultImage(
+    blob: Blob
+  ): void {
+
+    const name =
+      this.primaryResult?.name
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-zA-Z0-9]+/g, '-')
+        .replace(/^-|-$/g, '')
+        .toLowerCase() || 'arquetipo';
 
     const url =
-      window.location.href;
+      URL.createObjectURL(blob);
 
-    if (navigator.share) {
+    const link =
+      document.createElement('a');
+
+    link.href = url;
+    link.download =
+      `meu-arquetipo-${name}.png`;
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    URL.revokeObjectURL(url);
+  }
+
+
+  async shareResult(): Promise<void> {
+
+    const blob =
+      await this.generateResultImage();
+
+    if (!blob) {
+
+      await this.copyResultLink();
+      return;
+    }
+
+    const name =
+      this.primaryResult?.name ?? 'arquetipo';
+
+    const file =
+      new File(
+        [blob],
+        `meu-arquetipo-${name}.png`,
+        {
+          type: 'image/png'
+        }
+      );
+
+    if (
+      navigator.share &&
+      navigator.canShare?.({
+        files: [file]
+      })
+    ) {
 
       try {
 
         await navigator.share({
           title: 'Meu arquétipo',
-          text,
-          url
+          text: this.getResultShareText(),
+          files: [file]
         });
 
         return;
 
       }
-      catch {
-        return;
-      }
+      catch (error) {
 
+        if (
+          error instanceof DOMException &&
+          error.name === 'AbortError'
+        ) {
+          return;
+        }
+      }
     }
 
-    await this.copyResultLink();
+    this.downloadResultImage(blob);
   }
 
 
