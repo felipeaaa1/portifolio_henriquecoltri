@@ -1204,12 +1204,8 @@ export class ArchetypeQuizPageComponent implements OnInit {
       context.font =
         '700 31px Grandis, Arial, sans-serif';
 
-      const maxSecondaryWidth =
-        Math.max(
-          ...this.archetypeOrder.map(
-            name => context.measureText(`${name}.`).width
-          )
-        );
+      const secondaryWidth =
+        context.measureText(`${secondary}.`).width;
 
       const capsuleX = 76;
       const capsuleY = 850;
@@ -1218,8 +1214,8 @@ export class ArchetypeQuizPageComponent implements OnInit {
         Math.min(
           900,
           Math.max(
-            560,
-            prefixWidth + maxSecondaryWidth + 160
+            520,
+            prefixWidth + secondaryWidth + 150
           )
         );
 
