@@ -147,18 +147,18 @@ export class ArchetypeQuizPageComponent implements OnInit {
 
 
   readonly shareBackgrounds: Record<ArchetypeName, string> = {
-    'Inocente': '/assets/archetypes/share-cards/inocente.png',
-    'Explorador': '/assets/archetypes/share-cards/explorador.png',
-    'Sábio': '/assets/archetypes/share-cards/sabio.png',
-    'Herói': '/assets/archetypes/share-cards/heroi.png',
-    'Rebelde': '/assets/archetypes/share-cards/rebelde.png',
-    'Mago': '/assets/archetypes/share-cards/mago.png',
-    'Pessoa Comum': '/assets/archetypes/share-cards/pessoa-comum.png',
-    'Amante': '/assets/archetypes/share-cards/amante.png',
-    'Bobo da Corte': '/assets/archetypes/share-cards/bobo-da-corte.png',
-    'Cuidador': '/assets/archetypes/share-cards/cuidador.png',
-    'Criador': '/assets/archetypes/share-cards/criador.png',
-    'Governante': '/assets/archetypes/share-cards/governante.png'
+    'Amante': '/assets/archetypes/share-cards/Amante-Card.png',
+    'Pessoa Comum': '/assets/archetypes/share-cards/Pessoa-Comum-Card.png',
+    'Herói': '/assets/archetypes/share-cards/Heroi-Card.png',
+    'Cuidador': '/assets/archetypes/share-cards/Cuidador-Card.png',
+    'Explorador': '/assets/archetypes/share-cards/Explorador-Card.png',
+    'Rebelde': '/assets/archetypes/share-cards/Rebelde-Card.png',
+    'Governante': '/assets/archetypes/share-cards/Governante-Card.png',
+    'Sábio': '/assets/archetypes/share-cards/Sabio-Card.png',
+    'Mago': '/assets/archetypes/share-cards/Mago-Card.png',
+    'Bobo da Corte': '/assets/archetypes/share-cards/Bobo-da-Corte-Card.png',
+    'Criador': '/assets/archetypes/share-cards/Criador-Card.png',
+    'Inocente': '/assets/archetypes/share-cards/Inocente-Card.png'
   };
 
 
@@ -1141,137 +1141,6 @@ export class ArchetypeQuizPageComponent implements OnInit {
   }
 
 
-  private async drawShareLandscape(
-    context: CanvasRenderingContext2D,
-    width: number,
-    height: number
-  ): Promise<void> {
-
-    if (!this.primaryResult) {
-      return;
-    }
-
-    const image =
-      await this.loadCanvasImage(
-        this.shareBackgrounds[this.primaryResult.name]
-      );
-
-    const sceneTop = 820;
-    const sceneHeight = height - sceneTop;
-
-    if (!image) {
-
-      const fallback =
-        context.createLinearGradient(
-          0,
-          sceneTop,
-          0,
-          height
-        );
-
-      fallback.addColorStop(0, '#21140f');
-      fallback.addColorStop(.4, '#7b301d');
-      fallback.addColorStop(1, '#080808');
-
-      context.fillStyle = fallback;
-      context.fillRect(
-        0,
-        sceneTop,
-        width,
-        sceneHeight
-      );
-
-      return;
-    }
-
-    const scale =
-      Math.max(
-        width / image.width,
-        sceneHeight / image.height
-      );
-
-    const drawWidth =
-      image.width * scale;
-
-    const drawHeight =
-      image.height * scale;
-
-    const drawX =
-      (width - drawWidth) / 2;
-
-    const drawY =
-      sceneTop +
-      (sceneHeight - drawHeight) / 2;
-
-    context.drawImage(
-      image,
-      drawX,
-      drawY,
-      drawWidth,
-      drawHeight
-    );
-
-    const sceneFade =
-      context.createLinearGradient(
-        0,
-        sceneTop,
-        0,
-        sceneTop + 360
-      );
-
-    sceneFade.addColorStop(
-      0,
-      '#171717'
-    );
-
-    sceneFade.addColorStop(
-      .35,
-      'rgba(23,23,23,.86)'
-    );
-
-    sceneFade.addColorStop(
-      1,
-      'rgba(23,23,23,0)'
-    );
-
-    context.fillStyle = sceneFade;
-
-    context.fillRect(
-      0,
-      sceneTop,
-      width,
-      380
-    );
-
-    const bottomFade =
-      context.createLinearGradient(
-        0,
-        height - 360,
-        0,
-        height
-      );
-
-    bottomFade.addColorStop(
-      0,
-      'rgba(0,0,0,0)'
-    );
-
-    bottomFade.addColorStop(
-      1,
-      'rgba(0,0,0,.92)'
-    );
-
-    context.fillStyle = bottomFade;
-
-    context.fillRect(
-      0,
-      height - 380,
-      width,
-      380
-    );
-  }
-
-
   private async generateResultImage(): Promise<Blob | null> {
 
     if (
@@ -1283,6 +1152,15 @@ export class ArchetypeQuizPageComponent implements OnInit {
 
     if (document.fonts?.ready) {
       await document.fonts.ready;
+    }
+
+    const baseImage =
+      await this.loadCanvasImage(
+        this.shareBackgrounds[this.primaryResult.name]
+      );
+
+    if (!baseImage) {
+      return null;
     }
 
     const canvas =
@@ -1298,140 +1176,42 @@ export class ArchetypeQuizPageComponent implements OnInit {
       return null;
     }
 
-    const dark = '#171717';
-    const light = '#f6f1e8';
-    const muted = '#9f9991';
-    const accent = '#ff7452';
-
-    const copy =
-      this.shareCopy[this.primaryResult.name];
+    context.drawImage(
+      baseImage,
+      0,
+      0,
+      canvas.width,
+      canvas.height
+    );
 
     const secondary =
       this.secondaryResults[0]?.name ?? null;
 
-    const secondaryLabel =
-      secondary
-        ? `${this.strongSecondaryInfluence ? 'Com forte influência de' : 'Com influência de'} ${secondary}.`
-        : '';
+    if (secondary) {
 
-    context.fillStyle = dark;
-    context.fillRect(
-      0,
-      0,
-      canvas.width,
-      canvas.height
-    );
+      const accent = '#ff7452';
+      const light = '#f6f1e8';
 
-    await this.drawShareLandscape(
-      context,
-      canvas.width,
-      canvas.height
-    );
-
-    const topFade =
-      context.createLinearGradient(
-        0,
-        0,
-        0,
-        1020
-      );
-
-    topFade.addColorStop(0, dark);
-    topFade.addColorStop(.74, 'rgba(23,23,23,.98)');
-    topFade.addColorStop(1, 'rgba(23,23,23,0)');
-
-    context.fillStyle = topFade;
-    context.fillRect(
-      0,
-      0,
-      canvas.width,
-      1040
-    );
-
-    const x = 74;
-    const maxWidth = 932;
-
-    context.fillStyle = accent;
-    context.font =
-      '700 27px Grandis, Arial, sans-serif';
-
-    context.letterSpacing = '3px';
-
-    context.fillText(
-      'SEU ARQUÉTIPO PREDOMINANTE',
-      x,
-      195
-    );
-
-    context.letterSpacing = '0px';
-
-    let titleSize = 192;
-
-    context.font =
-      `900 ${titleSize}px Grandis, Arial, sans-serif`;
-
-    while (
-      context.measureText(this.primaryResult.name).width > maxWidth &&
-      titleSize > 108
-    ) {
-      titleSize -= 6;
-      context.font =
-        `900 ${titleSize}px Grandis, Arial, sans-serif`;
-    }
-
-    context.fillStyle = accent;
-
-    context.fillText(
-      this.primaryResult.name,
-      x,
-      410
-    );
-
-    context.fillStyle = light;
-    context.font =
-      '700 70px Grandis, Arial, sans-serif';
-
-    const phraseLines =
-      this.wrapCanvasText(
-        context,
-        copy.phrase,
-        maxWidth
-      ).slice(0, 5);
-
-    const phraseBottom =
-      this.drawCanvasLines(
-        context,
-        phraseLines,
-        x,
-        545,
-        77
-      );
-
-    context.fillStyle = muted;
-    context.font =
-      '400 34px Grandis, Arial, sans-serif';
-
-    context.fillText(
-      'Uma leitura sobre o que move você hoje.',
-      x,
-      phraseBottom + 34
-    );
-
-    if (secondaryLabel) {
+      const label =
+        `${this.strongSecondaryInfluence ? 'Com forte influência de' : 'Com influência de'} ${secondary}.`;
 
       context.font =
         '500 31px Grandis, Arial, sans-serif';
 
+      const textWidth =
+        context.measureText(label).width;
+
+      const capsuleX = 76;
+      const capsuleY = 796;
+      const capsuleHeight = 78;
       const capsuleWidth =
         Math.min(
-          760,
-          context.measureText(secondaryLabel).width + 104
+          820,
+          Math.max(
+            520,
+            textWidth + 118
+          )
         );
-
-      const capsuleX = x;
-      const capsuleY = phraseBottom + 76;
-      const capsuleHeight = 78;
-      const radius = 39;
 
       context.beginPath();
       context.roundRect(
@@ -1439,127 +1219,45 @@ export class ArchetypeQuizPageComponent implements OnInit {
         capsuleY,
         capsuleWidth,
         capsuleHeight,
-        radius
+        39
       );
+
+      context.fillStyle =
+        'rgba(23,23,23,.72)';
+      context.fill();
 
       context.strokeStyle = accent;
       context.lineWidth = 2;
       context.stroke();
 
-      context.fillStyle = accent;
-
       context.save();
+
       context.translate(
-        capsuleX + 42,
+        capsuleX + 52,
         capsuleY + 39
       );
 
       context.rotate(Math.PI / 4);
-      context.fillRect(-8, -8, 16, 16);
+
+      context.fillStyle = accent;
+
+      context.fillRect(
+        -10,
+        -10,
+        20,
+        20
+      );
+
       context.restore();
 
       context.fillStyle = light;
 
       context.fillText(
-        secondaryLabel,
-        capsuleX + 70,
-        capsuleY + 51
+        label,
+        capsuleX + 88,
+        capsuleY + 50
       );
     }
-
-    const footerGradient =
-      context.createLinearGradient(
-        0,
-        1570,
-        0,
-        1920
-      );
-
-    footerGradient.addColorStop(
-      0,
-      'rgba(0,0,0,0)'
-    );
-
-    footerGradient.addColorStop(
-      1,
-      'rgba(0,0,0,.98)'
-    );
-
-    context.fillStyle = footerGradient;
-    context.fillRect(
-      0,
-      1540,
-      canvas.width,
-      380
-    );
-
-    const logo =
-      await this.loadCanvasImage(
-        '/assets/images/brand/logo-henrique-coltri-gelo.svg'
-      );
-
-    if (logo) {
-
-      const logoWidth = 250;
-      const logoHeight =
-        logo.height / logo.width * logoWidth;
-
-      context.drawImage(
-        logo,
-        x,
-        1720,
-        logoWidth,
-        logoHeight
-      );
-    }
-    else {
-
-      context.fillStyle = light;
-      context.font =
-        '700 34px Grandis, Arial, sans-serif';
-
-      context.fillText(
-        'HENRIQUE COLTRI',
-        x,
-        1788
-      );
-    }
-
-    context.strokeStyle =
-      'rgba(246,241,232,.28)';
-
-    context.lineWidth = 2;
-
-    context.beginPath();
-    context.moveTo(
-      365,
-      1705
-    );
-    context.lineTo(
-      365,
-      1815
-    );
-    context.stroke();
-
-    context.fillStyle = light;
-    context.font =
-      '500 31px Grandis, Arial, sans-serif';
-
-    context.fillText(
-      'Descubra qual força move você hoje.',
-      410,
-      1748
-    );
-
-    context.fillStyle = muted;
-    context.font =
-      '400 24px Grandis, Arial, sans-serif';
-
-    context.fillText(
-      'henriquecoltri.com.br/descubra-seu-arquetipo',
-      410,
-      1794
-    );
 
     return await new Promise(resolve => {
 
