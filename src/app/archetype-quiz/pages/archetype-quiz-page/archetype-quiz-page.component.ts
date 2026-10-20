@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 
 import { SeoService } from '../../../core/services/seo.service';
 import { PortfolioService } from '../../../core/services/portfolio.service';
@@ -61,7 +61,7 @@ type QuizPhase =
   templateUrl: './archetype-quiz-page.component.html',
   styleUrl: './archetype-quiz-page.component.scss'
 })
-export class ArchetypeQuizPageComponent implements OnInit {
+export class ArchetypeQuizPageComponent implements OnInit, AfterViewInit {
 
   readonly contactUrl: string;
 
@@ -927,6 +927,37 @@ export class ArchetypeQuizPageComponent implements OnInit {
 
     this.contactUrl =
       portfolioService.getWhatsappUrl();
+  }
+
+
+  ngAfterViewInit(): void {
+
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const forceTop = (): void => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'auto'
+      });
+    };
+
+    forceTop();
+
+    requestAnimationFrame(() => {
+      forceTop();
+
+      requestAnimationFrame(() => {
+        forceTop();
+      });
+    });
+
+    window.setTimeout(
+      forceTop,
+      120
+    );
   }
 
 
