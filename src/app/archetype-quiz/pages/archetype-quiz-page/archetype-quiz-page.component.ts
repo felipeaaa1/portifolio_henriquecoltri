@@ -1192,24 +1192,34 @@ export class ArchetypeQuizPageComponent implements OnInit {
       const accent = '#ff7452';
       const light = '#f6f1e8';
 
-      const label =
-        `${this.strongSecondaryInfluence ? 'Com forte influência de' : 'Com influência de'} ${secondary}.`;
+      const prefix =
+        `${this.strongSecondaryInfluence ? 'Com forte influência de' : 'Com influência de'} `;
 
       context.font =
         '500 31px Grandis, Arial, sans-serif';
 
-      const textWidth =
-        context.measureText(label).width;
+      const prefixWidth =
+        context.measureText(prefix).width;
+
+      context.font =
+        '700 31px Grandis, Arial, sans-serif';
+
+      const maxSecondaryWidth =
+        Math.max(
+          ...this.archetypeOrder.map(
+            name => context.measureText(`${name}.`).width
+          )
+        );
 
       const capsuleX = 76;
       const capsuleY = 850;
       const capsuleHeight = 78;
       const capsuleWidth =
         Math.min(
-          820,
+          900,
           Math.max(
-            520,
-            textWidth + 118
+            560,
+            prefixWidth + maxSecondaryWidth + 160
           )
         );
 
@@ -1249,9 +1259,6 @@ export class ArchetypeQuizPageComponent implements OnInit {
       );
 
       context.restore();
-
-      const prefix =
-        `${this.strongSecondaryInfluence ? 'Com forte influência de' : 'Com influência de'} `;
 
       const textX =
         capsuleX + 88;
