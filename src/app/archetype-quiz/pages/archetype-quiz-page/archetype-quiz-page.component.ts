@@ -1274,9 +1274,6 @@ export class ArchetypeQuizPageComponent implements OnInit {
         capsuleY + 50
       );
 
-      const prefixWidth =
-        context.measureText(prefix).width;
-
       context.font =
         '700 31px Grandis, Arial, sans-serif';
 
