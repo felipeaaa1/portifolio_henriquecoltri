@@ -1703,15 +1703,27 @@ ${window.location.href}`;
   private scrollToTop(): void {
 
     if (
-      typeof window !==
-      'undefined'
+      typeof window === 'undefined' ||
+      typeof document === 'undefined'
     ) {
-
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      return;
     }
+
+    const resetScroll = (): void => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    };
+
+    resetScroll();
+
+    requestAnimationFrame(() => {
+      resetScroll();
+
+      requestAnimationFrame(() => {
+        resetScroll();
+      });
+    });
   }
 
 }
