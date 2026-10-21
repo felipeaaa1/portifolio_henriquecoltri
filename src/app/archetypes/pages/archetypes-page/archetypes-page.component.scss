@@ -50,13 +50,13 @@
   display: grid;
   grid-template-columns: minmax(0, 1.45fr) minmax(300px, .55fr);
   gap: clamp(3rem, 8vw, 8rem);
-  align-items: end;
+  align-items: start;
 }
 
 .archetypes-hero__content h1 {
   max-width: 900px;
   margin: 0;
-  font-size: clamp(3.8rem, 8.2vw, 8rem);
+  font-size: clamp(3.4rem, 6.4vw, 6.3rem);
   line-height: .88;
   letter-spacing: -.072em;
 }
