@@ -20,10 +20,10 @@
 }
 
 .archetypes-hero {
-  min-height: calc(100svh - 80px);
+  min-height: auto;
   display: flex;
   align-items: center;
-  padding: clamp(6rem, 10vw, 10rem) 0;
+  padding: clamp(4.5rem, 7vw, 7rem) 0 clamp(3rem, 4.5vw, 4.5rem);
   background: var(--color-dark);
   color: var(--color-light);
   overflow: hidden;
