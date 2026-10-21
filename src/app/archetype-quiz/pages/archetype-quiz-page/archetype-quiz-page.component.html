@@ -337,13 +337,15 @@
               title="Compartilhar"
               (click)="shareResult()"><svg class="archetype-quiz__share-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3M8 7l4-4 4 4M5 10v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
 
+            <a class="archetype-quiz__share-button archetype-quiz__instagram-button" href="https://www.instagram.com/henriquecoltri" target="_blank" rel="noopener noreferrer" aria-label="Abrir Instagram de Henrique Coltri" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.8" r="1" fill="currentColor"/></svg></a>
+
             <button
               type="button"
               class="archetype-quiz__share-button"
               aria-label="Compartilhar no WhatsApp"
               title="WhatsApp"
               (click)="shareOnWhatsApp()">
-              WA
+              <img class="archetype-quiz__whatsapp-icon" src="assets/images/icons/icon-whatsapp.svg" alt="">
             </button>
 
             <button
@@ -539,6 +541,54 @@
 
     </section>
 
+
+
+    <section class="archetype-quiz__share-callout">
+
+      <div class="container">
+
+        <div class="archetype-quiz__share-callout-card">
+
+          <div>
+            <p class="archetype-quiz__eyebrow">
+              Compartilhe sua descoberta
+            </p>
+
+            <h2>
+              Seu resultado
+              <span>fez sentido para você?</span>
+            </h2>
+
+            <p>
+              Compartilhe nos stories e marque
+              <a
+                href="https://www.instagram.com/henriquecoltri"
+                target="_blank"
+                rel="noopener noreferrer">
+                @henriquecoltri
+              </a>.
+              Quero ver qual arquétipo apareceu mais vivo em você hoje.
+            </p>
+          </div>
+
+          <button
+            type="button"
+            class="archetype-quiz__share-callout-button"
+            (click)="shareResult()">
+
+            Compartilhar meu resultado
+
+            <span aria-hidden="true">
+              ↗
+            </span>
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
 
     <section class="archetype-quiz__brand-bridge">
 

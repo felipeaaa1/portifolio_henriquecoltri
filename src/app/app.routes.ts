@@ -27,6 +27,11 @@ export const routes: Routes = [
       .then(component => component.AboutPageComponent)
   },
   {
+    path: 'arquetipos',
+    loadComponent: () => import('./archetypes/pages/archetypes-page/archetypes-page.component')
+      .then(component => component.ArchetypesPageComponent)
+  },
+  {
     path: 'descubra-seu-arquetipo',
     loadComponent: () => import('./archetype-quiz/pages/archetype-quiz-page/archetype-quiz-page.component')
       .then(component => component.ArchetypeQuizPageComponent)

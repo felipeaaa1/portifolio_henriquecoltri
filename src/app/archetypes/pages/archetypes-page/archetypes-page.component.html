@@ -1,0 +1,506 @@
+<section class="archetypes-hero section-dark">
+
+  <div class="container archetypes-hero__grid">
+
+    <div class="archetypes-hero__content">
+
+      <p class="archetypes-eyebrow">
+        Arquétipos de marca
+      </p>
+
+      <h1>
+        Toda marca comunica
+        <em>quem ela é.</em>
+        Mesmo quando não percebe.
+      </h1>
+
+      <p class="archetypes-hero__lead">
+        Uma marca não é percebida apenas pelo que diz sobre si mesma.
+        Ela é percebida pelo modo como fala, escolhe, se comporta,
+        cria experiências e responde ao mundo.
+      </p>
+
+      <p class="archetypes-hero__lead">
+        Os arquétipos ajudam a organizar esses sinais em uma direção
+        de significado mais clara, humana e reconhecível.
+      </p>
+
+      <a
+        class="button button--accent"
+        href="/arquetipos#entenda">
+        Entender os arquétipos
+        <span aria-hidden="true">↓</span>
+      </a>
+
+    </div>
+
+    <aside
+      class="archetypes-hero__statement"
+      appReveal="slide-right">
+
+      <span class="archetypes-hero__quote" aria-hidden="true">“</span>
+
+      <p>
+        Uma identidade pode ser visualmente bonita e ainda assim
+        dizer pouco sobre a marca que representa.
+      </p>
+
+      <strong>
+        Significado vem antes da aparência.
+      </strong>
+
+    </aside>
+
+  </div>
+
+</section>
+
+
+<section
+  id="entenda"
+  class="archetypes-intro section-light">
+
+  <div class="container archetypes-intro__grid">
+
+    <div
+      class="archetypes-section-heading"
+      appReveal="fade-up">
+
+      <p class="archetypes-eyebrow">
+        Antes dos 12 nomes
+      </p>
+
+      <h2>
+        Arquétipo não é
+        <span>fantasia para vestir uma marca.</span>
+      </h2>
+
+    </div>
+
+    <div
+      class="archetypes-intro__copy"
+      appReveal="fade-up"
+      [revealDelay]="100">
+
+      <p class="archetypes-intro__lead">
+        Arquétipos são padrões de significado reconhecíveis na experiência
+        humana. No branding, eles ajudam a entender que tipo de desejo,
+        valor, comportamento e história uma marca tende a representar.
+      </p>
+
+      <p>
+        A ideia ganhou força no universo das marcas com o trabalho de
+        Margaret Mark e Carol S. Pearson, que organizaram doze arquétipos
+        recorrentes em torno de motivações humanas fundamentais.
+      </p>
+
+      <p>
+        Isso não significa escolher um personagem e copiar sua estética.
+        Significa encontrar uma estrutura capaz de orientar decisões para que
+        posicionamento, linguagem, identidade e experiência contem a mesma história.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="archetypes-tension section-light">
+
+  <div class="container">
+
+    <div
+      class="archetypes-tension__card"
+      appReveal="scale">
+
+      <p class="archetypes-eyebrow">
+        O problema da incoerência
+      </p>
+
+      <div class="archetypes-tension__grid">
+
+        <h2>
+          Sua marca pode dizer que é ousada.
+          <span>Mas o público acredita nos sinais.</span>
+        </h2>
+
+        <div>
+          <p>
+            Se a linguagem é conservadora, a identidade é genérica e toda
+            decisão evita qualquer risco, a palavra “ousada” perde força.
+          </p>
+
+          <p>
+            Percepção não nasce de uma frase isolada. Ela nasce da repetição
+            coerente de escolhas. O arquétipo pode funcionar como um critério
+            para alinhar essas escolhas.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="archetypes-groups section-dark">
+
+  <div class="container">
+
+    <div
+      class="archetypes-section-heading archetypes-section-heading--dark"
+      appReveal="fade-up">
+
+      <p class="archetypes-eyebrow">
+        Quatro territórios
+      </p>
+
+      <h2>
+        Antes de doze arquétipos,
+        <span>quatro grandes motivações.</span>
+      </h2>
+
+      <p>
+        Mark e Pearson organizam os arquétipos em quatro territórios que
+        expressam tensões humanas fundamentais. É isso que dá lógica ao
+        sistema e evita tratar os doze arquétipos como personagens soltos.
+      </p>
+
+    </div>
+
+    <div class="archetypes-groups__grid">
+
+      @for (group of groups; track group.index) {
+
+        <a class="archetypes-group-card" routerLink="/arquetipos" [fragment]="'grupo-' + group.index" aria-label="Ir para {{ group.title }}" appReveal="fade-up">
+
+          <div class="archetypes-group-card__top">
+            <span>{{ group.index }}</span>
+            <p>{{ group.tension }}</p>
+          </div>
+
+          <h3>@if (group.index === '01') { Independência<br>&amp; Realização } @else if (group.index === '03') { Pertencimento<br>&amp; Prazer } @else if (group.index === '04') { Estabilidade<br>&amp; Controle } @else { {{ group.title }} }</h3>
+
+          <p class="archetypes-group-card__description">
+            {{ group.description }}
+          </p>
+
+          <div class="archetypes-group-card__names">
+            @for (archetype of group.archetypes; track archetype.name) {
+              <span>{{ archetype.name }}</span>
+            }
+          </div>
+
+        
+          </a>
+      }
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="archetypes-catalog section-light">
+
+  <div class="container">
+
+    <div
+      class="archetypes-section-heading"
+      appReveal="fade-up">
+
+      <p class="archetypes-eyebrow">
+        Os 12 arquétipos
+      </p>
+
+      <h2>
+        Do significado
+        <span>à expressão.</span>
+      </h2>
+
+      <p>
+        Cada arquétipo parte de uma motivação central e carrega forças,
+        promessas e riscos próprios. O valor está em compreender essa
+        profundidade, não em transformar o arquétipo num estereótipo.
+      </p>
+
+    </div>
+
+        <nav class="archetypes-catalog__nav" aria-label="Navegação pelos quatro territórios">
+      @for (group of groups; track group.index) {
+        <a routerLink="/arquetipos" [fragment]="'grupo-' + group.index">
+          {{ group.title }}
+        </a>
+      }
+    </nav>
+    @for (group of groups; track group.index) {
+
+      <section class="archetypes-catalog__group" id="grupo-{{ group.index }}">
+
+        <header class="archetypes-catalog__group-heading">
+          <span>{{ group.index }}</span>
+          <div>
+            <p>{{ group.tension }}</p>
+            <h3>{{ group.title }}</h3>
+          </div>
+        </header>
+
+        <div class="archetypes-catalog__grid">
+
+          @for (archetype of group.archetypes; track archetype.name) {
+
+            <article
+              class="archetype-card"
+              appReveal="fade-up">
+
+              <div class="archetype-card__number">
+                {{ archetype.number }}
+              </div>
+
+              <h4>{{ archetype.name }}</h4>
+
+              <div class="archetype-card__line">
+                <span>Busca</span>
+                <p>{{ archetype.desire }}</p>
+              </div>
+
+              <div class="archetype-card__line">
+                <span>Na marca</span>
+                <p>{{ archetype.promise }}</p>
+              </div>
+
+              <div class="archetype-card__line archetype-card__line--shadow">
+                <span>Sombra</span>
+                <p>{{ archetype.shadow }}</p>
+              </div>
+
+            </article>
+          }
+
+        </div>
+
+      </section>
+    }
+
+  </div>
+
+</section>
+
+
+<section class="archetypes-brand section-dark">
+
+  <div class="container archetypes-brand__grid">
+
+    <div
+      class="archetypes-brand__heading"
+      appReveal="slide-left">
+
+      <p class="archetypes-eyebrow">
+        Arquétipo na prática
+      </p>
+
+      <h2>
+        Descobrir o arquétipo
+        <span>é só o começo.</span>
+      </h2>
+
+    </div>
+
+    <div
+      class="archetypes-brand__content"
+      appReveal="slide-right">
+
+      <p class="archetypes-brand__lead">
+        Dizer que uma marca é Criadora, Heroica ou Cuidadora não resolve
+        o branding. A pergunta importante vem depois:
+        <strong>como essa ideia passa a orientar decisões reais?</strong>
+      </p>
+
+      <div class="archetypes-brand__signals">
+
+        <div>
+          <span>01</span>
+          <strong>Posicionamento</strong>
+          <p>Que lugar a marca pretende ocupar e que promessa consegue sustentar.</p>
+        </div>
+
+        <div>
+          <span>02</span>
+          <strong>Tom de voz</strong>
+          <p>Como fala, argumenta, acolhe, provoca, ensina ou lidera.</p>
+        </div>
+
+        <div>
+          <span>03</span>
+          <strong>Identidade</strong>
+          <p>Como os significados ganham forma sem depender de clichês visuais.</p>
+        </div>
+
+        <div>
+          <span>04</span>
+          <strong>Experiência</strong>
+          <p>Como atendimento, produto, ambiente e comportamento confirmam a promessa.</p>
+        </div>
+
+        <div>
+          <span>05</span>
+          <strong>Cultura</strong>
+          <p>Como a marca se comporta internamente quando ninguém está vendo a campanha.</p>
+        </div>
+
+        <div>
+          <span>06</span>
+          <strong>Consistência</strong>
+          <p>Como tudo isso continua reconhecível em diferentes pontos de contato.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="archetypes-not-label section-light">
+
+  <div class="container">
+
+    <div
+      class="archetypes-not-label__content"
+      appReveal="fade-up">
+
+      <p class="archetypes-eyebrow">
+        Um cuidado importante
+      </p>
+
+      <h2>
+        Arquétipos são mapas.
+        <span>Não caixas.</span>
+      </h2>
+
+      <p>
+        Uma marca não precisa se comportar como uma caricatura para ser
+        coerente com um arquétipo. Pessoas e marcas são complexas, podem
+        carregar influências complementares e evoluem ao longo do tempo.
+      </p>
+
+      <p>
+        O objetivo não é limitar a expressão, mas criar clareza suficiente
+        para que a marca saiba o que reforçar, o que evitar e como continuar
+        sendo ela mesma em contextos diferentes.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="archetypes-quiz section-dark">
+
+  <div class="container archetypes-quiz__grid">
+
+    <div
+      class="archetypes-quiz__content"
+      appReveal="slide-left">
+
+      <p class="archetypes-eyebrow">
+        Agora olhe para você
+      </p>
+
+      <h2>
+        Antes de pensar na sua marca,
+        <span>que tal perceber o que move você hoje?</span>
+      </h2>
+
+      <p>
+        Criei uma experiência rápida para identificar qual arquétipo parece
+        estar mais vivo em você neste momento. Não é um diagnóstico e nem
+        um rótulo. É uma leitura para provocar reflexão e curiosidade.
+      </p>
+
+      <a
+        class="button button--accent"
+        href="/descubra-seu-arquetipo">
+        Descobrir meu arquétipo
+        <span aria-hidden="true">↗</span>
+      </a>
+
+    </div>
+
+    <div
+      class="archetypes-quiz__orbit"
+      aria-hidden="true"
+      appReveal="scale">
+
+      <div class="archetypes-quiz__orbit-ring"></div>
+      <div class="archetypes-quiz__orbit-core">
+        <span>12</span>
+        <small>arquétipos</small>
+      </div>
+
+      <span class="archetypes-quiz__dot archetypes-quiz__dot--1"></span>
+      <span class="archetypes-quiz__dot archetypes-quiz__dot--2"></span>
+      <span class="archetypes-quiz__dot archetypes-quiz__dot--3"></span>
+      <span class="archetypes-quiz__dot archetypes-quiz__dot--4"></span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="archetypes-final section-light">
+
+  <div class="container">
+
+    <div
+      class="archetypes-final__card"
+      appReveal="fade-up">
+
+      <div>
+
+        <p class="archetypes-eyebrow">
+          E a sua marca?
+        </p>
+
+        <h2>
+          Talvez ela já esteja tentando dizer alguma coisa.
+          <span>Só ainda não encontrou uma linguagem para isso.</span>
+        </h2>
+
+      </div>
+
+      <div class="archetypes-final__action">
+
+        <p>
+          No meu trabalho, arquétipos podem fazer parte de uma investigação
+          maior de estratégia, personalidade e expressão de marca.
+        </p>
+
+        <a
+          class="button button--accent"
+          [href]="contactUrl"
+          target="_blank"
+          rel="noopener noreferrer">
+          Conversar sobre minha marca
+          <span aria-hidden="true">↗</span>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
