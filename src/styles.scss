@@ -223,3 +223,38 @@ body:has(.archetype-quiz__processing) app-footer, body:has(.archetype-quiz__resu
 body:has(.archetype-quiz__intro) app-footer { background:var(--color-dark) !important; }
 body:has(.archetype-quiz__question-screen) app-footer { background:var(--color-paper) !important; }
 body:has(.archetype-quiz__processing) app-footer, body:has(.archetype-quiz__result) app-footer { background:var(--color-dark) !important; }
+
+body:has(.archetypes-final) app-footer { display: block !important; background: var(--color-paper) !important; }
+
+/* UX ARQUETIPOS WHATSAPP - INICIO */
+
+html:has(.archetypes-hero) {
+  scroll-behavior: smooth;
+}
+
+/* Em larguras menores o WhatsApp vira apenas ícone para não cobrir conteúdo */
+@media (max-width: 1400px) {
+  body:has(.archetypes-hero) .whatsapp {
+    width: 48px !important;
+    min-width: 48px !important;
+    padding: 0 !important;
+    justify-content: center !important;
+  }
+
+  body:has(.archetypes-hero) .whatsapp__label {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:has(.archetypes-hero) {
+    scroll-behavior: auto;
+  }
+}
+
+/* UX ARQUETIPOS WHATSAPP - FIM */

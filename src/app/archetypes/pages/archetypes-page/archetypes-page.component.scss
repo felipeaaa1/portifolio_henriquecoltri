@@ -126,7 +126,7 @@
 
 .archetypes-intro {
   margin-top: -48px;
-  padding: calc(clamp(4rem, 7vw, 6rem) + 48px) 0 clamp(6rem, 11vw, 11rem);
+  padding: calc(clamp(4rem, 7vw, 6rem) + 48px) 0 clamp(3rem, 4vw, 4rem);
   background: var(--color-paper);
   z-index: 1;
 }
@@ -180,7 +180,7 @@
 }
 
 .archetypes-tension {
-  padding: 0 0 clamp(6rem, 10vw, 10rem);
+  padding: 0 0 clamp(3rem, 5vw, 5rem);
   background: var(--color-paper);
 }
 
@@ -223,7 +223,7 @@
 }
 
 .archetypes-groups {
-  padding: clamp(6rem, 11vw, 11rem) 0;
+  padding: clamp(3rem, 4.5vw, 4.5rem) 0 clamp(3rem, 4.5vw, 4.5rem);
   background: var(--color-dark);
   color: var(--color-light);
 }
@@ -280,9 +280,9 @@
   justify-content: space-between;
   gap: 1rem;
   color: var(--color-accent);
-  font-size: .72rem;
+  font-size: .92rem;
   font-weight: 700;
-  letter-spacing: .12em;
+  letter-spacing: .08em;
   text-transform: uppercase;
 }
 
@@ -324,12 +324,12 @@
 }
 
 .archetypes-catalog {
-  padding: clamp(6rem, 11vw, 11rem) 0;
+  padding: clamp(3rem, 4.5vw, 4.5rem) 0 clamp(3rem, 4.5vw, 4.5rem);
   background: var(--color-paper);
 }
 
 .archetypes-catalog__group + .archetypes-catalog__group {
-  margin-top: clamp(6rem, 10vw, 10rem);
+  margin-top: clamp(2.5rem, 4vw, 3.5rem);
 }
 
 .archetypes-catalog__group-heading {
@@ -353,9 +353,9 @@
 .archetypes-catalog__group-heading p {
   margin: 0 0 .5rem;
   color: rgba(17, 17, 17, .46);
-  font-size: .72rem;
+  font-size: .92rem;
   font-weight: 700;
-  letter-spacing: .12em;
+  letter-spacing: .08em;
   text-transform: uppercase;
 }
 
@@ -436,7 +436,7 @@
 }
 
 .archetypes-brand {
-  padding: clamp(6rem, 11vw, 11rem) 0;
+  padding: clamp(3rem, 4.5vw, 4.5rem) 0 clamp(3rem, 4.5vw, 4.5rem);
   background: var(--color-dark);
   color: var(--color-light);
 }
@@ -500,7 +500,7 @@
 }
 
 .archetypes-not-label {
-  padding: clamp(6rem, 11vw, 11rem) 0;
+  padding: clamp(3rem, 4.5vw, 4.5rem) 0 clamp(3rem, 4.5vw, 4.5rem);
   background: var(--color-paper);
 }
 
@@ -588,9 +588,11 @@
 
 .archetypes-quiz__orbit-core small {
   margin-top: .45rem;
-  font-size: .72rem;
-  font-weight: 700;
-  letter-spacing: .12em;
+  position: relative;
+  left: .08em;
+  font-size: .92rem;
+  font-weight: 800;
+  letter-spacing: .06em;
   text-transform: uppercase;
 }
 
@@ -755,3 +757,160 @@
   }
 
 }
+
+
+
+
+
+.archetypes-catalog .archetypes-section-heading { margin-bottom: clamp(2.5rem, 4vw, 3.5rem); }
+
+
+
+
+
+
+.archetypes-final h2 span { font-size: clamp(1.8rem, 2.8vw, 2.7rem); font-weight: 400; line-height: 1.08; letter-spacing: -.03em; }
+
+.archetypes-final h2 span { display: block; margin-top: .7rem; }
+
+.archetypes-final h2 span { font-size: clamp(1.5rem, 2.2vw, 2.2rem); }
+
+.archetypes-final h2 span { font-size: clamp(1.4rem, 2vw, 2.05rem); }
+
+.archetypes-final h2 span { margin-top: 1.25rem; }
+
+.archetypes-final { padding-bottom: clamp(2.5rem, 4vw, 3.5rem); }
+
+.archetypes-quiz { padding-bottom: clamp(2.5rem, 4vw, 3.5rem); }
+.archetypes-final { padding-top: clamp(2.5rem, 4vw, 3.5rem); }
+
+.archetypes-hero__content .archetypes-hero__lead:nth-of-type(3) { text-decoration: underline; text-decoration-color: currentColor; text-underline-offset: .18em; text-decoration-thickness: 1px; }
+
+.archetypes-section-heading--dark h2 span { font-size: clamp(2.4rem, 4vw, 4rem); white-space: nowrap; }
+
+.archetypes-section-heading--dark h2 span { font-size: clamp(2.4rem, 4vw, 4rem); white-space: nowrap; }
+
+@media (min-width: 981px) { .archetypes-groups .archetypes-section-heading--dark h2 { font-size: clamp(3.5rem, 4.8vw, 4.8rem) !important; line-height: .92; } .archetypes-groups .archetypes-section-heading--dark h2 span { font-size: inherit !important; font-weight: inherit !important; line-height: inherit !important; white-space: nowrap; } }
+
+.archetypes-tension__grid h2 span { font-size: clamp(1.5rem, 2.2vw, 2.1rem); font-weight: 400; line-height: 1.15; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .16em; }
+
+.archetypes-tension__grid h2 span { display: block; margin-top: .7rem; font-size: clamp(1.5rem, 2.2vw, 2.1rem) !important; font-weight: 400 !important; line-height: 1.25 !important; letter-spacing: 0 !important; word-spacing: normal !important; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .18em; }
+
+.archetypes-group-card h3 { max-width: 100%; }
+.archetypes-group-card:nth-child(1) h3, .archetypes-group-card:nth-child(3) h3, .archetypes-group-card:nth-child(4) h3 { max-width: 430px; }
+
+@media (min-width: 981px) { .archetypes-catalog__group-heading h3 { white-space: nowrap; font-size: clamp(1.9rem, 2.8vw, 3rem); } }
+
+.archetypes-quiz h2 span { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .12em; text-decoration-color: currentColor; }
+
+/* UX FINAL ARQUETIPOS - INICIO */
+
+/* Textos informativos não devem parecer links */
+.archetypes-hero__content .archetypes-hero__lead:nth-of-type(3),
+.archetypes-tension__grid h2 span,
+.archetypes-quiz h2 span {
+  text-decoration: none !important;
+}
+
+/* Os quatro territórios agora são navegação */
+.archetypes-group-card {
+  cursor: pointer;
+}
+
+.archetypes-group-card__link {
+  min-height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+  text-decoration: none;
+  border-radius: inherit;
+}
+
+.archetypes-group-card:has(.archetypes-group-card__link:focus-visible) {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-color: var(--color-accent);
+}
+
+.archetypes-group-card__link:focus-visible {
+  outline: none;
+}
+
+/* Navegação rápida dos quatro grupos */
+.archetypes-catalog__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+  margin: -1rem 0 clamp(2.5rem, 4vw, 4rem);
+}
+
+.archetypes-catalog__nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: .7rem 1rem;
+  border: 1px solid rgba(17, 17, 17, .18);
+  border-radius: 999px;
+  color: #111;
+  font-size: .78rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    border-color .2s ease,
+    background .2s ease,
+    transform .2s ease;
+}
+
+.archetypes-catalog__nav a:hover,
+.archetypes-catalog__nav a:focus-visible {
+  border-color: var(--color-accent);
+  background: rgba(255, 116, 82, .10);
+  transform: translateY(-2px);
+}
+
+.archetypes-catalog__nav a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Evita que o header fixo cubra o título ao navegar */
+.archetypes-catalog__group {
+  scroll-margin-top: 110px;
+}
+
+@media (max-width: 680px) {
+  .archetypes-catalog__nav {
+    margin-right: -1rem;
+    padding-right: 1rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .archetypes-catalog__nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .archetypes-catalog__nav a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .archetypes-catalog__group {
+    scroll-margin-top: 88px;
+  }
+}
+
+/* UX FINAL ARQUETIPOS - FIM */
+
+.archetypes-group-card { color: inherit; text-decoration: none; cursor: pointer; user-select: none; }
+.archetypes-group-card:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
+
+.archetypes-hero__content .archetypes-hero__lead:nth-of-type(3) { max-width: 900px; }
+
+@media (min-width: 981px) { .archetypes-hero__content .archetypes-hero__lead:nth-of-type(3) { width: calc(100% + min(38vw, 520px)) !important; max-width: none !important; position: relative; z-index: 2; } }
+
+.archetypes-hero__content .archetypes-hero__lead:nth-of-type(3) { margin-top: 1.45rem; }
+
+.archetypes-hero__content p.archetypes-hero__lead:nth-of-type(3) { margin-top: 1.1rem !important; }

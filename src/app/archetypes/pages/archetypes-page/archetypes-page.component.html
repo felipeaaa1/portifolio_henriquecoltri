@@ -177,16 +177,14 @@
 
       @for (group of groups; track group.index) {
 
-        <article
-          class="archetypes-group-card"
-          appReveal="fade-up">
+        <a class="archetypes-group-card" routerLink="/arquetipos" [fragment]="'grupo-' + group.index" aria-label="Ir para {{ group.title }}" appReveal="fade-up">
 
           <div class="archetypes-group-card__top">
             <span>{{ group.index }}</span>
             <p>{{ group.tension }}</p>
           </div>
 
-          <h3>{{ group.title }}</h3>
+          <h3>@if (group.index === '01') { Independência<br>&amp; Realização } @else if (group.index === '03') { Pertencimento<br>&amp; Prazer } @else if (group.index === '04') { Estabilidade<br>&amp; Controle } @else { {{ group.title }} }</h3>
 
           <p class="archetypes-group-card__description">
             {{ group.description }}
@@ -198,7 +196,8 @@
             }
           </div>
 
-        </article>
+        
+          </a>
       }
 
     </div>
@@ -233,9 +232,16 @@
 
     </div>
 
+        <nav class="archetypes-catalog__nav" aria-label="Navegação pelos quatro territórios">
+      @for (group of groups; track group.index) {
+        <a routerLink="/arquetipos" [fragment]="'grupo-' + group.index">
+          {{ group.title }}
+        </a>
+      }
+    </nav>
     @for (group of groups; track group.index) {
 
-      <section class="archetypes-catalog__group">
+      <section class="archetypes-catalog__group" id="grupo-{{ group.index }}">
 
         <header class="archetypes-catalog__group-heading">
           <span>{{ group.index }}</span>

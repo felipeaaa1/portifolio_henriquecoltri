@@ -9,6 +9,8 @@ import {
   isPlatformBrowser
 } from '@angular/common';
 
+import { RouterLink } from '@angular/router';
+
 import {
   PortfolioService
 } from '../../../core/services/portfolio.service';
@@ -41,7 +43,8 @@ type ArchetypeGroup = {
   selector: 'app-archetypes-page',
   standalone: true,
   imports: [
-    RevealDirective
+    RevealDirective,
+    RouterLink
   ],
   templateUrl: './archetypes-page.component.html',
   styleUrl: './archetypes-page.component.scss'
