@@ -1700,6 +1700,45 @@ ${window.location.href}`;
   }
 
 
+  private trackQuizResult(): void {
+
+    if (
+      typeof window === 'undefined' ||
+      !this.primaryResult
+    ) {
+      return;
+    }
+
+    if (
+      window.location.hostname === 'localhost' ||
+      window.location.hostname === '127.0.0.1'
+    ) {
+      return;
+    }
+
+    const gtag =
+      (window as any).gtag;
+
+    if (typeof gtag !== 'function') {
+      return;
+    }
+
+    gtag(
+      'event',
+      'quiz_arquetipo_resultado',
+      {
+        arquétipo_predominante:
+          this.primaryResult.name,
+
+        arquétipo_secundario:
+          this.secondaryResults[0]?.name ?? 'Nenhum',
+
+        forte_influencia:
+          this.strongSecondaryInfluence ? 'sim' : 'nao'
+      }
+    );
+  }
+
   private scrollToTop(): void {
 
     if (
