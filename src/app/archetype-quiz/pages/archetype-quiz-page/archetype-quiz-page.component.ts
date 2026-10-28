@@ -1727,10 +1727,10 @@ ${window.location.href}`;
       'event',
       'quiz_arquetipo_resultado',
       {
-        arquétipo_predominante:
+        arquetipo_predominante:
           this.primaryResult.name,
 
-        arquétipo_secundario:
+        arquetipo_secundario:
           this.secondaryResults[0]?.name ?? 'Nenhum',
 
         forte_influencia:
