@@ -1576,6 +1576,8 @@ ${window.location.href}`;
       secondary.length > 0 &&
       primary.score - secondary[0].score <= 2;
 
+    this.trackQuizResult();
+
     this.phase =
       'processing';
 
